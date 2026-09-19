@@ -15,6 +15,20 @@ Built for [DwarfStar](https://github.com/antirez/ds4) (`ds4-server`), but nothin
 specific to it: any server that accepts `tools` and returns `tool_calls` works, including llama.cpp,
 vLLM and SGLang.
 
+## The one setting that matters
+
+Give every concurrent agent its own resident session (`sessions = clients` in `matrix.toml`). An
+agent re-sends its whole history each step, so one slot cannot hold several conversations — they
+evict each other and each step re-prefills the entire context. Measured here on Qwen3.8 Q2:
+
+| Slots / agents | Median prefix reuse | Prefill per step |
+|---|--:|--:|
+| 1 / 3 | 2.4% | ~60,000 tokens |
+| 3 / 3 | 97.2% | ~890 tokens |
+
+`scripts/pick_concurrency.py` measures this per family. It is multi-turn on purpose: a single-shot
+benchmark sees only decode contention and will recommend one session, which is wrong.
+
 ## Install
 
 ```text
