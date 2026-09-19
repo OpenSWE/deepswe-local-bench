@@ -65,3 +65,18 @@ container runs under QEMU at a fraction of the speed.
 | `DECISIONS.md` | why the benchmark is set up this way |
 
 MIT.
+
+## Resuming
+
+The driver is resumable and idempotent. If the tab closes, the machine reboots, or a run is
+interrupted, rerun exactly the same command:
+
+```bash
+python3 scripts/run_matrix.py 2>&1 | tee -a runs/driver.log
+```
+
+Finished jobs are skipped, an unfinished job is continued with `pier job resume`, and trials that
+were cancelled mid-flight are deleted and rerun. `--status` prints one line per planned run.
+
+To publish this repo, create an empty `OpenSWE/deepswe-local-bench` on GitHub and run
+`git push -u origin main`. The remote is already set to SSH.
