@@ -251,3 +251,14 @@ in Q17. It is now multi-turn and reports reuse per row from
 `usage.prompt_tokens_details.cached_tokens` (verified present on this server). A benchmark whose
 workload shape differs from the real one will confidently recommend the wrong setting.
 **Cost:** ~2 hours of trials discarded to keep the comparison clean and the matrix uniform.
+
+## Q23 — The session fix scales with trajectory length (the point of it)
+**Evidence, same run, as contexts grew:** first 30 prompts — 85.2% median reuse, max context 25,424,
+45,028 prefill tokens. Latest 30 prompts — 99.0% reuse, max context 59,235, 20,123 prefill tokens.
+Reuse *rose* and total prefill work *fell* while contexts more than doubled.
+**Why it matters:** under 1 slot, per-step cost grew with trajectory length, which is why the step
+rate decayed from 1.47/min to 0.50/min over two hours. With a slot per agent, per-step cost is flat,
+and the aggregate rate held at ~13 steps/min across the same growth. Long-horizon agent benchmarks
+are dominated by this, not by raw decode speed.
+**Projection:** ~12 hours per configuration for this family, against the ~2.5 days implied by the
+old configuration.
