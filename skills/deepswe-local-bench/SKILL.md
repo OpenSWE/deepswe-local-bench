@@ -30,6 +30,21 @@ falls back to QEMU and runs several times slower. Verify with:
 docker run --rm --platform linux/amd64 alpine uname -m     # must print x86_64
 ```
 
+## Prove the verifier before the sweep
+
+An agent trial can run for hours before it ever reaches the verifier, so a broken grading stage
+stays invisible while days of compute are already committed. Pier's `oracle` agent applies each
+task's own reference solution, which exercises the collect hook, the patch, the separate verifier
+image and the grader without the model at all:
+
+```bash
+pier run -p <tasks> --agent oracle -i '<one-task-name>' -n 1 -k 1 -o /tmp/oracle-check --job-name oracle -y -q
+cat /tmp/oracle-check/oracle/*/verifier/reward.json
+```
+
+Expect `{"reward": 1, ...}` with every fail-to-pass and pass-to-pass test passing. It takes minutes
+and needs no inference server. Do this before launching the matrix.
+
 ## The port-80 rule
 
 Every DeepSWE task declares `network_mode = "no-network"`. Pier implements that as an isolated
