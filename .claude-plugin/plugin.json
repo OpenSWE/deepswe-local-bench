@@ -1,0 +1,10 @@
+{
+  "name": "deepswe-local-bench",
+  "version": "0.1.0",
+  "description": "Run the DeepSWE benchmark against local OpenAI-compatible inference servers (DwarfStar ds4-server) over a matrix of models, quantizations and reasoning efforts, and render a leaderboard-style table.",
+  "author": { "name": "soulmachine" },
+  "homepage": "https://github.com/OpenSWE/deepswe-local-bench",
+  "repository": "https://github.com/OpenSWE/deepswe-local-bench",
+  "license": "MIT",
+  "keywords": ["deepswe", "benchmark", "swe-bench", "mini-swe-agent", "pier", "ds4", "dwarfstar", "local-llm"]
+}

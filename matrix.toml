@@ -1,0 +1,117 @@
+# Benchmark matrix: one [[server]] per ds4-server instance; every effort in
+# `efforts` runs against that same instance (effort is a per-request field).
+# Order = run order. A server whose model file is not on disk yet is waited for.
+
+[defaults]
+ds4_repo = "~/github.com/antirez/ds4"
+tasks = "~/github.com/datacurve-ai/deep-swe/tasks"
+jobs_dir = "jobs"                        # relative to this repo, gitignored
+port = 8000                              # ds4-server listens here, unprivileged
+forward_port = 80                        # root-owned forwarder; squid allows only ports 80/443
+base_url = "http://host.docker.internal/v1"
+mini_swe_agent_version = "2.3.0"         # the leaderboard's pinned harness version
+agent_timeout_multiplier = 2.0           # 3 h -> 6 h; aggregate.py also reports the 3 h cutoff
+max_retries = 1                          # Pier retries infra errors once; timeouts are never retried
+seed = 0
+kv_disk_dir = "/tmp/ds4-kv"
+kv_disk_space_mb = 262144
+kv_cold_max_tokens = 200000
+server_ready_timeout_s = 3600
+
+# ---------------------------------------------------------------- DeepSeek V4.1 Flash
+# No MTP exists for this model. `max` needs no context gate on V4.1.
+[[server]]
+id = "deepseek-v4.1-flash-q2"
+label = "DeepSeek V4.1 Flash Q2"
+family = "DeepSeek V4.1 Flash"
+quant = "Q2"
+model = "gguf/DeepSeek-V4.1-Flash-Q2.gguf"
+ctx = 262144
+sessions = 6
+mtp = false
+efforts = ["high", "max"]
+
+[[server]]
+id = "deepseek-v4.1-flash-q4"
+label = "DeepSeek V4.1 Flash Q4"
+family = "DeepSeek V4.1 Flash"
+quant = "Q4"
+model = "gguf/DeepSeek-V4.1-Flash-Q4.gguf"
+ctx = 262144
+sessions = 6
+mtp = false
+efforts = ["high", "max"]
+
+# ---------------------------------------------------------------- Qwen3.8 Flash Next
+# `max` needs ctx >= 393216; native ctx is 262144, so YaRN x2 extends it.
+# The *-native rows are the control for the YaRN cost (high only).
+[[server]]
+id = "qwen3.8-flash-next-q2"
+label = "Qwen3.8 Flash Next Q2"
+family = "Qwen3.8 Flash Next"
+quant = "Q2"
+model = "gguf/Qwen3.8-Flash-Next-Q2.gguf"
+ctx = 393216
+sessions = 12
+mtp = true
+env = { DS4_QWEN4_YARN_FACTOR = "2" }
+efforts = ["low", "medium", "high", "max"]
+
+[[server]]
+id = "qwen3.8-flash-next-q2-native"
+label = "Qwen3.8 Flash Next Q2 (native ctx)"
+family = "Qwen3.8 Flash Next"
+quant = "Q2"
+model = "gguf/Qwen3.8-Flash-Next-Q2.gguf"
+ctx = 262144
+sessions = 12
+mtp = true
+efforts = ["high"]
+
+[[server]]
+id = "qwen3.8-flash-next-q4"
+label = "Qwen3.8 Flash Next Q4"
+family = "Qwen3.8 Flash Next"
+quant = "Q4"
+model = "gguf/Qwen3.8-Flash-Next-Q4.gguf"
+ctx = 393216
+sessions = 12
+mtp = true
+env = { DS4_QWEN4_YARN_FACTOR = "2" }
+efforts = ["low", "medium", "high", "max"]
+
+[[server]]
+id = "qwen3.8-flash-next-q4-native"
+label = "Qwen3.8 Flash Next Q4 (native ctx)"
+family = "Qwen3.8 Flash Next"
+quant = "Q4"
+model = "gguf/Qwen3.8-Flash-Next-Q4.gguf"
+ctx = 262144
+sessions = 12
+mtp = true
+efforts = ["high"]
+
+# ---------------------------------------------------------------- GLM 5.3 Flash
+# `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
+# `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
+[[server]]
+id = "glm-5.3-flash-q2"
+label = "GLM 5.3 Flash Q2"
+family = "GLM 5.3 Flash"
+quant = "Q2"
+model = "gguf/GLM-5.3-Flash-Q2.gguf"
+ctx = 393216
+sessions = 3
+mtp = false
+efforts = ["high", "max"]
+
+[[server]]
+id = "glm-5.3-flash-q4"
+label = "GLM 5.3 Flash Q4"
+family = "GLM 5.3 Flash"
+quant = "Q4"
+model = "gguf/GLM-5.3-Flash-Q4_K.gguf"
+ctx = 393216
+sessions = 3
+mtp = false
+efforts = ["high", "max"]

@@ -1,0 +1,15 @@
+{
+  "name": "deepswe-local-bench",
+  "description": "Marketplace for the deepswe-local-bench plugin — DeepSWE benchmark runs against local inference servers.",
+  "owner": { "name": "soulmachine" },
+  "plugins": [
+    {
+      "name": "deepswe-local-bench",
+      "source": "./",
+      "description": "Run the DeepSWE benchmark against local OpenAI-compatible inference servers over a matrix of models, quantizations and reasoning efforts, and render a leaderboard-style table.",
+      "version": "0.1.0",
+      "license": "MIT",
+      "keywords": ["deepswe", "benchmark", "mini-swe-agent", "pier", "local-llm"]
+    }
+  ]
+}
