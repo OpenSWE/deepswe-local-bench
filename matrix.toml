@@ -1,6 +1,6 @@
 # Benchmark matrix: one [[server]] per ds4-server instance; every effort in
 # `efforts` runs against that same instance (effort is a per-request field).
-# Order = run order. A server whose model file is not on disk yet is waited for.
+# Order = run order: Qwen Q2 first (fastest, validates the pipeline), DeepSeek Q4 last. A server whose model file is not on disk yet is waited for.
 
 # `sessions` = resident server slots, `clients` = Pier's concurrent tasks.
 # Batching is not assumed to help: measured here, DeepSeek V4.1 Q2 aggregate output
@@ -23,32 +23,6 @@ kv_disk_dir = "/tmp/ds4-kv"
 kv_disk_space_mb = 262144
 kv_cold_max_tokens = 200000
 server_ready_timeout_s = 3600
-
-# ---------------------------------------------------------------- DeepSeek V4.1 Flash
-# No MTP exists for this model. `max` needs no context gate on V4.1.
-[[server]]
-id = "deepseek-v4.1-flash-q2"
-label = "DeepSeek V4.1 Flash Q2"
-family = "DeepSeek V4.1 Flash"
-quant = "Q2"
-model = "gguf/DeepSeek-V4.1-Flash-Q2.gguf"
-ctx = 262144
-sessions = 1
-clients = 3
-mtp = false
-efforts = ["high", "max"]
-
-[[server]]
-id = "deepseek-v4.1-flash-q4"
-label = "DeepSeek V4.1 Flash Q4"
-family = "DeepSeek V4.1 Flash"
-quant = "Q4"
-model = "gguf/DeepSeek-V4.1-Flash-Q4.gguf"
-ctx = 262144
-sessions = 1
-clients = 3
-mtp = false
-efforts = ["high", "max"]
 
 # ---------------------------------------------------------------- Qwen3.8 Flash Next
 # `max` needs ctx >= 393216; native ctx is 262144, so YaRN x2 extends it.
@@ -78,6 +52,35 @@ clients = 3
 mtp = true
 efforts = ["high"]
 
+# ---------------------------------------------------------------- DeepSeek V4.1 Flash
+# No MTP exists for this model. `max` needs no context gate on V4.1.
+[[server]]
+id = "deepseek-v4.1-flash-q2"
+label = "DeepSeek V4.1 Flash Q2"
+family = "DeepSeek V4.1 Flash"
+quant = "Q2"
+model = "gguf/DeepSeek-V4.1-Flash-Q2.gguf"
+ctx = 262144
+sessions = 1
+clients = 3
+mtp = false
+efforts = ["high", "max"]
+
+# ---------------------------------------------------------------- GLM 5.3 Flash
+# `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
+# `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
+[[server]]
+id = "glm-5.3-flash-q2"
+label = "GLM 5.3 Flash Q2"
+family = "GLM 5.3 Flash"
+quant = "Q2"
+model = "gguf/GLM-5.3-Flash-Q2.gguf"
+ctx = 393216
+sessions = 1
+clients = 3
+mtp = true
+efforts = ["high", "max"]
+
 [[server]]
 id = "qwen3.8-flash-next-q4"
 label = "Qwen3.8 Flash Next Q4"
@@ -103,21 +106,6 @@ clients = 3
 mtp = true
 efforts = ["high"]
 
-# ---------------------------------------------------------------- GLM 5.3 Flash
-# `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
-# `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
-[[server]]
-id = "glm-5.3-flash-q2"
-label = "GLM 5.3 Flash Q2"
-family = "GLM 5.3 Flash"
-quant = "Q2"
-model = "gguf/GLM-5.3-Flash-Q2.gguf"
-ctx = 393216
-sessions = 1
-clients = 3
-mtp = true
-efforts = ["high", "max"]
-
 [[server]]
 id = "glm-5.3-flash-q4"
 label = "GLM 5.3 Flash Q4"
@@ -129,3 +117,16 @@ sessions = 1
 clients = 3
 mtp = true
 efforts = ["high", "max"]
+
+[[server]]
+id = "deepseek-v4.1-flash-q4"
+label = "DeepSeek V4.1 Flash Q4"
+family = "DeepSeek V4.1 Flash"
+quant = "Q4"
+model = "gguf/DeepSeek-V4.1-Flash-Q4.gguf"
+ctx = 262144
+sessions = 1
+clients = 3
+mtp = false
+efforts = ["high", "max"]
+
