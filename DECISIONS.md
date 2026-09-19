@@ -196,3 +196,31 @@ grilling session that scoped the work; later entries are calls made while buildi
 **Justification:** ds4 queues requests when all slots are busy rather than rejecting them (`docs/SERVER.md`). Agent steps are mostly model time, so the overlap gain is modest, but it is free if queuing costs nothing. Measured with `--sessions 1 --clients 3`.
 **Outcome:** applied
 **Ref:** scripts/pick_concurrency.py (--clients), runs/pick-deepseek-q2-queued.txt
+
+## Q18 — Verifier proven independently with Pier's oracle agent
+**Context:** After 90 minutes the first agent trials still had not reached the verifier, leaving the
+last link in the pipeline untested while a multi-day sweep was already committed.
+**Decision:** Run `pier run --agent oracle` on one task. The oracle applies the task's reference
+solution, so it exercises collect-hook, patch, verifier image and grader without the model at all.
+**Result:** `abs-module-cache-flags` scored `reward=1`, 20/20 fail-to-pass and 3/3 pass-to-pass.
+**Why it matters:** ~8 minutes of work validated the stage that would otherwise have been unproven
+for hours, and it is now the documented first step in the skill.
+
+## Q19 — Run order corrected to Qwen Q2 first
+**Context:** The accepted plan put Qwen Q2 first (on disk, ~2.5x faster than DeepSeek). The matrix
+file as written ran DeepSeek Q2 first, so the driver started on the slowest family.
+**Decision:** Reorder to Qwen Q2 -> Qwen Q2 native -> DeepSeek Q2 -> GLM Q2 -> Qwen Q4 -> Qwen Q4
+native -> GLM Q4 -> DeepSeek Q4, and restart the driver. The interrupted DeepSeek trials were
+written with `CancelledError`, which `pier job resume` deletes and reruns by default, so nothing
+is lost beyond ~75 minutes of compute.
+**Why:** Matches the accepted order and puts the first complete configuration hours sooner.
+
+## Q20 — Observed task cost on DeepSeek V4.1 Flash Q2
+**Context:** Needed a defensible runtime projection for the full matrix.
+**Measured:** three trials cancelled at 75 minutes each had reached 51 agent steps and 17.6k / 23.3k
+/ 30.2k output tokens, with the server ~100% busy throughout (305 completed phases in 71 minutes,
+median 5s between completions).
+**Implication:** roughly 2.2 days per configuration for this family, so the 18-row matrix is on the
+order of 40 days rather than the ~2 weeks estimated before measurement. Recorded rather than acted
+on: the accepted budget is unlimited, and the cheapest trim if that changes is Qwen's low/medium
+efforts, which the server renders distinctly only for Qwen.
