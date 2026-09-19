@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 14:53 PDT",
+ "generated_at": "2026-09-19 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 16,
-   "n_counted": 16,
+   "n_trials": 24,
+   "n_counted": 24,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6875,
-   "ci_low": 0.4375,
-   "ci_high": 0.875,
-   "ci_half": 0.21875,
-   "pass_at_1_3h": 0.6875,
-   "avg_minutes": 50.95104829583333,
-   "avg_out_tok_k": 72.009125,
-   "avg_steps": 113.0625,
+   "pass_at_1": 0.75,
+   "ci_low": 0.5833333333333334,
+   "ci_high": 0.9166666666666666,
+   "ci_half": 0.16666666666666663,
+   "pass_at_1_3h": 0.75,
+   "avg_minutes": 53.61503660902778,
+   "avg_out_tok_k": 73.06620833333332,
+   "avg_steps": 112.33333333333333,
    "complete": false
   }
  ],
@@ -37,6 +37,17 @@
     "n_output_tokens": 51504,
     "steps": 79,
     "peak_context_tokens": 93565
+   },
+   {
+    "task": "datacurve/geo-shapeindex-serialization",
+    "trial": "geo-shapeindex-serialization__mzRAfzk",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6516.984218,
+    "n_output_tokens": 57225,
+    "steps": 140,
+    "peak_context_tokens": 118145
    },
    {
     "task": "datacurve/prometheus-typed-label-sorting",
@@ -61,6 +72,17 @@
     "peak_context_tokens": 133376
    },
    {
+    "task": "datacurve/katex-multicolumn-array-spans",
+    "trial": "katex-multicolumn-array-spans__tZQX2wN",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3295.519872,
+    "n_output_tokens": 83875,
+    "steps": 159,
+    "peak_context_tokens": 160327
+   },
+   {
     "task": "datacurve/kysely-window-grouping-helpers",
     "trial": "kysely-window-grouping-helpers__hmdj5XX",
     "status": "scored",
@@ -81,6 +103,17 @@
     "n_output_tokens": 93616,
     "steps": 144,
     "peak_context_tokens": 156593
+   },
+   {
+    "task": "datacurve/claude-code-by-agents-recursive-delegation",
+    "trial": "claude-code-by-agents-recursive__mnPTmaJ",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2220.576072,
+    "n_output_tokens": 61908,
+    "steps": 70,
+    "peak_context_tokens": 108536
    },
    {
     "task": "datacurve/abs-stepped-slices",
@@ -105,6 +138,17 @@
     "peak_context_tokens": 124297
    },
    {
+    "task": "datacurve/langchain-request-coalescing",
+    "trial": "langchain-request-coalescing__r7LJGQt",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4922.769522,
+    "n_output_tokens": 125515,
+    "steps": 125,
+    "peak_context_tokens": 178783
+   },
+   {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
     "trial": "ofetch-per-origin-circuit-breake__7oofyyu",
     "status": "scored",
@@ -125,6 +169,28 @@
     "n_output_tokens": 49739,
     "steps": 84,
     "peak_context_tokens": 72687
+   },
+   {
+    "task": "datacurve/bandit-interprocedural-taint-checks",
+    "trial": "bandit-interprocedural-taint-che__HG4KkCU",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2650.955351,
+    "n_output_tokens": 69515,
+    "steps": 86,
+    "peak_context_tokens": 108193
+   },
+   {
+    "task": "datacurve/fd-deterministic-multi-key-sorting",
+    "trial": "fd-deterministic-multi-key-sorti__MrPMwKr",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2295.724079,
+    "n_output_tokens": 58211,
+    "steps": 104,
+    "peak_context_tokens": 123120
    },
    {
     "task": "datacurve/happy-dom-deterministic-intersectionobserver",
@@ -193,6 +259,17 @@
     "peak_context_tokens": 113592
    },
    {
+    "task": "datacurve/quill-shared-toolbar-focus",
+    "trial": "quill-shared-toolbar-focus__brEuZ67",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4586.439541,
+    "n_output_tokens": 97556,
+    "steps": 129,
+    "peak_context_tokens": 176261
+   },
+   {
     "task": "datacurve/true-myth-iterable-collection-combinators",
     "trial": "true-myth-iterable-collection-co__bATUcKH",
     "status": "scored",
@@ -202,6 +279,17 @@
     "n_output_tokens": 83644,
     "steps": 98,
     "peak_context_tokens": 191474
+   },
+   {
+    "task": "datacurve/httpx-deterministic-cookie-store",
+    "trial": "httpx-deterministic-cookie-store__hSsDQyb",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1803.677698,
+    "n_output_tokens": 47638,
+    "steps": 74,
+    "peak_context_tokens": 68653
    }
   ]
  }
