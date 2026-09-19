@@ -233,3 +233,21 @@ not support, and a silently dropped `reasoning_effort` would make all 18 rows di
 server's default sampling applies — matching the leaderboard, which sets no temperature either.
 **Why it matters:** this is the single assumption the whole effort axis rests on, and it is cheap to
 verify and cheap to regress on a litellm upgrade. Added to the skill as a pre-sweep step.
+
+## Q22 — Sessions raised to match clients; my concurrency benchmark was measuring the wrong thing
+**Context:** Under 1 resident session with 3 concurrent agents, the step rate decayed steadily
+(1.47/min at 15 min, 0.50/min at 120 min) and no task finished in two hours.
+**Cause:** an agent re-sends its whole history every step, so a single slot cannot hold three
+conversations — they evict each other and each step re-prefills the full context. Measured from the
+server log: median prefix reuse **2.4%**, ~60k tokens re-prefilled per step, 1,513,771 prefill
+tokens across 25 steps.
+**Fix:** `sessions = clients = 3` on every row. Re-measured: median reuse **97.2%**, ~890 tokens per
+step, 26,760 across 30 steps — a 67x reduction in prefill work. Early step rate went from 66 steps
+in 15 minutes to 70 in 5. Speculative decoding stays active (Qwen/Metal keeps it for 2-16 sessions)
+and the planned memory line was unchanged, because slots share the prefill workspace.
+**The deeper error:** `pick_concurrency.py` fired fresh, unrelated prompts, which measures decode
+contention only — under that test one session always wins, and it is what led me to `sessions = 1`
+in Q17. It is now multi-turn and reports reuse per row from
+`usage.prompt_tokens_details.cached_tokens` (verified present on this server). A benchmark whose
+workload shape differs from the real one will confidently recommend the wrong setting.
+**Cost:** ~2 hours of trials discarded to keep the comparison clean and the matrix uniform.
