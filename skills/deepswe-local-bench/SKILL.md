@@ -106,3 +106,16 @@ leaderboard's across-rollout interval, so label it wherever it is published.
 | `scripts/port80_forward.py` | root-owned 80 → server-port forwarder for the sandbox |
 | `scripts/aggregate.py` | job directories → `results/results.json` and `RESULTS.md` |
 | `scripts/render_html.py` | results JSON → static leaderboard page |
+
+## Running it in a herdr tab
+
+A full matrix takes days, so give it its own tab rather than a foreground shell:
+
+```bash
+TAB=$(herdr tab create --workspace "$HERDR_WORKSPACE_ID" --label deepswe-bench --no-focus \
+      | python3 -c 'import sys,json; print(json.load(sys.stdin)["result"]["root_pane"]["pane_id"])')
+herdr pane run "$TAB" "cd <repo> && python3 scripts/run_matrix.py 2>&1 | tee -a runs/matrix.log"
+herdr pane read "$TAB" --source recent --lines 40        # check on it later
+```
+
+The driver is resumable, so a closed tab or a reboot costs only the task in flight.

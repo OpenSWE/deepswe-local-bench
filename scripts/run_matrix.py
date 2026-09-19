@@ -37,7 +37,15 @@ def job_name(server_id: str, effort: str, suffix: str | None) -> str:
 
 
 def job_done(jobs_dir: Path, name: str) -> bool:
-    return (jobs_dir / name / "result.json").exists()
+    """Pier writes result.json when the job STARTS and updates it live, so presence
+    proves nothing; a finished job is the one carrying a finished_at timestamp."""
+    f = jobs_dir / name / "result.json"
+    if not f.exists():
+        return False
+    try:
+        return json.loads(f.read_text()).get("finished_at") is not None
+    except (OSError, json.JSONDecodeError):
+        return False
 
 
 def listeners(port: int) -> list[int]:
@@ -216,6 +224,37 @@ def run_job(d: dict, s: dict, effort: str, jobs_dir: Path, args) -> bool:
     return job_done(jobs_dir, name)
 
 
+def print_status(d: dict, servers: list[dict], jobs_dir: Path) -> None:
+    """One line per planned run: done, running, or pending, with trial counts."""
+    print(f"{'run':44s} {'state':9s} {'trials':>8s}  detail")
+    for s in servers:
+        for e in s["efforts"]:
+            name = job_name(s["id"], e, None)
+            jd, res = jobs_dir / name, jobs_dir / name / "result.json"
+            if not jd.exists():
+                print(f"{name:44s} {'pending':9s} {'':>8s}")
+                continue
+            trials = sorted(jd.glob("*/result.json"))
+            scored = errs = 0
+            for t in trials:
+                try:
+                    r = json.loads(t.read_text())
+                except (OSError, json.JSONDecodeError):
+                    continue
+                if r.get("exception_info"):
+                    errs += 1
+                elif ((r.get("verifier_result") or {}).get("rewards") or {}).get("reward") is not None:
+                    scored += 1
+            state = "done" if job_done(jobs_dir, name) else "running"
+            try:
+                stats = json.loads(res.read_text()).get("stats", {}) if res.exists() else {}
+            except (OSError, json.JSONDecodeError):
+                stats = {}
+            detail = f"{scored} scored, {errs} errored" + (
+                f", {stats.get('n_running_trials', 0)} in flight" if state == "running" else "")
+            print(f"{name:44s} {state:9s} {len(trials):>8d}  {detail}")
+
+
 def main() -> None:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--matrix", default=str(ROOT / "matrix.toml"))
@@ -230,6 +269,7 @@ def main() -> None:
     ap.add_argument("--no-mtp", dest="mtp", action="store_false", help="force --mtp off")
     ap.add_argument("--reuse-server", action="store_true",
                     help="use a ds4-server already listening on the port instead of starting/stopping one")
+    ap.add_argument("--status", action="store_true", help="print matrix progress and exit")
     ap.add_argument("--dry-run", action="store_true")
     args = ap.parse_args()
     if args.n_tasks and not args.suffix:
@@ -244,6 +284,10 @@ def main() -> None:
         if unknown:
             ap.error(f"unknown server id(s): {sorted(unknown)}")
         servers = [s for s in servers if s["id"] in args.only]
+
+    if args.status:
+        print_status(d, servers, jobs_dir)
+        return
 
     failed: list[str] = []
     for s in servers:
@@ -267,7 +311,10 @@ def main() -> None:
         server_log = ROOT / "runs" / s["id"] / f"server-{time.strftime('%Y%m%d-%H%M%S')}.log"
         proc = None
         try:
-            if args.reuse_server and listeners(d["port"]):
+            if args.reuse_server and s is servers[0] and listeners(d["port"]):
+                # Only ever for the first server: a listener on the port says nothing
+                # about which weights it loaded, so reusing it later would silently
+                # score the wrong model.
                 log(f"reusing ds4-server already listening on port {d['port']}")
             else:
                 proc = start_server(d, s, server_log)

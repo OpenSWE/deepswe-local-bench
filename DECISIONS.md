@@ -125,3 +125,54 @@ grilling session that scoped the work; later entries are calls made while buildi
 **Justification:** every server behaviour cited in this journal was read from the current sources.
 **Outcome:** applied
 **Ref:** ds4 HEAD 8db1d1d
+
+## Q13 — setup/port80 — deviation
+
+**Question:** Grilling Q17 chose "ds4-server binds 127.0.0.1:80" on the premise that macOS permits an unprivileged bind below 1024. The server refused to start: `failed to listen on 127.0.0.1:80: Permission denied`.
+**Options considered:** run ds4-server under sudo / a root-owned forwarder on 80 to the server's real port / pf redirect / patch Pier's squid allowlist
+**Chosen:** `scripts/port80_forward.py`, started with passwordless sudo, binds 127.0.0.1:80 and forwards to 127.0.0.1:8000, then drops to the invoking uid immediately after the bind. ds4-server stays unprivileged on 8000.
+**Decided-by:** agent
+**Justification:** keeps the original intent of Q17 (no benchmark or runner changes, loopback only, nothing on the LAN) while running a ~40-line forwarder as root instead of a 150 GiB inference server. Verified end to end: an amd64 container reaches `http://host.docker.internal/v1/models`, and a tool-calling chat completion returns `finish_reason: "tool_calls"`.
+**Outcome:** applied
+**Ref:** scripts/port80_forward.py, matrix.toml `[defaults] forward_port`
+
+## Q14 — setup/job-done — deviation
+
+**Question:** The driver treated the presence of `jobs/<job>/result.json` as proof a job had finished, so it would skip or mis-resume live jobs.
+**Options considered:** presence of the file / require a `finished_at` timestamp / count trials
+**Chosen:** A job counts as done only when `result.json` carries a non-null `finished_at`.
+**Decided-by:** agent
+**Justification:** observed directly in the smoke run: Pier writes `result.json` at job start with `finished_at: null` and `n_running_trials: 1`, updating it as trials land.
+**Outcome:** applied
+**Ref:** scripts/run_matrix.py (job_done)
+
+## Q15 — setup/model-ready — deviation
+
+**Question:** The driver's "weights are fully downloaded" check rejected any file held open by another process, so it waited forever on a model the inference server itself had mapped.
+**Options considered:** drop the open-handle check / detect writers only / rely on size stability alone
+**Chosen:** Detect *writers* only, via `lsof -Fan` access modes, alongside no `.assembling` sibling and a stable size across a quiet minute. Readers are expected: the server mmaps the weights.
+**Decided-by:** agent
+**Justification:** the in-flight downloads write to temporary names, so a complete file with only readers is genuinely ready; verified against both the served Q2 file and the two downloads running in other tabs.
+**Outcome:** applied
+**Ref:** scripts/run_matrix.py (has_writer, model_ready)
+
+## Q16 — setup/github — escalated
+
+**Question:** Grilling Q10 approved publishing the skill repo publicly in the OpenSWE GitHub organization. `gh repo create` failed: the active token carries only `admin:public_key`, `admin:ssh_signing_key`, `read:user` and `user:email`.
+**Options considered:** create the repo with a differently-scoped token / ask the user to create it / skip publishing
+**Chosen:** —
+**Decided-by:** agent
+**Justification:** only a human can grant the `public_repo` scope or create the repository. The local repository at `~/github.com/OpenSWE/deepswe-local-bench` is committed and complete, which satisfies the literal request; publishing waits for a token or a repository created by hand, after which `git push -u origin main` finishes it.
+**Outcome:** escalated
+**Ref:** (pending)
+
+## Q17 — run/glm-pilot — gate-resolution
+
+**Question:** Grilling Q23 chose a 3-task pilot to settle GLM's session count, since ds4 disables MTP whenever more than one session is resident. What runs until the pilot happens?
+**Options considered:** block GLM rows on the pilot / ship a default and pilot when GLM's turn arrives
+**Chosen:** Default to 3 sessions without MTP in matrix.toml, and run the pilot immediately before the first GLM row:
+`scripts/run_matrix.py --only glm-5.3-flash-q2 --efforts high --n-tasks 3 --suffix pilot-mtp --sessions 1 --mtp` against the same three tasks at `--sessions 3 --no-mtp`, keeping the faster.
+**Decided-by:** agent
+**Justification:** agent workloads are bursty — a session idles while its container runs a shell command — so overlapping sessions should beat a 1.3–1.6x single-stream MTP gain, especially as GLM's native batching falls back to ordered decoding past about 2051 visible tokens, which every agent context exceeds. The pilot decides it on measurement rather than this reasoning; GLM's turn is days away, so nothing is blocked meanwhile.
+**Outcome:** assumed
+**Ref:** matrix.toml (glm-5.3-flash-q2)
