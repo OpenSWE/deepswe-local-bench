@@ -224,3 +224,12 @@ median 5s between completions).
 order of 40 days rather than the ~2 weeks estimated before measurement. Recorded rather than acted
 on: the accepted budget is unlimited, and the cheapest trim if that changes is Qwen's low/medium
 efforts, which the server renders distinctly only for Qwen.
+
+## Q21 — Verified that reasoning_effort survives litellm's drop_params
+**Context:** mini.yaml sets `drop_params: true`. litellm drops parameters it thinks a provider does
+not support, and a silently dropped `reasoning_effort` would make all 18 rows differ only in name.
+**Check:** pointed the pinned litellm at a local echo server and inspected the outgoing body.
+**Result:** body carried `reasoning_effort: low` and `seed: 0`, and carried no `temperature`, so the
+server's default sampling applies — matching the leaderboard, which sets no temperature either.
+**Why it matters:** this is the single assumption the whole effort axis rests on, and it is cheap to
+verify and cheap to regress on a litellm upgrade. Added to the skill as a pre-sweep step.

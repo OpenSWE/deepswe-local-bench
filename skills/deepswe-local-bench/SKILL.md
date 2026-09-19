@@ -93,6 +93,24 @@ verifier crash leave the denominator, while an agent timeout or context exhausti
 attempt. With one rollout per task the ± is a 95% bootstrap interval over tasks, which is **not** the
 leaderboard's across-rollout interval, so label it wherever it is published.
 
+## Prove the effort axis reaches the server
+
+mini-swe-agent's pinned config sets litellm's `drop_params: true`, and litellm drops parameters it
+believes a provider does not support. If it dropped `reasoning_effort`, every effort row would be
+an identical run under a different name and the matrix would be meaningless. Verify before
+sweeping, with a throwaway HTTP server that prints the request body:
+
+```python
+import litellm
+litellm.drop_params = True
+litellm.completion(model="openai/<your-id>", messages=[{"role":"user","content":"hi"}],
+                   reasoning_effort="low", seed=0)
+```
+
+Measured against litellm as pinned here, the body carried `reasoning_effort`, carried `seed`, and
+carried no `temperature`, so the server's own default sampling applies. That is the leaderboard's
+condition, which sets no temperature either. Re-check after any litellm upgrade.
+
 ## Traps worth knowing
 
 - **Effort labels collapse.** A server may map several of `low`/`medium`/`high`/`xhigh`/`max` to the
