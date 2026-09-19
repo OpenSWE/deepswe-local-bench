@@ -176,3 +176,23 @@ grilling session that scoped the work; later entries are calls made while buildi
 **Justification:** agent workloads are bursty — a session idles while its container runs a shell command — so overlapping sessions should beat a 1.3–1.6x single-stream MTP gain, especially as GLM's native batching falls back to ordered decoding past about 2051 visible tokens, which every agent context exceeds. The pilot decides it on measurement rather than this reasoning; GLM's turn is days away, so nothing is blocked meanwhile.
 **Outcome:** assumed
 **Ref:** matrix.toml (glm-5.3-flash-q2)
+
+## Q18 — run/concurrency — deviation
+
+**Question:** Grilling Q21 set concurrency at (Qwen 12, DeepSeek 6, GLM 3) resident sessions, reasoning from ds4's documented native session batching. The first live run contradicted it: DeepSeek V4.1 Flash Q2 decoded at about 1.0 tok/s per session across 6 sessions at 20k–87k contexts, against 15.4 tok/s single-session.
+**Options considered:** keep the planned session counts / measure aggregate throughput against session count and use the winner
+**Chosen:** Measure, then decide per family with `scripts/pick_concurrency.py`. For DeepSeek V4.1 Flash Q2 the measured aggregate output throughput at a 21k-token prompt was: 1 session 6.44 tok/s, 2 sessions 1.95, 3 sessions 2.24, 6 sessions 2.80. A single resident session is 2.3x the best batched setting, so DeepSeek runs unbatched.
+**Decided-by:** agent
+**Justification:** ds4's published batching figures are measured at 1k contexts (`QA_BEFORE_RELEASES.md`), while agent trajectories here reach 20k–87k tokens, where per-session decode collapses. Running 18 configurations at the planned setting would have cost days for a 2.3x throughput loss. The run was stopped 45 minutes in, before any row was scored, so nothing measured under the wrong setting reaches the results.
+**Outcome:** applied
+**Ref:** scripts/pick_concurrency.py, runs/pick-deepseek-q2.txt
+
+## Q19 — run/pier-concurrency — tradeoff
+
+**Question:** With one resident session, does Pier still get to run several tasks at once, so container and shell time overlaps model time?
+**Options considered:** Pier concurrency 1, strictly serial / Pier concurrency above the server's slot count, letting the server queue
+**Chosen:** Keep Pier's task concurrency above the server's session count and let ds4 queue the extra requests, provided the queued measurement shows no aggregate loss against a single client.
+**Decided-by:** agent
+**Justification:** ds4 queues requests when all slots are busy rather than rejecting them (`docs/SERVER.md`). Agent steps are mostly model time, so the overlap gain is modest, but it is free if queuing costs nothing. Measured with `--sessions 1 --clients 3`.
+**Outcome:** applied
+**Ref:** scripts/pick_concurrency.py (--clients), runs/pick-deepseek-q2-queued.txt

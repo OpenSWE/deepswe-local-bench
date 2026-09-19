@@ -2,6 +2,12 @@
 # `efforts` runs against that same instance (effort is a per-request field).
 # Order = run order. A server whose model file is not on disk yet is waited for.
 
+# `sessions` = resident server slots, `clients` = Pier's concurrent tasks.
+# Batching is not assumed to help: measured here, DeepSeek V4.1 Q2 aggregate output
+# throughput was 6.44 tok/s at 1 session vs 2.80 at 6, while a single-session server
+# serving 3 queued clients held 6.34 — so slots stay at 1 and concurrency comes from
+# clients. Re-measure per family with scripts/pick_concurrency.py before its rows.
+
 [defaults]
 ds4_repo = "~/github.com/antirez/ds4"
 tasks = "~/github.com/datacurve-ai/deep-swe/tasks"
@@ -27,7 +33,8 @@ family = "DeepSeek V4.1 Flash"
 quant = "Q2"
 model = "gguf/DeepSeek-V4.1-Flash-Q2.gguf"
 ctx = 262144
-sessions = 6
+sessions = 1
+clients = 3
 mtp = false
 efforts = ["high", "max"]
 
@@ -38,7 +45,8 @@ family = "DeepSeek V4.1 Flash"
 quant = "Q4"
 model = "gguf/DeepSeek-V4.1-Flash-Q4.gguf"
 ctx = 262144
-sessions = 6
+sessions = 1
+clients = 3
 mtp = false
 efforts = ["high", "max"]
 
@@ -52,7 +60,8 @@ family = "Qwen3.8 Flash Next"
 quant = "Q2"
 model = "gguf/Qwen3.8-Flash-Next-Q2.gguf"
 ctx = 393216
-sessions = 12
+sessions = 1
+clients = 3
 mtp = true
 env = { DS4_QWEN4_YARN_FACTOR = "2" }
 efforts = ["low", "medium", "high", "max"]
@@ -64,7 +73,8 @@ family = "Qwen3.8 Flash Next"
 quant = "Q2"
 model = "gguf/Qwen3.8-Flash-Next-Q2.gguf"
 ctx = 262144
-sessions = 12
+sessions = 1
+clients = 3
 mtp = true
 efforts = ["high"]
 
@@ -75,7 +85,8 @@ family = "Qwen3.8 Flash Next"
 quant = "Q4"
 model = "gguf/Qwen3.8-Flash-Next-Q4.gguf"
 ctx = 393216
-sessions = 12
+sessions = 1
+clients = 3
 mtp = true
 env = { DS4_QWEN4_YARN_FACTOR = "2" }
 efforts = ["low", "medium", "high", "max"]
@@ -87,7 +98,8 @@ family = "Qwen3.8 Flash Next"
 quant = "Q4"
 model = "gguf/Qwen3.8-Flash-Next-Q4.gguf"
 ctx = 262144
-sessions = 12
+sessions = 1
+clients = 3
 mtp = true
 efforts = ["high"]
 
@@ -101,8 +113,9 @@ family = "GLM 5.3 Flash"
 quant = "Q2"
 model = "gguf/GLM-5.3-Flash-Q2.gguf"
 ctx = 393216
-sessions = 3
-mtp = false
+sessions = 1
+clients = 3
+mtp = true
 efforts = ["high", "max"]
 
 [[server]]
@@ -112,6 +125,7 @@ family = "GLM 5.3 Flash"
 quant = "Q4"
 model = "gguf/GLM-5.3-Flash-Q4_K.gguf"
 ctx = 393216
-sessions = 3
-mtp = false
+sessions = 1
+clients = 3
+mtp = true
 efforts = ["high", "max"]

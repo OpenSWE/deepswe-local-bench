@@ -181,7 +181,7 @@ def pier_run_cmd(d: dict, s: dict, effort: str, name: str, jobs_dir: Path, args)
            "--ak", "model_kwargs=" + json.dumps({"seed": d["seed"]}),
            "--ae", f"OPENAI_BASE_URL={d['base_url']}", "--ae", f"OPENAI_API_BASE={d['base_url']}",
            "--ae", "OPENAI_API_KEY=dummy",                     # ds4-server has no auth; litellm wants a key
-           "-n", str(s["sessions"]), "-k", "1",
+           "-n", str(s.get("clients", s.get("sessions", 1))), "-k", "1",
            "--agent-timeout-multiplier", str(d["agent_timeout_multiplier"]),
            "-r", str(d.get("max_retries", 1)),
            "-o", str(jobs_dir), "--job-name", name, "-y", "-q"]
@@ -264,7 +264,8 @@ def main() -> None:
     ap.add_argument("--sample-seed", type=int, default=0)
     ap.add_argument("--task", action="append", help="Pier -i task-name glob (repeatable)")
     ap.add_argument("--suffix", help="job-name suffix so subsets never collide with the real sweep")
-    ap.add_argument("--sessions", type=int, help="override sessions/concurrency for the selected servers")
+    ap.add_argument("--sessions", type=int, help="override resident server slots for the selected servers")
+    ap.add_argument("--clients", type=int, help="override Pier task concurrency for the selected servers")
     ap.add_argument("--mtp", dest="mtp", action="store_true", default=None, help="force --mtp on")
     ap.add_argument("--no-mtp", dest="mtp", action="store_false", help="force --mtp off")
     ap.add_argument("--reuse-server", action="store_true",
@@ -294,6 +295,8 @@ def main() -> None:
         efforts = [e for e in s["efforts"] if not args.efforts or e in args.efforts.split(",")]
         if args.sessions:
             s["sessions"] = args.sessions
+        if args.clients:
+            s["clients"] = args.clients
         if args.mtp is not None:
             s["mtp"] = args.mtp
         pending = [e for e in efforts if not job_done(jobs_dir, job_name(s["id"], e, args.suffix))]
