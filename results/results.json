@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 11:08 PDT",
+ "generated_at": "2026-09-19 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 6,
-   "n_counted": 6,
+   "n_trials": 12,
+   "n_counted": 12,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6666666666666666,
-   "ci_low": 0.3333333333333333,
+   "pass_at_1": 0.75,
+   "ci_low": 0.5,
    "ci_high": 1.0,
-   "ci_half": 0.33333333333333337,
-   "pass_at_1_3h": 0.6666666666666666,
-   "avg_minutes": 53.58547314444444,
-   "avg_out_tok_k": 74.15133333333333,
-   "avg_steps": 127.16666666666667,
+   "ci_half": 0.25,
+   "pass_at_1_3h": 0.75,
+   "avg_minutes": 47.21122039861111,
+   "avg_out_tok_k": 68.0195,
+   "avg_steps": 111.25,
    "complete": false
   }
  ],
@@ -72,6 +72,28 @@
     "peak_context_tokens": 156593
    },
    {
+    "task": "datacurve/abs-stepped-slices",
+    "trial": "abs-stepped-slices__79RPyEG",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 1444.363229,
+    "n_output_tokens": 36987,
+    "steps": 76,
+    "peak_context_tokens": 65658
+   },
+   {
+    "task": "datacurve/kombu-single-active-consumer-priority",
+    "trial": "kombu-single-active-consumer-pri__pcbDqgE",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2815.164681,
+    "n_output_tokens": 70224,
+    "steps": 111,
+    "peak_context_tokens": 124297
+   },
+   {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
     "trial": "ofetch-per-origin-circuit-breake__7oofyyu",
     "status": "scored",
@@ -83,6 +105,28 @@
     "peak_context_tokens": 118004
    },
    {
+    "task": "datacurve/eicrud-keyset-pagination-cursor",
+    "trial": "eicrud-keyset-pagination-cursor__cpP7vba",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2881.681647,
+    "n_output_tokens": 63759,
+    "steps": 123,
+    "peak_context_tokens": 131043
+   },
+   {
+    "task": "datacurve/ytt-jsonpath-query-api",
+    "trial": "ytt-jsonpath-query-api__YBQ7CnP",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2332.357822,
+    "n_output_tokens": 64817,
+    "steps": 63,
+    "peak_context_tokens": 86560
+   },
+   {
     "task": "datacurve/python-statemachine-state-data-scoping",
     "trial": "python-statemachine-state-data-s__QNXSHxq",
     "status": "scored",
@@ -92,6 +136,28 @@
     "n_output_tokens": 77190,
     "steps": 179,
     "peak_context_tokens": 166194
+   },
+   {
+    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
+    "trial": "sql-formatter-bigquery-pipe-form__gSQ7fJC",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2068.725165,
+    "n_output_tokens": 51895,
+    "steps": 101,
+    "peak_context_tokens": 113592
+   },
+   {
+    "task": "datacurve/true-myth-iterable-collection-combinators",
+    "trial": "true-myth-iterable-collection-co__bATUcKH",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3159.015811,
+    "n_output_tokens": 83644,
+    "steps": 98,
+    "peak_context_tokens": 191474
    }
   ]
  }
