@@ -111,6 +111,12 @@ Measured against litellm as pinned here, the body carried `reasoning_effort`, ca
 carried no `temperature`, so the server's own default sampling applies. That is the leaderboard's
 condition, which sets no temperature either. Re-check after any litellm upgrade.
 
+Then confirm the flags survived the harness too. Pier expands `--ak model_kwargs='{"seed": 0}'` into
+separate dotted keys rather than assigning the dict wholesale, so it coexists with
+`--ak reasoning_effort=...`; verified in a trial log as
+`-c model.model_kwargs.reasoning_effort=low -c model.model_kwargs.seed=0`. Grep a running trial's
+`trial.log` for the `mini-swe-agent` line and read the flags rather than assuming.
+
 ## Traps worth knowing
 
 - **Effort labels collapse.** A server may map several of `low`/`medium`/`high`/`xhigh`/`max` to the
