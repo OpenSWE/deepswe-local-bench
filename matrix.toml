@@ -34,7 +34,7 @@ family = "Qwen3.8 Flash Next"
 quant = "Q2"
 model = "gguf/Qwen3.8-Flash-Next-Q2.gguf"
 ctx = 393216
-sessions = 1
+sessions = 3
 clients = 3
 mtp = true
 env = { DS4_QWEN4_YARN_FACTOR = "2" }

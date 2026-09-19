@@ -130,15 +130,20 @@ separate dotted keys rather than assigning the dict wholesale, so it coexists wi
   `tools` and return `tool_calls` with `finish_reason: "tool_calls"`. Check with one curl before a run.
 - **Cost is blank for an unpriced model.** litellm has no price entry, so Pier records null and the
   cost column is meaningless. Report wall-clock minutes per task instead.
-- **Batched sessions can be much slower, not faster.** Published batching figures are often measured
-  at ~1k contexts, while agent trajectories reach 20k-100k, where per-session decode can collapse.
-  Measured on ds4 + DeepSeek V4.1 Flash Q2 at 21k-token prompts: **6.44** aggregate output tok/s with
-  one resident session against **2.80** with six, a 2.3x loss. Run `scripts/pick_concurrency.py`
-  before every family and trust the number over the documentation.
-- **Concurrency should come from queued clients, not slots.** The same server with one slot serving
-  three concurrent clients held **6.34** tok/s, so extra agents queue for free and their container
-  time overlaps. Keep `sessions = 1` and raise `clients`. One slot also re-enables speculative
-  decoding on servers that disable it while batching.
+- **Size sessions by prefix reuse, not by decode throughput.** An agent re-sends its whole
+  history every step, so the question is whether the server still holds it. One resident session
+  cannot hold several concurrent agents: they evict each other and every step re-prefills the
+  entire context. Measured mid-sweep with 1 session and 3 agents, median prefix reuse was **2.4%**,
+  around 70-90k tokens re-prefilled per step, and the step rate decayed as trajectories grew.
+  Give each concurrent agent its own slot: `sessions = clients`.
+- **A single-shot benchmark will tell you the opposite, and be wrong.** Fresh unrelated prompts
+  measure only decode contention, where one session always wins. `scripts/pick_concurrency.py` is
+  multi-turn for this reason, and reports prefix reuse per row from
+  `usage.prompt_tokens_details.cached_tokens`. If a server does not report that field, read reuse
+  from its log instead; do not assume it.
+- **Check that speculative decoding survives your slot count.** Some servers disable it while
+  batching. Qwen3.8 on Metal keeps it from 2 to 16 sessions, and the startup log says so by staying
+  silent; other families disable it above one session, so re-check per family.
 - **A first run pays for 113 emulated image builds.** They cache, so only the first configuration is slow.
 - **Concurrency shapes wall-clock per task**, so never compare minutes across rows that ran at
   different session counts without saying so.
