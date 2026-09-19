@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 10:00 PDT",
+ "generated_at": "2026-09-19 10:32 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,23 +10,45 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 2,
-   "n_counted": 2,
+   "n_trials": 4,
+   "n_counted": 4,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 1.0,
-   "ci_low": 1.0,
+   "pass_at_1": 0.5,
+   "ci_low": 0.0,
    "ci_high": 1.0,
-   "ci_half": 0.0,
-   "pass_at_1_3h": 1.0,
-   "avg_minutes": 50.77857229166666,
-   "avg_out_tok_k": 70.4535,
-   "avg_steps": 161.0,
+   "ci_half": 0.5,
+   "pass_at_1_3h": 0.5,
+   "avg_minutes": 54.84965534166667,
+   "avg_out_tok_k": 71.83925,
+   "avg_steps": 137.5,
    "complete": false
   }
  ],
  "trials": {
   "qwen3.8-flash-next-q2__low": [
+   {
+    "task": "datacurve/anko-typed-variable-bindings",
+    "trial": "anko-typed-variable-bindings__zRX2a6T",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2321.246394,
+    "n_output_tokens": 51504,
+    "steps": 79,
+    "peak_context_tokens": 93565
+   },
+   {
+    "task": "datacurve/prometheus-typed-label-sorting",
+    "trial": "prometheus-typed-label-sorting__iuHyzDy",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4749.242213,
+    "n_output_tokens": 94946,
+    "steps": 149,
+    "peak_context_tokens": 148187
+   },
    {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__gKuVrLR",
