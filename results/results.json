@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 10:32 PDT",
+ "generated_at": "2026-09-19 11:08 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 4,
-   "n_counted": 4,
+   "n_trials": 6,
+   "n_counted": 6,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5,
-   "ci_low": 0.0,
+   "pass_at_1": 0.6666666666666666,
+   "ci_low": 0.3333333333333333,
    "ci_high": 1.0,
-   "ci_half": 0.5,
-   "pass_at_1_3h": 0.5,
-   "avg_minutes": 54.84965534166667,
-   "avg_out_tok_k": 71.83925,
-   "avg_steps": 137.5,
+   "ci_half": 0.33333333333333337,
+   "pass_at_1_3h": 0.6666666666666666,
+   "avg_minutes": 53.58547314444444,
+   "avg_out_tok_k": 74.15133333333333,
+   "avg_steps": 127.16666666666667,
    "complete": false
   }
  ],
@@ -59,6 +59,28 @@
     "n_output_tokens": 63717,
     "steps": 143,
     "peak_context_tokens": 133376
+   },
+   {
+    "task": "datacurve/numba-stencil-boundary-modes",
+    "trial": "numba-stencil-boundary-modes__sqYrfV7",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3784.945343,
+    "n_output_tokens": 93616,
+    "steps": 144,
+    "peak_context_tokens": 156593
+   },
+   {
+    "task": "datacurve/ofetch-per-origin-circuit-breaker",
+    "trial": "ofetch-per-origin-circuit-breake__7oofyyu",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2341.907707,
+    "n_output_tokens": 63935,
+    "steps": 69,
+    "peak_context_tokens": 118004
    },
    {
     "task": "datacurve/python-statemachine-state-data-scoping",
