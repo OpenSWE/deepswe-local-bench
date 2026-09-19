@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DeepSWE on DwarfStar</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" referrerpolicy="no-referrer" href="https://fonts.googleapis.com/css2?family=Geist:wght@400..600&display=swap">
+<style>
+:root{color-scheme:light dark;--bg:#fff;--fg:#0a0a0a;--fg2:#666;--line:#eaeaea;--line2:#d4d4d4;--focus:#0072f5;
+--s1:#0a0a0a;--s2:#7a7a7a;--s3:#b4b4b4}
+@media(prefers-color-scheme:dark){:root{--bg:#0a0a0a;--fg:#ededed;--fg2:#a1a1a1;--line:#1f1f1f;--line2:#333;
+--s1:#ededed;--s2:#8f8f8f;--s3:#5a5a5a}}
+*{box-sizing:border-box;min-width:0}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:Geist,-apple-system,system-ui,sans-serif;
+font-size:15px;line-height:1.6;font-variant-numeric:tabular-nums}
+main{max-width:1060px;margin:0 auto;padding:48px 24px 96px}
+h1{font-size:28px;line-height:1.25;font-weight:600;margin:0 0 8px}
+h2{font-size:20px;line-height:1.3;font-weight:600;margin:48px 0 12px}
+.lede{color:var(--fg2);max-width:68ch;margin:0 0 8px}
+.note{color:var(--fg2);font-size:13px;max-width:78ch}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:14px}
+caption{text-align:left;color:var(--fg2);font-size:13px;padding-bottom:8px}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:baseline;text-align:left;font-weight:400}
+thead th{color:var(--fg2);font-size:13px;font-weight:500;border-bottom:1px solid var(--line2)}
+th[scope=row]{font-weight:500;white-space:nowrap}
+.num{text-align:right;white-space:nowrap}
+.eff{color:var(--fg2);font-weight:400}
+.ci{color:var(--fg2);font-size:12px}
+tbody tr:hover{background:color-mix(in srgb,var(--fg) 4%,transparent)}
+.controls{display:flex;gap:16px;align-items:center;margin-top:24px;flex-wrap:wrap}
+.controls label{display:inline-flex;gap:6px;align-items:center;font-size:14px}
+input:focus-visible,a:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+svg{width:100%;height:auto;margin-top:12px}
+.grid{stroke:var(--line);stroke-width:1}
+.tick,.axis,.lbl{fill:var(--fg2);font-size:11px;font-family:Geist,system-ui,sans-serif}
+.axis{fill:var(--fg2);font-size:12px}
+.lbl{fill:var(--fg2);font-size:10px}
+.pt.series-1,.dot.series-1{fill:var(--s1)}.pt.series-2,.dot.series-2{fill:var(--s2)}.pt.series-3,.dot.series-3{fill:var(--s3)}
+.legend{display:flex;gap:16px;font-size:13px;color:var(--fg2);margin:8px 0 0}
+.key{display:inline-flex;gap:6px;align-items:center}
+.dot{width:9px;height:9px;border-radius:50%;display:inline-block}
+footer{margin-top:64px;color:var(--fg2);font-size:13px}
+</style></head>
+<body><main>
+<h1>DeepSWE on DwarfStar</h1>
+<p class="lede">Three model families served locally by ds4-server on an Apple M3 Ultra with 512 GB of
+unified memory, scored on all 113 DeepSWE tasks through mini-swe-agent 2.3.0 under Pier.</p>
+<p class="note">One rollout per task. Pass@1 ± is a 95% bootstrap interval over tasks, not the public
+leaderboard's across-rollout interval. Effort labels are the ones the server distinguishes:
+<code>xhigh</code> equals <code>high</code>; GLM and DeepSeek render <code>low</code> and
+<code>medium</code> as <code>high</code>; <code>max</code> needs a 393216-token context on Qwen and GLM.
+Generated 2026-09-19 06:52 PDT.</p>
+<div class="controls"><label><input type="checkbox" id="best"> Best effort level only</label></div>
+<table><caption>DeepSWE pass@1 by model, quantization and reasoning effort</caption><thead><tr><th scope="col">Model</th><th scope="col" class="num">Pass@1</th><th scope="col" class="num">Pass@1 @3h</th><th scope="col" class="num">Avg min/task</th><th scope="col" class="num">Out tok (k)</th><th scope="col" class="num">Steps</th><th scope="col" class="num">Tasks</th></tr></thead><tbody><tr data-best="1"><th scope="row">DeepSeek V4.1 Flash Q2 <span class="eff">[high]</span></th><td class="num">—% <span class="ci">±—</span></td><td class="num">—%</td><td class="num">—</td><td class="num">—</td><td class="num">—</td><td class="num">0/113</td></tr></tbody></table>
+<h2>Score against wall-clock cost</h2>
+<p class="note">No scored rows yet.</p>
+<p class="note">Minutes per task are wall-clock for the agent phase at the concurrency each row ran with,
+so they compare configurations on this machine rather than predicting single-stream latency.</p>
+<footer>Source and scripts: <a href="https://github.com/OpenSWE/deepswe-local-bench">OpenSWE/deepswe-local-bench</a>.</footer>
+</main><script>
+const only=document.getElementById('best');
+const apply=()=>document.querySelectorAll('tbody tr').forEach(r=>{
+  r.hidden = only.checked && r.dataset.best!=='1';});
+only.addEventListener('change',apply);apply();
+</script></body></html>

@@ -1,5 +1,65 @@
 {
- "generated_at": "2026-09-19 03:50 PDT",
- "rows": [],
- "trials": {}
+ "generated_at": "2026-09-19 06:52 PDT",
+ "rows": [
+  {
+   "server_id": "deepseek-v4.1-flash-q2",
+   "label": "DeepSeek V4.1 Flash Q2",
+   "family": "DeepSeek V4.1 Flash",
+   "quant": "Q2",
+   "ctx": 262144,
+   "sessions": 1,
+   "mtp": false,
+   "effort": "high",
+   "n_trials": 3,
+   "n_counted": 0,
+   "n_infra": 3,
+   "n_flagged": 0,
+   "pass_at_1": null,
+   "ci_low": 0.0,
+   "ci_high": 0.0,
+   "ci_half": null,
+   "pass_at_1_3h": null,
+   "avg_minutes": null,
+   "avg_out_tok_k": null,
+   "avg_steps": null,
+   "complete": false
+  }
+ ],
+ "trials": {
+  "deepseek-v4.1-flash-q2__high": [
+   {
+    "task": "datacurve/prometheus-typed-label-sorting",
+    "trial": "prometheus-typed-label-sorting__UnUCbKf",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "duration_s": 4528.742692,
+    "n_output_tokens": 17580,
+    "steps": 51,
+    "peak_context_tokens": 44510
+   },
+   {
+    "task": "datacurve/skrub-duration-encoding",
+    "trial": "skrub-duration-encoding__C2YNaCb",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "duration_s": 4528.687261,
+    "n_output_tokens": 30242,
+    "steps": 51,
+    "peak_context_tokens": 82482
+   },
+   {
+    "task": "datacurve/python-statemachine-state-data-scoping",
+    "trial": "python-statemachine-state-data-s__intWVbz",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "duration_s": 4528.761343,
+    "n_output_tokens": 23266,
+    "steps": 51,
+    "peak_context_tokens": 111815
+   }
+  ]
+ }
 }
