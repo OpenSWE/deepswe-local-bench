@@ -262,3 +262,17 @@ and the aggregate rate held at ~13 steps/min across the same growth. Long-horizo
 are dominated by this, not by raw decode speed.
 **Projection:** ~12 hours per configuration for this family, against the ~2.5 days implied by the
 old configuration.
+
+## Q24 — Stayed at 3 sessions rather than testing 6
+**Context:** with prefill effectively free (99.9% reuse), decode became the bottleneck. Qwen/Metal
+supports 2-16 sessions with speculative decoding, so more slots could raise aggregate decode.
+**Observed:** ~60 tok/s aggregate at 1 session with MTP, ~90 at 3 (28-32 per session). A 1.5x gain
+for 3x the slots, i.e. clearly diminishing — the GPU is near saturation.
+**Decision:** keep 3. A third sweep restart costs in-flight trials, more slots need proportionally
+more KV and one more 8 GiB container each competing for CPU during tool execution, and the expected
+gain is maybe 1.2x. The 67x prefill win is already captured.
+**Revisit:** the driver restarts the server only when weights or context change, so the next free
+opportunity is after the four Qwen Q2 efforts. Measure with `scripts/pick_concurrency.py --sessions
+3,6 --turns 8` before changing anything.
+**Also worth noting:** step cost varies enormously with this model — single steps ranged from 74 to
+7,752 generated tokens (3s to 280s), so short-window step rates are noise. Average over >10 minutes.
