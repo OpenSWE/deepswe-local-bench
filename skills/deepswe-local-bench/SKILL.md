@@ -143,6 +143,29 @@ separate dotted keys rather than assigning the dict wholesale, so it coexists wi
 - **Concurrency shapes wall-clock per task**, so never compare minutes across rows that ran at
   different session counts without saying so.
 
+## How the agent's work reaches the grader
+
+The verifier runs in a **separate** container built from the same image, so the agent's edits travel
+only through the collected patch. Each task collects with
+
+```
+git diff --binary <base_commit> HEAD > /logs/artifacts/model.patch
+```
+
+which reads **committed history only**. A working tree full of edits, and any untracked new file,
+contributes nothing. Every task instruction ends with a line telling the agent to commit when done,
+so a model that ignores it scores 0 — that is the benchmark measuring instruction-following, not a
+harness bug, and it applies identically to the hosted models on the public leaderboard.
+
+When a mid-run trial looks idle, check inside its container rather than guessing:
+
+```bash
+docker exec <trial-container> sh -c 'cd /app && git status --porcelain && git log --oneline -3'
+```
+
+An untracked file there means the agent is working and has not committed yet. `git diff` alone shows
+nothing and reads as "no progress".
+
 ## Files
 
 | Path | Role |
