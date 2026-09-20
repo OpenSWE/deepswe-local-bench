@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 08:53 PDT",
+ "generated_at": "2026-09-20 10:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 79,
-   "n_counted": 78,
+   "n_trials": 83,
+   "n_counted": 82,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.6153846153846154,
-   "ci_low": 0.5128205128205128,
-   "ci_high": 0.717948717948718,
-   "ci_half": 0.10256410256410259,
-   "pass_at_1_3h": 0.6153846153846154,
-   "avg_minutes": 48.968482307264956,
-   "avg_out_tok_k": 70.81601282051282,
-   "avg_steps": 118.15384615384616,
+   "pass_at_1": 0.6097560975609756,
+   "ci_low": 0.5,
+   "ci_high": 0.7073170731707317,
+   "ci_half": 0.10365853658536583,
+   "pass_at_1_3h": 0.6097560975609756,
+   "avg_minutes": 50.0967959,
+   "avg_out_tok_k": 71.99495121951219,
+   "avg_steps": 121.73170731707317,
    "complete": false
   }
  ],
@@ -446,6 +446,17 @@
     "peak_context_tokens": 132904
    },
    {
+    "task": "datacurve/boa-hierarchical-evaluation-cancellation",
+    "trial": "boa-hierarchical-evaluation-canc__2GoLYVu",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3330.705253,
+    "n_output_tokens": 77825,
+    "steps": 159,
+    "peak_context_tokens": 145356
+   },
+   {
     "task": "datacurve/langchain-request-coalescing",
     "trial": "langchain-request-coalescing__r7LJGQt",
     "status": "scored",
@@ -521,6 +532,17 @@
     "n_output_tokens": 66667,
     "steps": 104,
     "peak_context_tokens": 124537
+   },
+   {
+    "task": "datacurve/valibot-recursive-schema-composition",
+    "trial": "valibot-recursive-schema-composi__U4HBwfV",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5223.06897,
+    "n_output_tokens": 125175,
+    "steps": 173,
+    "peak_context_tokens": 194404
    },
    {
     "task": "datacurve/bandit-interprocedural-taint-checks",
@@ -631,6 +653,17 @@
     "n_output_tokens": 160659,
     "steps": 166,
     "peak_context_tokens": 242275
+   },
+   {
+    "task": "datacurve/kgateway-consistent-hash-policy",
+    "trial": "kgateway-consistent-hash-policy__QDmsG7U",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5637.106676,
+    "n_output_tokens": 88450,
+    "steps": 255,
+    "peak_context_tokens": 187001
    },
    {
     "task": "datacurve/igel-persist-feature-schema",
@@ -873,6 +906,17 @@
     "n_output_tokens": 47638,
     "steps": 74,
     "peak_context_tokens": 68653
+   },
+   {
+    "task": "datacurve/optique-conditional-option-dependencies",
+    "trial": "optique-conditional-option-depen__45AE4Ve",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3112.857731,
+    "n_output_tokens": 88487,
+    "steps": 179,
+    "peak_context_tokens": 168620
    },
    {
     "task": "datacurve/participle-grammar-conflict-analysis",
