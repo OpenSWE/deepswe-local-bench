@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 18:53 PDT",
+ "generated_at": "2026-09-19 20:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 31,
-   "n_counted": 31,
+   "n_trials": 38,
+   "n_counted": 38,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.7096774193548387,
-   "ci_low": 0.5483870967741935,
-   "ci_high": 0.8709677419354839,
-   "ci_half": 0.16129032258064518,
-   "pass_at_1_3h": 0.7096774193548387,
-   "avg_minutes": 51.87245041451613,
-   "avg_out_tok_k": 71.51570967741935,
-   "avg_steps": 114.03225806451613,
+   "pass_at_1": 0.7368421052631579,
+   "ci_low": 0.6052631578947368,
+   "ci_high": 0.868421052631579,
+   "ci_half": 0.13157894736842107,
+   "pass_at_1_3h": 0.7368421052631579,
+   "avg_minutes": 52.645496957894736,
+   "avg_out_tok_k": 73.65186842105263,
+   "avg_steps": 116.60526315789474,
    "complete": false
   }
  ],
@@ -94,6 +94,17 @@
     "peak_context_tokens": 160327
    },
    {
+    "task": "datacurve/httpx-streaming-json-iteration",
+    "trial": "httpx-streaming-json-iteration__jhPtBAw",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2406.93657,
+    "n_output_tokens": 61407,
+    "steps": 79,
+    "peak_context_tokens": 104626
+   },
+   {
     "task": "datacurve/kysely-window-grouping-helpers",
     "trial": "kysely-window-grouping-helpers__hmdj5XX",
     "status": "scored",
@@ -114,6 +125,17 @@
     "n_output_tokens": 93616,
     "steps": 144,
     "peak_context_tokens": 156593
+   },
+   {
+    "task": "datacurve/arktype-json-schema-refs-dependencies",
+    "trial": "arktype-json-schema-refs-depende__xe64WGo",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6098.146757,
+    "n_output_tokens": 149390,
+    "steps": 281,
+    "peak_context_tokens": 246710
    },
    {
     "task": "datacurve/claude-code-by-agents-recursive-delegation",
@@ -138,6 +160,17 @@
     "peak_context_tokens": 65658
    },
    {
+    "task": "datacurve/anko-default-function-arguments",
+    "trial": "anko-default-function-arguments__TNAcnii",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2335.800684,
+    "n_output_tokens": 60421,
+    "steps": 86,
+    "peak_context_tokens": 101408
+   },
+   {
     "task": "datacurve/kombu-single-active-consumer-priority",
     "trial": "kombu-single-active-consumer-pri__pcbDqgE",
     "status": "scored",
@@ -149,6 +182,17 @@
     "peak_context_tokens": 124297
    },
    {
+    "task": "datacurve/updo-policy-alerting",
+    "trial": "updo-policy-alerting__PntVVqy",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 1913.674879,
+    "n_output_tokens": 42272,
+    "steps": 54,
+    "peak_context_tokens": 77161
+   },
+   {
     "task": "datacurve/vulture-persistent-analysis-cache",
     "trial": "vulture-persistent-analysis-cach__ESpxN3n",
     "status": "scored",
@@ -158,6 +202,28 @@
     "n_output_tokens": 52359,
     "steps": 74,
     "peak_context_tokens": 82349
+   },
+   {
+    "task": "datacurve/task-task-graph-export",
+    "trial": "task-task-graph-export__Di6AqXX",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3103.300593,
+    "n_output_tokens": 58586,
+    "steps": 158,
+    "peak_context_tokens": 125309
+   },
+   {
+    "task": "datacurve/go-git-worktree-merge-conflicts",
+    "trial": "go-git-worktree-merge-conflicts__rXWiAwX",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4601.080399,
+    "n_output_tokens": 108852,
+    "steps": 150,
+    "peak_context_tokens": 175366
    },
    {
     "task": "datacurve/langchain-request-coalescing",
@@ -367,6 +433,17 @@
     "n_output_tokens": 47638,
     "steps": 74,
     "peak_context_tokens": 68653
+   },
+   {
+    "task": "datacurve/mobly-grouped-test-barriers",
+    "trial": "mobly-grouped-test-barriers__T9PbXQ4",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3090.035411,
+    "n_output_tokens": 100856,
+    "steps": 88,
+    "peak_context_tokens": 153045
    }
   ]
  }
