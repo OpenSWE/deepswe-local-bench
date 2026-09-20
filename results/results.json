@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 22:53 PDT",
+ "generated_at": "2026-09-20 00:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 45,
-   "n_counted": 45,
+   "n_trials": 49,
+   "n_counted": 49,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6888888888888889,
-   "ci_low": 0.5555555555555556,
-   "ci_high": 0.8222222222222222,
-   "ci_half": 0.1333333333333333,
-   "pass_at_1_3h": 0.6888888888888889,
-   "avg_minutes": 51.46353079777778,
-   "avg_out_tok_k": 72.5680888888889,
-   "avg_steps": 116.68888888888888,
+   "pass_at_1": 0.6530612244897959,
+   "ci_low": 0.5102040816326531,
+   "ci_high": 0.7755102040816326,
+   "ci_half": 0.13265306122448978,
+   "pass_at_1_3h": 0.6530612244897959,
+   "avg_minutes": 52.4976551,
+   "avg_out_tok_k": 74.9464693877551,
+   "avg_steps": 118.93877551020408,
    "complete": false
   }
  ],
@@ -149,6 +149,17 @@
     "peak_context_tokens": 246710
    },
    {
+    "task": "datacurve/pest-character-class-coalescing",
+    "trial": "pest-character-class-coalescing__GgvzVQW",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3233.211746,
+    "n_output_tokens": 101803,
+    "steps": 127,
+    "peak_context_tokens": 159614
+   },
+   {
     "task": "datacurve/aiomonitor-task-snapshots-diff",
     "trial": "aiomonitor-task-snapshots-diff__9X3ooW4",
     "status": "scored",
@@ -180,6 +191,17 @@
     "n_output_tokens": 36987,
     "steps": 76,
     "peak_context_tokens": 65658
+   },
+   {
+    "task": "datacurve/wasmi-trap-coredumps",
+    "trial": "wasmi-trap-coredumps__LjDVxmJ",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4982.423349,
+    "n_output_tokens": 128497,
+    "steps": 219,
+    "peak_context_tokens": 244914
    },
    {
     "task": "datacurve/anko-default-function-arguments",
@@ -235,6 +257,17 @@
     "n_output_tokens": 58586,
     "steps": 158,
     "peak_context_tokens": 125309
+   },
+   {
+    "task": "datacurve/obsidian-linter-scoped-ignore-markers",
+    "trial": "obsidian-linter-scoped-ignore-ma__GkcqYy4",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3331.29386,
+    "n_output_tokens": 80383,
+    "steps": 110,
+    "peak_context_tokens": 145645
    },
    {
     "task": "datacurve/go-git-worktree-merge-conflicts",
@@ -301,6 +334,17 @@
     "n_output_tokens": 49739,
     "steps": 84,
     "peak_context_tokens": 72687
+   },
+   {
+    "task": "datacurve/tengo-callable-instance-isolation",
+    "trial": "tengo-callable-instance-isolatio__JvcCrqo",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3844.643885,
+    "n_output_tokens": 96130,
+    "steps": 121,
+    "peak_context_tokens": 141450
    },
    {
     "task": "datacurve/csstree-shorthand-expansion-compression",
