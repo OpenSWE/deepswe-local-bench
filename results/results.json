@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 06:53 PDT",
+ "generated_at": "2026-09-20 08:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 74,
-   "n_counted": 73,
+   "n_trials": 79,
+   "n_counted": 78,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.6301369863013698,
-   "ci_low": 0.5205479452054794,
-   "ci_high": 0.7397260273972602,
-   "ci_half": 0.1095890410958904,
-   "pass_at_1_3h": 0.6301369863013698,
-   "avg_minutes": 49.08846344269407,
-   "avg_out_tok_k": 70.47438356164383,
-   "avg_steps": 118.10958904109589,
+   "pass_at_1": 0.6153846153846154,
+   "ci_low": 0.5128205128205128,
+   "ci_high": 0.717948717948718,
+   "ci_half": 0.10256410256410259,
+   "pass_at_1_3h": 0.6153846153846154,
+   "avg_minutes": 48.968482307264956,
+   "avg_out_tok_k": 70.81601282051282,
+   "avg_steps": 118.15384615384616,
    "complete": false
   }
  ],
@@ -259,6 +259,17 @@
     "peak_context_tokens": 127165
    },
    {
+    "task": "datacurve/textual-richlog-follow-state",
+    "trial": "textual-richlog-follow-state__Ln8jzaa",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3040.045961,
+    "n_output_tokens": 78927,
+    "steps": 181,
+    "peak_context_tokens": 137250
+   },
+   {
     "task": "datacurve/aiomonitor-task-snapshots-diff",
     "trial": "aiomonitor-task-snapshots-diff__9X3ooW4",
     "status": "scored",
@@ -367,6 +378,17 @@
     "n_output_tokens": 76608,
     "steps": 88,
     "peak_context_tokens": 156772
+   },
+   {
+    "task": "datacurve/wazero-multi-module-snapshots",
+    "trial": "wazero-multi-module-snapshots__jBBkitq",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1322.571536,
+    "n_output_tokens": 37768,
+    "steps": 53,
+    "peak_context_tokens": 58395
    },
    {
     "task": "datacurve/kombu-virtual-queue-dead-lettering",
@@ -510,6 +532,28 @@
     "n_output_tokens": 69515,
     "steps": 86,
     "peak_context_tokens": 108193
+   },
+   {
+    "task": "datacurve/dateutil-rfc5545-timezone-interop",
+    "trial": "dateutil-rfc5545-timezone-intero__pD5PrJv",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2732.779808,
+    "n_output_tokens": 94696,
+    "steps": 86,
+    "peak_context_tokens": 139247
+   },
+   {
+    "task": "datacurve/mashumaro-flattened-dataclass-fields",
+    "trial": "mashumaro-flattened-dataclass-fi__BNTAGCD",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2691.698984,
+    "n_output_tokens": 71426,
+    "steps": 110,
+    "peak_context_tokens": 114441
    },
    {
     "task": "datacurve/tomlkit-toml-table-converters",
@@ -686,6 +730,17 @@
     "n_output_tokens": 90333,
     "steps": 165,
     "peak_context_tokens": 158256
+   },
+   {
+    "task": "datacurve/pebble-durability-wait-apis",
+    "trial": "pebble-durability-wait-apis__LBwuczk",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4377.93103,
+    "n_output_tokens": 96202,
+    "steps": 164,
+    "peak_context_tokens": 157347
    },
    {
     "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
