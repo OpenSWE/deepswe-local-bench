@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-19 16:53 PDT",
+ "generated_at": "2026-09-19 18:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 24,
-   "n_counted": 24,
+   "n_trials": 31,
+   "n_counted": 31,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.75,
-   "ci_low": 0.5833333333333334,
-   "ci_high": 0.9166666666666666,
-   "ci_half": 0.16666666666666663,
-   "pass_at_1_3h": 0.75,
-   "avg_minutes": 53.61503660902778,
-   "avg_out_tok_k": 73.06620833333332,
-   "avg_steps": 112.33333333333333,
+   "pass_at_1": 0.7096774193548387,
+   "ci_low": 0.5483870967741935,
+   "ci_high": 0.8709677419354839,
+   "ci_half": 0.16129032258064518,
+   "pass_at_1_3h": 0.7096774193548387,
+   "avg_minutes": 51.87245041451613,
+   "avg_out_tok_k": 71.51570967741935,
+   "avg_steps": 114.03225806451613,
    "complete": false
   }
  ],
@@ -59,6 +59,17 @@
     "n_output_tokens": 94946,
     "steps": 149,
     "peak_context_tokens": 148187
+   },
+   {
+    "task": "datacurve/koota-query-predicates",
+    "trial": "koota-query-predicates__WZyxV7e",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3188.639468,
+    "n_output_tokens": 81316,
+    "steps": 142,
+    "peak_context_tokens": 160812
    },
    {
     "task": "datacurve/skrub-duration-encoding",
@@ -138,6 +149,17 @@
     "peak_context_tokens": 124297
    },
    {
+    "task": "datacurve/vulture-persistent-analysis-cache",
+    "trial": "vulture-persistent-analysis-cach__ESpxN3n",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2086.256695,
+    "n_output_tokens": 52359,
+    "steps": 74,
+    "peak_context_tokens": 82349
+   },
+   {
     "task": "datacurve/langchain-request-coalescing",
     "trial": "langchain-request-coalescing__r7LJGQt",
     "status": "scored",
@@ -149,6 +171,17 @@
     "peak_context_tokens": 178783
    },
    {
+    "task": "datacurve/testem-bail-on-test-failure",
+    "trial": "testem-bail-on-test-failure__3snXDUM",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2741.386184,
+    "n_output_tokens": 66210,
+    "steps": 127,
+    "peak_context_tokens": 129994
+   },
+   {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
     "trial": "ofetch-per-origin-circuit-breake__7oofyyu",
     "status": "scored",
@@ -158,6 +191,17 @@
     "n_output_tokens": 63935,
     "steps": 69,
     "peak_context_tokens": 118004
+   },
+   {
+    "task": "datacurve/goreleaser-retry-publish-auditing",
+    "trial": "goreleaser-retry-publish-auditin__pDKFF3Q",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3488.027551,
+    "n_output_tokens": 76471,
+    "steps": 148,
+    "peak_context_tokens": 132715
    },
    {
     "task": "datacurve/httpx-multipart-response-parsing",
@@ -215,6 +259,17 @@
     "peak_context_tokens": 131043
    },
    {
+    "task": "datacurve/vitest-duration-sharding",
+    "trial": "vitest-duration-sharding__QiNzFXG",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2587.908038,
+    "n_output_tokens": 59728,
+    "steps": 155,
+    "peak_context_tokens": 115582
+   },
+   {
     "task": "datacurve/sqlfmt-create-table-ddl-formatting",
     "trial": "sqlfmt-create-table-ddl-formatti__nWcAJfB",
     "status": "scored",
@@ -224,6 +279,17 @@
     "n_output_tokens": 160659,
     "steps": 166,
     "peak_context_tokens": 242275
+   },
+   {
+    "task": "datacurve/expr-try-catch-errors",
+    "trial": "expr-try-catch-errors__qiRBaGF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3248.166772,
+    "n_output_tokens": 81295,
+    "steps": 104,
+    "peak_context_tokens": 153196
    },
    {
     "task": "datacurve/ytt-jsonpath-query-api",
@@ -268,6 +334,17 @@
     "n_output_tokens": 97556,
     "steps": 129,
     "peak_context_tokens": 176261
+   },
+   {
+    "task": "datacurve/psd-tools-blend-range-api",
+    "trial": "psd-tools-blend-range-api__j2f3JNC",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1936.720346,
+    "n_output_tokens": 46019,
+    "steps": 89,
+    "peak_context_tokens": 83051
    },
    {
     "task": "datacurve/true-myth-iterable-collection-combinators",
