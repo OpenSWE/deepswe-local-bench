@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 00:53 PDT",
+ "generated_at": "2026-09-20 02:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 49,
-   "n_counted": 49,
-   "n_infra": 0,
+   "n_trials": 58,
+   "n_counted": 57,
+   "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.6530612244897959,
-   "ci_low": 0.5102040816326531,
-   "ci_high": 0.7755102040816326,
-   "ci_half": 0.13265306122448978,
-   "pass_at_1_3h": 0.6530612244897959,
-   "avg_minutes": 52.4976551,
-   "avg_out_tok_k": 74.9464693877551,
-   "avg_steps": 118.93877551020408,
+   "pass_at_1": 0.6491228070175439,
+   "ci_low": 0.5263157894736842,
+   "ci_high": 0.7719298245614035,
+   "ci_half": 0.12280701754385964,
+   "pass_at_1_3h": 0.6491228070175439,
+   "avg_minutes": 50.74825947017544,
+   "avg_out_tok_k": 72.38917543859648,
+   "avg_steps": 119.9298245614035,
    "complete": false
   }
  ],
@@ -72,6 +72,28 @@
     "peak_context_tokens": 160812
    },
    {
+    "task": "datacurve/ts-pattern-match-each",
+    "trial": "ts-pattern-match-each__zzH5djq",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1538.746097,
+    "n_output_tokens": 37829,
+    "steps": 54,
+    "peak_context_tokens": 73502
+   },
+   {
+    "task": "datacurve/actionlint-action-pinning-lint",
+    "trial": "actionlint-action-pinning-lint__6NtSEDQ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2214.71918,
+    "n_output_tokens": 82541,
+    "steps": 121,
+    "peak_context_tokens": 167014
+   },
+   {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__gKuVrLR",
     "status": "scored",
@@ -81,6 +103,17 @@
     "n_output_tokens": 63717,
     "steps": 143,
     "peak_context_tokens": 133376
+   },
+   {
+    "task": "datacurve/abs-module-cache-flags",
+    "trial": "abs-module-cache-flags__gBBknVg",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2320.378634,
+    "n_output_tokens": 61026,
+    "steps": 111,
+    "peak_context_tokens": 103903
    },
    {
     "task": "datacurve/katex-multicolumn-array-spans",
@@ -158,6 +191,17 @@
     "n_output_tokens": 101803,
     "steps": 127,
     "peak_context_tokens": 159614
+   },
+   {
+    "task": "datacurve/adaptix-name-mapping-aliases",
+    "trial": "adaptix-name-mapping-aliases__XCKBVN8",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2650.554627,
+    "n_output_tokens": 63580,
+    "steps": 143,
+    "peak_context_tokens": 127165
    },
    {
     "task": "datacurve/aiomonitor-task-snapshots-diff",
@@ -257,6 +301,17 @@
     "n_output_tokens": 58586,
     "steps": 158,
     "peak_context_tokens": 125309
+   },
+   {
+    "task": "datacurve/koota-composite-trait-aspects",
+    "trial": "koota-composite-trait-aspects__f5hRk4K",
+    "status": "infra",
+    "exception": "VerifierTimeoutError",
+    "reward": null,
+    "duration_s": 3112.206225,
+    "n_output_tokens": 76608,
+    "steps": 88,
+    "peak_context_tokens": 156772
    },
    {
     "task": "datacurve/obsidian-linter-scoped-ignore-markers",
@@ -490,6 +545,17 @@
     "peak_context_tokens": 113592
    },
    {
+    "task": "datacurve/prometheus-transactional-reload-status",
+    "trial": "prometheus-transactional-reload__D5dnNie",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3709.889896,
+    "n_output_tokens": 61371,
+    "steps": 273,
+    "peak_context_tokens": 144139
+   },
+   {
     "task": "datacurve/quill-shared-toolbar-focus",
     "trial": "quill-shared-toolbar-focus__brEuZ67",
     "status": "scored",
@@ -512,6 +578,17 @@
     "peak_context_tokens": 83051
    },
    {
+    "task": "datacurve/termenv-preserve-ansi-resets",
+    "trial": "termenv-preserve-ansi-resets__jc4dySW",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2063.785619,
+    "n_output_tokens": 60721,
+    "steps": 57,
+    "peak_context_tokens": 80720
+   },
+   {
     "task": "datacurve/koota-deferred-mutation-buffer",
     "trial": "koota-deferred-mutation-buffer__mhxhjCE",
     "status": "scored",
@@ -532,6 +609,28 @@
     "n_output_tokens": 83644,
     "steps": 98,
     "peak_context_tokens": 191474
+   },
+   {
+    "task": "datacurve/happy-dom-abort-pending-body-reads",
+    "trial": "happy-dom-abort-pending-body-rea__gxJX788",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3227.455149,
+    "n_output_tokens": 56669,
+    "steps": 168,
+    "peak_context_tokens": 162808
+   },
+   {
+    "task": "datacurve/fastapi-deprecation-response-headers",
+    "trial": "fastapi-deprecation-response-hea__pJwmdXd",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 1490.412192,
+    "n_output_tokens": 30069,
+    "steps": 81,
+    "peak_context_tokens": 56412
    },
    {
     "task": "datacurve/httpx-deterministic-cookie-store",
