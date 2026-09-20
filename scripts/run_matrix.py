@@ -183,6 +183,7 @@ def pier_run_cmd(d: dict, s: dict, effort: str, name: str, jobs_dir: Path, args)
            "--ae", "OPENAI_API_KEY=dummy",                     # ds4-server has no auth; litellm wants a key
            "-n", str(s.get("clients", s.get("sessions", 1))), "-k", "1",
            "--agent-timeout-multiplier", str(d["agent_timeout_multiplier"]),
+           "--verifier-timeout-multiplier", str(d.get("verifier_timeout_multiplier", 1.0)),
            "-r", str(d.get("max_retries", 1)),
            "-o", str(jobs_dir), "--job-name", name, "-y", "-q"]
     if args.n_tasks:

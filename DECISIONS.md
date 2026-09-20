@@ -276,3 +276,23 @@ opportunity is after the four Qwen Q2 efforts. Measure with `scripts/pick_concur
 3,6 --turns 8` before changing anything.
 **Also worth noting:** step cost varies enormously with this model — single steps ranged from 74 to
 7,752 generated tokens (3s to 280s), so short-window step rates are noise. Average over >10 minutes.
+
+## Q25. Verifier timeout raised 3x for Rosetta emulation (2026-09-20)
+
+**Observed.** `koota-composite-trait-aspects` hit `VerifierTimeoutError` at the task's
+1800 s verifier limit — the first harness error in 57 tasks.
+
+**Cause.** DeepSWE task images are amd64-only and run under Rosetta on this host. The
+leaderboard graded on native amd64 (Modal), so 1800 s there is not 1800 s here. Heavy test
+suites (koota's is large) exceed it purely from emulation overhead.
+
+**Why it matters.** Infra errors are excluded from the denominator, so silently dropping
+them biases the score by removing exactly the tasks with the biggest test suites.
+
+**Decision.** `verifier_timeout_multiplier = 3.0` (30 min -> 90 min) in matrix defaults,
+passed to Pier as `--verifier-timeout-multiplier`. It affects only grading, never agent
+behaviour, so pass rates stay comparable across rows.
+
+**Caveat.** This changes the job config. `pier job resume` refuses when config differs, so
+resuming the in-flight `qwen3.8-flash-next-q2__low` job (started under the old value) needs
+the multiplier temporarily reverted. Rows started after this commit are unaffected.
