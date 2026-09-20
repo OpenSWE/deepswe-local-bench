@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 10:53 PDT",
+ "generated_at": "2026-09-20 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,23 +10,34 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 83,
-   "n_counted": 82,
+   "n_trials": 90,
+   "n_counted": 89,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.6097560975609756,
-   "ci_low": 0.5,
-   "ci_high": 0.7073170731707317,
-   "ci_half": 0.10365853658536583,
-   "pass_at_1_3h": 0.6097560975609756,
-   "avg_minutes": 50.0967959,
-   "avg_out_tok_k": 71.99495121951219,
-   "avg_steps": 121.73170731707317,
+   "pass_at_1": 0.5955056179775281,
+   "ci_low": 0.4943820224719101,
+   "ci_high": 0.6966292134831461,
+   "ci_half": 0.101123595505618,
+   "pass_at_1_3h": 0.5955056179775281,
+   "avg_minutes": 50.69821244850187,
+   "avg_out_tok_k": 72.39383146067416,
+   "avg_steps": 121.5505617977528,
    "complete": false
   }
  ],
  "trials": {
   "qwen3.8-flash-next-q2__low": [
+   {
+    "task": "datacurve/obsidian-linter-link-format-conversion",
+    "trial": "obsidian-linter-link-format-conv__rRdvbiA",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 1522.565308,
+    "n_output_tokens": 50421,
+    "steps": 61,
+    "peak_context_tokens": 93073
+   },
    {
     "task": "datacurve/anko-typed-variable-bindings",
     "trial": "anko-typed-variable-bindings__zRX2a6T",
@@ -336,6 +347,17 @@
     "peak_context_tokens": 124297
    },
    {
+    "task": "datacurve/oxvg-structural-selector-preservation",
+    "trial": "oxvg-structural-selector-preserv__Ep3VzgK",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8330.062468,
+    "n_output_tokens": 168801,
+    "steps": 229,
+    "peak_context_tokens": 284483
+   },
+   {
     "task": "datacurve/updo-policy-alerting",
     "trial": "updo-policy-alerting__PntVVqy",
     "status": "scored",
@@ -501,6 +523,17 @@
     "peak_context_tokens": 132715
    },
    {
+    "task": "datacurve/fastapi-implicit-head-options",
+    "trial": "fastapi-implicit-head-options__3CPXxdV",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2552.366337,
+    "n_output_tokens": 66083,
+    "steps": 125,
+    "peak_context_tokens": 102128
+   },
+   {
     "task": "datacurve/httpx-multipart-response-parsing",
     "trial": "httpx-multipart-response-parsing__ubYc7LP",
     "status": "scored",
@@ -633,6 +666,17 @@
     "peak_context_tokens": 131043
    },
    {
+    "task": "datacurve/etree-xml-diff-patch",
+    "trial": "etree-xml-diff-patch__3edbdM6",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1951.959927,
+    "n_output_tokens": 53834,
+    "steps": 56,
+    "peak_context_tokens": 78508
+   },
+   {
     "task": "datacurve/vitest-duration-sharding",
     "trial": "vitest-duration-sharding__QiNzFXG",
     "status": "scored",
@@ -653,6 +697,17 @@
     "n_output_tokens": 160659,
     "steps": 166,
     "peak_context_tokens": 242275
+   },
+   {
+    "task": "datacurve/arcane-drift-detection-baselines",
+    "trial": "arcane-drift-detection-baselines__fP7gZfz",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2307.635989,
+    "n_output_tokens": 44536,
+    "steps": 133,
+    "peak_context_tokens": 96118
    },
    {
     "task": "datacurve/kgateway-consistent-hash-policy",
@@ -686,6 +741,17 @@
     "n_output_tokens": 81295,
     "steps": 104,
     "peak_context_tokens": 153196
+   },
+   {
+    "task": "datacurve/cliffy-config-file-parsing",
+    "trial": "cliffy-config-file-parsing__2jo4twm",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3241.973172,
+    "n_output_tokens": 64825,
+    "steps": 115,
+    "peak_context_tokens": 115666
    },
    {
     "task": "datacurve/go-genai-streamed-function-args",
@@ -906,6 +972,17 @@
     "n_output_tokens": 47638,
     "steps": 74,
     "peak_context_tokens": 68653
+   },
+   {
+    "task": "datacurve/go-critic-doc-link-checker",
+    "trial": "go-critic-doc-link-checker__o83zCxk",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4345.655446,
+    "n_output_tokens": 90965,
+    "steps": 117,
+    "peak_context_tokens": 143012
    },
    {
     "task": "datacurve/optique-conditional-option-dependencies",
