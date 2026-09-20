@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 14:53 PDT",
+ "generated_at": "2026-09-20 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 95,
-   "n_counted": 94,
+   "n_trials": 102,
+   "n_counted": 101,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.5851063829787234,
-   "ci_low": 0.48936170212765956,
-   "ci_high": 0.6808510638297872,
-   "ci_half": 0.09574468085106383,
-   "pass_at_1_3h": 0.5851063829787234,
-   "avg_minutes": 51.93312490230496,
-   "avg_out_tok_k": 72.99321276595745,
-   "avg_steps": 124.27659574468085,
+   "pass_at_1": 0.5742574257425742,
+   "ci_low": 0.4752475247524752,
+   "ci_high": 0.6732673267326733,
+   "ci_half": 0.09900990099009904,
+   "pass_at_1_3h": 0.5742574257425742,
+   "avg_minutes": 51.82254259306931,
+   "avg_out_tok_k": 72.55862376237624,
+   "avg_steps": 124.27722772277228,
    "complete": false
   }
  ],
@@ -103,6 +103,17 @@
     "n_output_tokens": 81316,
     "steps": 142,
     "peak_context_tokens": 160812
+   },
+   {
+    "task": "datacurve/dynamodb-toolbox-lazy-recursive-schemas",
+    "trial": "dynamodb-toolbox-lazy-recursive__uhnaM8J",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4783.583811,
+    "n_output_tokens": 97553,
+    "steps": 210,
+    "peak_context_tokens": 221477
    },
    {
     "task": "datacurve/ts-pattern-match-each",
@@ -413,6 +424,17 @@
     "peak_context_tokens": 156772
    },
    {
+    "task": "datacurve/awilix-async-container-initialization",
+    "trial": "awilix-async-container-initializ__CH5zAVF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2363.622942,
+    "n_output_tokens": 58031,
+    "steps": 80,
+    "peak_context_tokens": 111443
+   },
+   {
     "task": "datacurve/opa-template-string-reconstruction",
     "trial": "opa-template-string-reconstructi__UqcrysL",
     "status": "scored",
@@ -501,6 +523,17 @@
     "peak_context_tokens": 145356
    },
    {
+    "task": "datacurve/kea-atomic-signal-selectors",
+    "trial": "kea-atomic-signal-selectors__CA2vbQ4",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2755.398572,
+    "n_output_tokens": 66371,
+    "steps": 77,
+    "peak_context_tokens": 115006
+   },
+   {
     "task": "datacurve/langchain-request-coalescing",
     "trial": "langchain-request-coalescing__r7LJGQt",
     "status": "scored",
@@ -510,6 +543,17 @@
     "n_output_tokens": 125515,
     "steps": 125,
     "peak_context_tokens": 178783
+   },
+   {
+    "task": "datacurve/onedump-dump-encryption-pipeline",
+    "trial": "onedump-dump-encryption-pipeline__STYcKJw",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2295.94457,
+    "n_output_tokens": 54153,
+    "steps": 88,
+    "peak_context_tokens": 88128
    },
    {
     "task": "datacurve/testem-bail-on-test-failure",
@@ -565,6 +609,17 @@
     "n_output_tokens": 49739,
     "steps": 84,
     "peak_context_tokens": 72687
+   },
+   {
+    "task": "datacurve/mnamer-daemon-watch-lifecycle",
+    "trial": "mnamer-daemon-watch-lifecycle__Rrgssag",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2371.042826,
+    "n_output_tokens": 55044,
+    "steps": 73,
+    "peak_context_tokens": 94950
    },
    {
     "task": "datacurve/tengo-callable-instance-isolation",
@@ -831,6 +886,17 @@
     "peak_context_tokens": 166194
    },
    {
+    "task": "datacurve/effect-sse-httpapi-streaming",
+    "trial": "effect-sse-httpapi-streaming__PqSujnf",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3806.191924,
+    "n_output_tokens": 75617,
+    "steps": 216,
+    "peak_context_tokens": 158712
+   },
+   {
     "task": "datacurve/bandit-structured-nosec-directives",
     "trial": "bandit-structured-nosec-directiv__jdPN8G7",
     "status": "scored",
@@ -1060,6 +1126,17 @@
     "n_output_tokens": 45458,
     "steps": 44,
     "peak_context_tokens": 81784
+   },
+   {
+    "task": "datacurve/query-persist-restored-query-state",
+    "trial": "query-persist-restored-query-sta__mGwrhtF",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2765.99902,
+    "n_output_tokens": 60290,
+    "steps": 126,
+    "peak_context_tokens": 137307
    },
    {
     "task": "datacurve/mobly-grouped-test-barriers",
