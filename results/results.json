@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 12:53 PDT",
+ "generated_at": "2026-09-20 14:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 90,
-   "n_counted": 89,
+   "n_trials": 95,
+   "n_counted": 94,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.5955056179775281,
-   "ci_low": 0.4943820224719101,
-   "ci_high": 0.6966292134831461,
-   "ci_half": 0.101123595505618,
-   "pass_at_1_3h": 0.5955056179775281,
-   "avg_minutes": 50.69821244850187,
-   "avg_out_tok_k": 72.39383146067416,
-   "avg_steps": 121.5505617977528,
+   "pass_at_1": 0.5851063829787234,
+   "ci_low": 0.48936170212765956,
+   "ci_high": 0.6808510638297872,
+   "ci_half": 0.09574468085106383,
+   "pass_at_1_3h": 0.5851063829787234,
+   "avg_minutes": 51.93312490230496,
+   "avg_out_tok_k": 72.99321276595745,
+   "avg_steps": 124.27659574468085,
    "complete": false
   }
  ],
@@ -48,6 +48,17 @@
     "n_output_tokens": 51504,
     "steps": 79,
     "peak_context_tokens": 93565
+   },
+   {
+    "task": "datacurve/superjson-error-stack-serialization",
+    "trial": "superjson-error-stack-serializat__UkkJzAx",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5752.664887,
+    "n_output_tokens": 74605,
+    "steps": 67,
+    "peak_context_tokens": 105174
    },
    {
     "task": "datacurve/geo-shapeindex-serialization",
@@ -402,6 +413,17 @@
     "peak_context_tokens": 156772
    },
    {
+    "task": "datacurve/opa-template-string-reconstruction",
+    "trial": "opa-template-string-reconstructi__UqcrysL",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6697.04753,
+    "n_output_tokens": 111765,
+    "steps": 301,
+    "peak_context_tokens": 185965
+   },
+   {
     "task": "datacurve/wazero-multi-module-snapshots",
     "trial": "wazero-multi-module-snapshots__jBBkitq",
     "status": "scored",
@@ -631,6 +653,17 @@
     "n_output_tokens": 58211,
     "steps": 104,
     "peak_context_tokens": 123120
+   },
+   {
+    "task": "datacurve/drizzle-orm-window-function-builders",
+    "trial": "drizzle-orm-window-function-buil__D4nr3VY",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2369.94809,
+    "n_output_tokens": 59821,
+    "steps": 108,
+    "peak_context_tokens": 116099
    },
    {
     "task": "datacurve/happy-dom-deterministic-intersectionobserver",
@@ -897,6 +930,17 @@
     "peak_context_tokens": 83051
    },
    {
+    "task": "datacurve/scriggo-method-declarations",
+    "trial": "scriggo-method-declarations__oMSzaLy",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3665.235996,
+    "n_output_tokens": 97724,
+    "steps": 213,
+    "peak_context_tokens": 181728
+   },
+   {
     "task": "datacurve/termenv-preserve-ansi-resets",
     "trial": "termenv-preserve-ansi-resets__jc4dySW",
     "status": "scored",
@@ -961,6 +1005,17 @@
     "n_output_tokens": 30069,
     "steps": 81,
     "peak_context_tokens": 56412
+   },
+   {
+    "task": "datacurve/helm-unified-manifest-stream",
+    "trial": "helm-unified-manifest-stream__zTY4XrX",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3689.473471,
+    "n_output_tokens": 74396,
+    "steps": 175,
+    "peak_context_tokens": 138730
    },
    {
     "task": "datacurve/httpx-deterministic-cookie-store",
