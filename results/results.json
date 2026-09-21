@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 00:53 PDT",
+ "generated_at": "2026-09-21 02:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 13,
-   "n_counted": 13,
+   "n_trials": 17,
+   "n_counted": 17,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6923076923076923,
-   "ci_low": 0.46153846153846156,
-   "ci_high": 0.9230769230769231,
-   "ci_half": 0.23076923076923078,
-   "pass_at_1_3h": 0.6923076923076923,
-   "avg_minutes": 60.64674359615385,
-   "avg_out_tok_k": 88.89884615384615,
-   "avg_steps": 121.07692307692308,
+   "pass_at_1": 0.6470588235294118,
+   "ci_low": 0.4117647058823529,
+   "ci_high": 0.8823529411764706,
+   "ci_half": 0.23529411764705882,
+   "pass_at_1_3h": 0.6470588235294118,
+   "avg_minutes": 59.12057866078431,
+   "avg_out_tok_k": 85.81223529411766,
+   "avg_steps": 115.41176470588235,
    "complete": false
   }
  ],
@@ -1340,6 +1340,17 @@
     "peak_context_tokens": 236245
    },
    {
+    "task": "datacurve/kysely-window-grouping-helpers",
+    "trial": "kysely-window-grouping-helpers__zdFx8o6",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2674.396664,
+    "n_output_tokens": 63710,
+    "steps": 103,
+    "peak_context_tokens": 127393
+   },
+   {
     "task": "datacurve/prometheus-typed-label-sorting",
     "trial": "prometheus-typed-label-sorting__fc9sqvS",
     "status": "scored",
@@ -1384,6 +1395,17 @@
     "peak_context_tokens": 208102
    },
    {
+    "task": "datacurve/langchain-request-coalescing",
+    "trial": "langchain-request-coalescing__aWJwzYa",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3642.441189,
+    "n_output_tokens": 96320,
+    "steps": 76,
+    "peak_context_tokens": 136343
+   },
+   {
     "task": "datacurve/anko-typed-variable-bindings",
     "trial": "anko-typed-variable-bindings__Gp5Hohd",
     "status": "scored",
@@ -1406,6 +1428,17 @@
     "peak_context_tokens": 86051
    },
    {
+    "task": "datacurve/geo-shapeindex-serialization",
+    "trial": "geo-shapeindex-serialization__NrdBrDu",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3348.383741,
+    "n_output_tokens": 78845,
+    "steps": 94,
+    "peak_context_tokens": 132598
+   },
+   {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__f63XkCM",
     "status": "scored",
@@ -1415,6 +1448,17 @@
     "n_output_tokens": 89463,
     "steps": 188,
     "peak_context_tokens": 177292
+   },
+   {
+    "task": "datacurve/happy-dom-deterministic-intersectionobserver",
+    "trial": "happy-dom-deterministic-intersec__ASGt4HF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3333.308635,
+    "n_output_tokens": 64248,
+    "steps": 115,
+    "peak_context_tokens": 108191
    },
    {
     "task": "datacurve/python-statemachine-state-data-scoping",
