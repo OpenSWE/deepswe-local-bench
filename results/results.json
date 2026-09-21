@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 04:53 PDT",
+ "generated_at": "2026-09-21 06:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 23,
-   "n_counted": 23,
+   "n_trials": 28,
+   "n_counted": 28,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6521739130434783,
-   "ci_low": 0.43478260869565216,
-   "ci_high": 0.8260869565217391,
-   "ci_half": 0.1956521739130435,
-   "pass_at_1_3h": 0.6521739130434783,
-   "avg_minutes": 71.04705912608695,
-   "avg_out_tok_k": 83.93665217391305,
-   "avg_steps": 105.69565217391305,
+   "pass_at_1": 0.6785714285714286,
+   "ci_low": 0.5,
+   "ci_high": 0.8571428571428571,
+   "ci_half": 0.17857142857142855,
+   "pass_at_1_3h": 0.6785714285714286,
+   "avg_minutes": 71.31116444702381,
+   "avg_out_tok_k": 86.19164285714285,
+   "avg_steps": 109.82142857142857,
    "complete": false
   }
  ],
@@ -1450,6 +1450,17 @@
     "peak_context_tokens": 157725
    },
    {
+    "task": "datacurve/vitest-duration-sharding",
+    "trial": "vitest-duration-sharding__Akg2AxS",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2907.674916,
+    "n_output_tokens": 62248,
+    "steps": 130,
+    "peak_context_tokens": 125225
+   },
+   {
     "task": "datacurve/abs-stepped-slices",
     "trial": "abs-stepped-slices__RUoKLw8",
     "status": "scored",
@@ -1494,6 +1505,17 @@
     "peak_context_tokens": 108191
    },
    {
+    "task": "datacurve/vulture-persistent-analysis-cache",
+    "trial": "vulture-persistent-analysis-cach__wTbu2jw",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6981.633592,
+    "n_output_tokens": 131752,
+    "steps": 132,
+    "peak_context_tokens": 191026
+   },
+   {
     "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
     "trial": "sql-formatter-bigquery-pipe-form__uscspgS",
     "status": "failure",
@@ -1505,6 +1527,28 @@
     "peak_context_tokens": 130945
    },
    {
+    "task": "datacurve/expr-try-catch-errors",
+    "trial": "expr-try-catch-errors__xUBTcpz",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5982.644232,
+    "n_output_tokens": 161459,
+    "steps": 171,
+    "peak_context_tokens": 247741
+   },
+   {
+    "task": "datacurve/goreleaser-retry-publish-auditing",
+    "trial": "goreleaser-retry-publish-auditin__94ehEYu",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3563.724081,
+    "n_output_tokens": 67739,
+    "steps": 133,
+    "peak_context_tokens": 125280
+   },
+   {
     "task": "datacurve/python-statemachine-state-data-scoping",
     "trial": "python-statemachine-state-data-s__XRcPG7J",
     "status": "scored",
@@ -1514,6 +1558,17 @@
     "n_output_tokens": 103589,
     "steps": 144,
     "peak_context_tokens": 176789
+   },
+   {
+    "task": "datacurve/httpx-deterministic-cookie-store",
+    "trial": "httpx-deterministic-cookie-store__r4oVaiy",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2322.137856,
+    "n_output_tokens": 59625,
+    "steps": 78,
+    "peak_context_tokens": 87462
    },
    {
     "task": "datacurve/quill-shared-toolbar-focus",
