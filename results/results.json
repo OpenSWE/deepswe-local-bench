@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 14:53 PDT",
+ "generated_at": "2026-09-21 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 45,
-   "n_counted": 45,
+   "n_trials": 47,
+   "n_counted": 47,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6444444444444445,
-   "ci_low": 0.5111111111111111,
-   "ci_high": 0.7777777777777778,
-   "ci_half": 0.13333333333333336,
-   "pass_at_1_3h": 0.6444444444444445,
-   "avg_minutes": 68.00580901592592,
-   "avg_out_tok_k": 87.92913333333333,
-   "avg_steps": 108.42222222222222,
+   "pass_at_1": 0.6170212765957447,
+   "ci_low": 0.46808510638297873,
+   "ci_high": 0.7446808510638298,
+   "ci_half": 0.1382978723404255,
+   "pass_at_1_3h": 0.6170212765957447,
+   "avg_minutes": 74.92258996205673,
+   "avg_out_tok_k": 89.38712765957447,
+   "avg_steps": 108.57446808510639,
    "complete": false
   }
  ],
@@ -1560,6 +1560,17 @@
     "peak_context_tokens": 170957
    },
    {
+    "task": "datacurve/obsidian-linter-scoped-ignore-markers",
+    "trial": "obsidian-linter-scoped-ignore-ma__L7EXVCf",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6065.932027,
+    "n_output_tokens": 114302,
+    "steps": 143,
+    "peak_context_tokens": 201076
+   },
+   {
     "task": "datacurve/vitest-duration-sharding",
     "trial": "vitest-duration-sharding__Akg2AxS",
     "status": "scored",
@@ -1591,6 +1602,17 @@
     "n_output_tokens": 157464,
     "steps": 153,
     "peak_context_tokens": 223551
+   },
+   {
+    "task": "datacurve/csstree-shorthand-expansion-compression",
+    "trial": "csstree-shorthand-expansion-comp__fUABpaT",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.087323,
+    "n_output_tokens": 130082,
+    "steps": 81,
+    "peak_context_tokens": 183123
    },
    {
     "task": "datacurve/task-task-graph-export",
