@@ -296,3 +296,23 @@ behaviour, so pass rates stay comparable across rows.
 **Caveat.** This changes the job config. `pier job resume` refuses when config differs, so
 resuming the in-flight `qwen3.8-flash-next-q2__low` job (started under the old value) needs
 the multiplier temporarily reverted. Rows started after this commit are unaffected.
+
+## Q26. Editing the driver does not change the running driver (2026-09-21)
+
+**Observed.** After adding `--verifier-timeout-multiplier` to `scripts/run_matrix.py`, the
+next job's `config.json` still showed `verifier_timeout_multiplier: None`.
+
+**Cause.** The driver is a long-running Python process that loaded its module at startup.
+Editing the file on disk changes nothing for the process already running. Obvious in
+hindsight, easy to miss when a "fix" is committed and assumed live.
+
+**Consequence.** Any code change to the driver applies only from the next driver restart.
+Config-only changes in `matrix.toml` are re-read per job, but a change that adds a *flag*
+lives in the code, so it needs the restart too.
+
+**Decision.** Do not restart mid-job: `pier job resume` refuses when the job config differs,
+so the in-flight row would restart from zero. Restart at the next *server* transition, when
+no job is in flight. Impact meanwhile is ~1% (one verifier timeout in 112 tasks).
+
+**Check.** Verify a driver-code change actually took effect by reading the next job's
+`jobs/<job>/config.json`, not by reading the source.
