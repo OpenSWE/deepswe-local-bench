@@ -1,10 +1,10 @@
 # DeepSWE on DwarfStar (ds4) — local results
 
-Generated 2026-09-20 16:53 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
+Generated 2026-09-20 18:53 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
 
 | Model | Pass@1 | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |
 |---|---:|---:|---:|---:|---:|---:|
-| Qwen3.8 Flash Next Q2 [low] ★ | 57% ±10 | 57% | 51.8 | 73 | 124 | 101/113 (1 infra) |
+| Qwen3.8 Flash Next Q2 [low] ★ | 57% ±9 | 57% | 51.3 | 72 | 125 | 109/113 (1 infra) |
 
 ★ best effort level within a (family, quant, context) group.  
 Effort labels are the ones ds4-server distinguishes: `xhigh` equals `high`; GLM and DeepSeek render `low`/`medium` as `high`; `max` needs a 393216-token context on Qwen and GLM.  

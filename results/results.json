@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 16:53 PDT",
+ "generated_at": "2026-09-20 18:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "low",
-   "n_trials": 102,
-   "n_counted": 101,
+   "n_trials": 110,
+   "n_counted": 109,
    "n_infra": 1,
    "n_flagged": 0,
-   "pass_at_1": 0.5742574257425742,
-   "ci_low": 0.4752475247524752,
-   "ci_high": 0.6732673267326733,
-   "ci_half": 0.09900990099009904,
-   "pass_at_1_3h": 0.5742574257425742,
-   "avg_minutes": 51.82254259306931,
-   "avg_out_tok_k": 72.55862376237624,
-   "avg_steps": 124.27722772277228,
+   "pass_at_1": 0.5688073394495413,
+   "ci_low": 0.47706422018348627,
+   "ci_high": 0.6605504587155964,
+   "ci_half": 0.09174311926605505,
+   "pass_at_1_3h": 0.5688073394495413,
+   "avg_minutes": 51.273401508256875,
+   "avg_out_tok_k": 71.85739449541283,
+   "avg_steps": 124.5045871559633,
    "complete": false
   }
  ],
@@ -402,6 +402,17 @@
     "peak_context_tokens": 82349
    },
    {
+    "task": "datacurve/helm-array-merge-strategies",
+    "trial": "helm-array-merge-strategies__87kRmMh",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3094.338746,
+    "n_output_tokens": 62951,
+    "steps": 124,
+    "peak_context_tokens": 103752
+   },
+   {
     "task": "datacurve/task-task-graph-export",
     "trial": "task-task-graph-export__Di6AqXX",
     "status": "scored",
@@ -444,6 +455,28 @@
     "n_output_tokens": 111765,
     "steps": 301,
     "peak_context_tokens": 185965
+   },
+   {
+    "task": "datacurve/ipython-session-bundle-replay",
+    "trial": "ipython-session-bundle-replay__L7DrG4s",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2129.278103,
+    "n_output_tokens": 54365,
+    "steps": 94,
+    "peak_context_tokens": 95517
+   },
+   {
+    "task": "datacurve/koota-pair-relation-tracking",
+    "trial": "koota-pair-relation-tracking__E2zLuCK",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3252.001755,
+    "n_output_tokens": 81287,
+    "steps": 146,
+    "peak_context_tokens": 185790
    },
    {
     "task": "datacurve/wazero-multi-module-snapshots",
@@ -688,6 +721,17 @@
     "peak_context_tokens": 114441
    },
    {
+    "task": "datacurve/meriyah-explicit-resource-declarations",
+    "trial": "meriyah-explicit-resource-declar__fLyWptC",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3378.539835,
+    "n_output_tokens": 77038,
+    "steps": 145,
+    "peak_context_tokens": 160358
+   },
+   {
     "task": "datacurve/tomlkit-toml-table-converters",
     "trial": "tomlkit-toml-table-converters__LXpfZQD",
     "status": "scored",
@@ -818,6 +862,17 @@
     "n_output_tokens": 49368,
     "steps": 84,
     "peak_context_tokens": 87166
+   },
+   {
+    "task": "datacurve/dynamodb-toolbox-conditional-attribute-requirements",
+    "trial": "dynamodb-toolbox-conditional-att__WDC62mM",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3203.835699,
+    "n_output_tokens": 71055,
+    "steps": 218,
+    "peak_context_tokens": 163426
    },
    {
     "task": "datacurve/expr-try-catch-errors",
@@ -1139,6 +1194,28 @@
     "peak_context_tokens": 137307
    },
    {
+    "task": "datacurve/koota-entity-snapshot-rollback",
+    "trial": "koota-entity-snapshot-rollback__RiVuNcC",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2230.154666,
+    "n_output_tokens": 55549,
+    "steps": 117,
+    "peak_context_tokens": 126418
+   },
+   {
+    "task": "datacurve/cattrs-partial-structuring-recovery",
+    "trial": "cattrs-partial-structuring-recov__FZNMGjJ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1267.844993,
+    "n_output_tokens": 36686,
+    "steps": 85,
+    "peak_context_tokens": 72016
+   },
+   {
     "task": "datacurve/mobly-grouped-test-barriers",
     "trial": "mobly-grouped-test-barriers__T9PbXQ4",
     "status": "scored",
@@ -1148,6 +1225,17 @@
     "n_output_tokens": 100856,
     "steps": 88,
     "peak_context_tokens": 153045
+   },
+   {
+    "task": "datacurve/clack-async-autocomplete-options",
+    "trial": "clack-async-autocomplete-options__drHCTQe",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2727.443953,
+    "n_output_tokens": 65104,
+    "steps": 90,
+    "peak_context_tokens": 124081
    }
   ]
  }
