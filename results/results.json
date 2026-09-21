@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 12:53 PDT",
+ "generated_at": "2026-09-21 14:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 42,
-   "n_counted": 42,
+   "n_trials": 45,
+   "n_counted": 45,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6190476190476191,
-   "ci_low": 0.47619047619047616,
-   "ci_high": 0.7619047619047619,
-   "ci_half": 0.14285714285714285,
-   "pass_at_1_3h": 0.6190476190476191,
-   "avg_minutes": 68.22839954047619,
-   "avg_out_tok_k": 88.00871428571429,
-   "avg_steps": 109.61904761904762,
+   "pass_at_1": 0.6444444444444445,
+   "ci_low": 0.5111111111111111,
+   "ci_high": 0.7777777777777778,
+   "ci_half": 0.13333333333333336,
+   "pass_at_1_3h": 0.6444444444444445,
+   "avg_minutes": 68.00580901592592,
+   "avg_out_tok_k": 87.92913333333333,
+   "avg_steps": 108.42222222222222,
    "complete": false
   }
  ],
@@ -1395,6 +1395,17 @@
     "peak_context_tokens": 127393
    },
    {
+    "task": "datacurve/igel-persist-feature-schema",
+    "trial": "igel-persist-feature-schema__G2wHKBi",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2278.024943,
+    "n_output_tokens": 57140,
+    "steps": 65,
+    "peak_context_tokens": 99446
+   },
+   {
     "task": "datacurve/testem-bail-on-test-failure",
     "trial": "testem-bail-on-test-failure__FHzfSrJ",
     "status": "scored",
@@ -1571,6 +1582,17 @@
     "peak_context_tokens": 69669
    },
    {
+    "task": "datacurve/tengo-callable-instance-isolation",
+    "trial": "tengo-callable-instance-isolatio__hqodcLB",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6767.255411,
+    "n_output_tokens": 157464,
+    "steps": 153,
+    "peak_context_tokens": 223551
+   },
+   {
     "task": "datacurve/task-task-graph-export",
     "trial": "task-task-graph-export__57zvuiK",
     "status": "scored",
@@ -1723,6 +1745,17 @@
     "n_output_tokens": 127485,
     "steps": 208,
     "peak_context_tokens": 197189
+   },
+   {
+    "task": "datacurve/participle-grammar-conflict-analysis",
+    "trial": "participle-grammar-conflict-anal__qkXX6aT",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2634.837147,
+    "n_output_tokens": 45841,
+    "steps": 57,
+    "peak_context_tokens": 82870
    },
    {
     "task": "datacurve/quill-shared-toolbar-focus",
