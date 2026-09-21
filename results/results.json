@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 20:53 PDT",
+ "generated_at": "2026-09-20 22:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 3,
-   "n_counted": 3,
+   "n_trials": 10,
+   "n_counted": 10,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 1.0,
-   "ci_low": 1.0,
+   "pass_at_1": 0.7,
+   "ci_low": 0.4,
    "ci_high": 1.0,
-   "ci_half": 0.0,
-   "pass_at_1_3h": 1.0,
-   "avg_minutes": 63.433598066666676,
-   "avg_out_tok_k": 83.46766666666667,
-   "avg_steps": 149.33333333333334,
+   "ci_half": 0.3,
+   "pass_at_1_3h": 0.7,
+   "avg_minutes": 57.88635815333334,
+   "avg_out_tok_k": 86.442,
+   "avg_steps": 116.8,
    "complete": false
   }
  ],
@@ -1296,6 +1296,28 @@
   ],
   "qwen3.8-flash-next-q2__medium": [
    {
+    "task": "datacurve/true-myth-iterable-collection-combinators",
+    "trial": "true-myth-iterable-collection-co__68RcbnM",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3057.310432,
+    "n_output_tokens": 87351,
+    "steps": 70,
+    "peak_context_tokens": 154624
+   },
+   {
+    "task": "datacurve/kombu-single-active-consumer-priority",
+    "trial": "kombu-single-active-consumer-pri__fsRs2WC",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4319.268939,
+    "n_output_tokens": 100265,
+    "steps": 144,
+    "peak_context_tokens": 172789
+   },
+   {
     "task": "datacurve/prometheus-typed-label-sorting",
     "trial": "prometheus-typed-label-sorting__fc9sqvS",
     "status": "scored",
@@ -1305,6 +1327,50 @@
     "n_output_tokens": 57351,
     "steps": 116,
     "peak_context_tokens": 86544
+   },
+   {
+    "task": "datacurve/ofetch-per-origin-circuit-breaker",
+    "trial": "ofetch-per-origin-circuit-breake__DgXm2rp",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2099.315399,
+    "n_output_tokens": 58441,
+    "steps": 46,
+    "peak_context_tokens": 92494
+   },
+   {
+    "task": "datacurve/numba-stencil-boundary-modes",
+    "trial": "numba-stencil-boundary-modes__9o7Z8zF",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5594.559535,
+    "n_output_tokens": 137535,
+    "steps": 166,
+    "peak_context_tokens": 208102
+   },
+   {
+    "task": "datacurve/anko-typed-variable-bindings",
+    "trial": "anko-typed-variable-bindings__Gp5Hohd",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3889.955509,
+    "n_output_tokens": 106686,
+    "steps": 128,
+    "peak_context_tokens": 157725
+   },
+   {
+    "task": "datacurve/abs-stepped-slices",
+    "trial": "abs-stepped-slices__RUoKLw8",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 1832.349775,
+    "n_output_tokens": 51918,
+    "steps": 89,
+    "peak_context_tokens": 86051
    },
    {
     "task": "datacurve/skrub-duration-encoding",
@@ -1327,6 +1393,17 @@
     "n_output_tokens": 103589,
     "steps": 144,
     "peak_context_tokens": 176789
+   },
+   {
+    "task": "datacurve/ytt-jsonpath-query-api",
+    "trial": "ytt-jsonpath-query-api__GNzrmyp",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2521.007651,
+    "n_output_tokens": 71821,
+    "steps": 77,
+    "peak_context_tokens": 101252
    }
   ]
  }
