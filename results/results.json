@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-20 22:53 PDT",
+ "generated_at": "2026-09-21 00:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 10,
-   "n_counted": 10,
+   "n_trials": 13,
+   "n_counted": 13,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.7,
-   "ci_low": 0.4,
-   "ci_high": 1.0,
-   "ci_half": 0.3,
-   "pass_at_1_3h": 0.7,
-   "avg_minutes": 57.88635815333334,
-   "avg_out_tok_k": 86.442,
-   "avg_steps": 116.8,
+   "pass_at_1": 0.6923076923076923,
+   "ci_low": 0.46153846153846156,
+   "ci_high": 0.9230769230769231,
+   "ci_half": 0.23076923076923078,
+   "pass_at_1_3h": 0.6923076923076923,
+   "avg_minutes": 60.64674359615385,
+   "avg_out_tok_k": 88.89884615384615,
+   "avg_steps": 121.07692307692308,
    "complete": false
   }
  ],
@@ -1307,6 +1307,17 @@
     "peak_context_tokens": 154624
    },
    {
+    "task": "datacurve/httpx-multipart-response-parsing",
+    "trial": "httpx-multipart-response-parsing__6vcRovw",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2548.949583,
+    "n_output_tokens": 60102,
+    "steps": 74,
+    "peak_context_tokens": 95003
+   },
+   {
     "task": "datacurve/kombu-single-active-consumer-priority",
     "trial": "kombu-single-active-consumer-pri__fsRs2WC",
     "status": "scored",
@@ -1318,6 +1329,17 @@
     "peak_context_tokens": 172789
    },
    {
+    "task": "datacurve/sqlfmt-create-table-ddl-formatting",
+    "trial": "sqlfmt-create-table-ddl-formatti__5s7Bw2g",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6069.268017,
+    "n_output_tokens": 150341,
+    "steps": 162,
+    "peak_context_tokens": 236245
+   },
+   {
     "task": "datacurve/prometheus-typed-label-sorting",
     "trial": "prometheus-typed-label-sorting__fc9sqvS",
     "status": "scored",
@@ -1327,6 +1349,17 @@
     "n_output_tokens": 57351,
     "steps": 116,
     "peak_context_tokens": 86544
+   },
+   {
+    "task": "datacurve/eicrud-keyset-pagination-cursor",
+    "trial": "eicrud-keyset-pagination-cursor__6d8FWXg",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3954.427513,
+    "n_output_tokens": 80822,
+    "steps": 170,
+    "peak_context_tokens": 161021
    },
    {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",

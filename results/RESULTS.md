@@ -1,10 +1,10 @@
 # DeepSWE on DwarfStar (ds4) — local results
 
-Generated 2026-09-20 22:53 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
+Generated 2026-09-21 00:53 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
 
 | Model | Pass@1 | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |
 |---|---:|---:|---:|---:|---:|---:|
-| Qwen3.8 Flash Next Q2 [medium] ★ | 70% ±30 | 70% | 57.9 | 86 | 117 | 10/113 |
+| Qwen3.8 Flash Next Q2 [medium] ★ | 69% ±23 | 69% | 60.6 | 89 | 121 | 13/113 |
 | Qwen3.8 Flash Next Q2 [low] | 56% ±9 | 56% | 51.1 | 72 | 124 | 112/113 (1 infra) |
 
 ★ best effort level within a (family, quant, context) group.  
