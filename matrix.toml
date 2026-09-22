@@ -24,7 +24,10 @@ verifier_timeout_multiplier = 3.0        # 30 min -> 90 min: task test suites ru
 max_retries = 1                          # Pier retries infra errors once; timeouts are never retried
 seed = 0
 kv_disk_dir = "/tmp/ds4-kv"
-kv_disk_space_mb = 262144
+kv_disk_space_mb = 32768                 # 32 GiB, was 256 GiB: the cache grew to its cap and
+                                         # helped filling the volume that killed the Docker VM.
+                                         # Resident sessions already give ~97% prefix reuse.
+min_free_gb = 150                        # driver clears the KV cache below this, refuses below it after
 kv_cold_max_tokens = 200000
 server_ready_timeout_s = 3600
 

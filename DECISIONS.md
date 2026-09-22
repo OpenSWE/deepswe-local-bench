@@ -316,3 +316,34 @@ no job is in flight. Impact meanwhile is ~1% (one verifier timeout in 112 tasks)
 
 **Check.** Verify a driver-code change actually took effect by reading the next job's
 `jobs/<job>/config.json`, not by reading the source.
+
+## Q27. Disk exhaustion killed Docker and the driver burned the queue (2026-09-22)
+
+**Incident.** Docker's VM died mid-sweep. Every remaining job then failed instantly with
+"Docker daemon is not running"; the driver retried each 3x with no delay, walked all 16
+remaining rows in ~70 s, marked them unfinished, and exited. 43 trials in the in-flight
+`medium` row died with `RuntimeError: Docker compose command failed`.
+
+**Root cause: mine.** The volume hit 88% used / 450 GiB free. Two of my settings caused it:
+`kv_disk_space_mb = 262144` (256 GiB) let the ds4 KV disk cache grow to its cap — it reached
+253 GiB — on a volume that already holds ~1.5 TB of GGUFs, alongside Docker's image store at
+273 GiB. I copied that cap from the repo's `start-server.sh`, where it is fine for a short
+session, without reconsidering it for a multi-day sweep.
+
+**Fixes.**
+1. `kv_disk_space_mb = 32768` (32 GiB). Resident sessions already give ~97% prefix reuse, so
+   the disk cache adds little.
+2. `min_free_gb = 150` + `ensure_disk()`: below it the driver clears the KV cache, and
+   refuses to start a job if still low, instead of letting the volume kill Docker.
+3. `wait_for_docker()`: blocks (up to 24 h, polling 30 s) instead of failing fast. A
+   transient daemon outage must not be able to consume the whole matrix.
+4. Backoff `60 * attempt` between retries.
+
+**Recovery.** Deleted the 43 contaminated trials (list in `runs/contaminated-medium.txt`),
+kept the 67 valid results and 3 genuine agent timeouts, and removed the job-level
+`result.json` so the driver resumes the row rather than skipping it as done.
+
+**Correction to Q26.** I claimed resuming after a driver-code change would be refused because
+"config differs". Wrong: the driver resumes with `pier job resume -p <dir>` and passes no
+config flags, so the stored config is used and no comparison happens. The real blocker was
+different — a job-level `result.json` with `finished_at` set makes the driver skip the row.

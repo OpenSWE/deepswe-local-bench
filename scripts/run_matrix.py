@@ -206,6 +206,61 @@ def run_logged(cmd: list[str], log_path: Path) -> int:
         return p.wait()
 
 
+def docker_ok() -> bool:
+    try:
+        return subprocess.run(["docker", "info"], capture_output=True,
+                              timeout=30).returncode == 0
+    except Exception:
+        return False
+
+
+def wait_for_docker(max_wait_s: int = 86400) -> bool:
+    """Block until the Docker daemon answers.
+
+    A transient daemon outage used to be fatal to the whole sweep: pier exits 1
+    immediately, so three retries burned in ~3 s and the driver walked the entire
+    remaining matrix in about a minute, marking every row failed. Waiting instead
+    costs nothing when Docker is healthy.
+    """
+    if docker_ok():
+        return True
+    log("docker daemon unavailable - waiting")
+    t0 = time.time()
+    while time.time() - t0 < max_wait_s:
+        time.sleep(30)
+        if docker_ok():
+            log(f"docker daemon back after {int(time.time() - t0)}s")
+            return True
+    log(f"docker still down after {max_wait_s}s - giving up")
+    return False
+
+
+def free_gb(path: str = "/") -> float:
+    st = os.statvfs(path)
+    return st.f_bavail * st.f_frsize / 2**30
+
+
+def ensure_disk(d: dict) -> bool:
+    """Keep enough headroom that Docker's VM cannot be killed by a full volume.
+
+    The ds4 KV disk cache grows to its configured cap and Docker's image store
+    grows with every task image; on a volume that also holds the GGUFs, that
+    combination filled the disk and took the Docker VM down mid-sweep.
+    """
+    need = d.get("min_free_gb", 150)
+    if free_gb() >= need:
+        return True
+    kv = Path(os.path.expanduser(d.get("kv_disk_dir", "/tmp/ds4-kv")))
+    log(f"low disk: {free_gb():.0f} GiB free (< {need}) - clearing {kv}")
+    if kv.exists() and not listeners(d["port"]):
+        subprocess.run(["rm", "-rf", str(kv)], check=False)
+    if free_gb() >= need:
+        log(f"disk recovered: {free_gb():.0f} GiB free")
+        return True
+    log(f"STILL low on disk: {free_gb():.0f} GiB free - refusing to start job")
+    return False
+
+
 def run_job(d: dict, s: dict, effort: str, jobs_dir: Path, args) -> bool:
     name = job_name(s["id"], effort, args.suffix)
     job_log = ROOT / "runs" / s["id"] / f"pier-{name}.log"
@@ -213,6 +268,13 @@ def run_job(d: dict, s: dict, effort: str, jobs_dir: Path, args) -> bool:
         if job_done(jobs_dir, name):
             log(f"job {name}: done")
             return True
+        if not wait_for_docker():
+            log(f"job {name}: docker unavailable, aborting matrix")
+            raise SystemExit(3)
+        if not ensure_disk(d):
+            raise SystemExit(4)
+        if attempt > 1:
+            time.sleep(60 * attempt)
         if (jobs_dir / name).exists():
             cmd = ["pier", "job", "resume", "-p", str(jobs_dir / name)]
         else:
