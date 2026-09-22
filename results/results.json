@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 00:53 PDT",
+ "generated_at": "2026-09-22 02:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,19 +33,19 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 67,
-   "n_counted": 67,
+   "n_trials": 113,
+   "n_counted": 113,
    "n_infra": 0,
-   "n_flagged": 0,
-   "pass_at_1": 0.6119402985074627,
-   "ci_low": 0.4925373134328358,
-   "ci_high": 0.7313432835820896,
-   "ci_half": 0.11940298507462688,
-   "pass_at_1_3h": 0.6119402985074627,
-   "avg_minutes": 76.8458368363184,
-   "avg_out_tok_k": 87.26453731343284,
-   "avg_steps": 109.19402985074628,
-   "complete": false
+   "n_flagged": 43,
+   "pass_at_1": 0.3805309734513274,
+   "ci_low": 0.2920353982300885,
+   "ci_high": 0.4690265486725664,
+   "ci_half": 0.08849557522123894,
+   "pass_at_1_3h": 0.3805309734513274,
+   "avg_minutes": 76.16283851023809,
+   "avg_out_tok_k": 87.60608571428571,
+   "avg_steps": 110.75714285714285,
+   "complete": true
   }
  ],
  "trials": {
@@ -1340,6 +1340,17 @@
     "peak_context_tokens": 95003
    },
    {
+    "task": "datacurve/returns-validated-error-accumulation",
+    "trial": "returns-validated-error-accumula__nNxVBFv",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2044.601871,
+    "n_output_tokens": 53639,
+    "steps": 86,
+    "peak_context_tokens": 106663
+   },
+   {
     "task": "datacurve/go-genai-streamed-function-args",
     "trial": "go-genai-streamed-function-args__XYihp7f",
     "status": "scored",
@@ -1349,6 +1360,17 @@
     "n_output_tokens": 59655,
     "steps": 70,
     "peak_context_tokens": 111738
+   },
+   {
+    "task": "datacurve/awilix-async-container-initialization",
+    "trial": "awilix-async-container-initializ__g8bAHnL",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/tomlkit-toml-table-converters",
@@ -1371,6 +1393,39 @@
     "n_output_tokens": 100265,
     "steps": 144,
     "peak_context_tokens": 172789
+   },
+   {
+    "task": "datacurve/obsidian-linter-link-format-conversion",
+    "trial": "obsidian-linter-link-format-conv__AArPCi2",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/mashumaro-flattened-dataclass-fields",
+    "trial": "mashumaro-flattened-dataclass-fi__qFJaDN2",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/scc-bounded-memory-spilling",
+    "trial": "scc-bounded-memory-spilling__TesPEb4",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/bandit-interprocedural-taint-checks",
@@ -1428,6 +1483,39 @@
     "peak_context_tokens": 131623
    },
    {
+    "task": "datacurve/kea-atomic-signal-selectors",
+    "trial": "kea-atomic-signal-selectors__EJ5A6u3",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/scriggo-method-declarations",
+    "trial": "scriggo-method-declarations__wDfTDc2",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/effect-sse-httpapi-streaming",
+    "trial": "effect-sse-httpapi-streaming__5ewe3YB",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/igel-persist-feature-schema",
     "trial": "igel-persist-feature-schema__G2wHKBi",
     "status": "scored",
@@ -1448,6 +1536,17 @@
     "n_output_tokens": 67271,
     "steps": 120,
     "peak_context_tokens": 132140
+   },
+   {
+    "task": "datacurve/optique-conditional-option-dependencies",
+    "trial": "optique-conditional-option-depen__ubG7kkU",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/prometheus-typed-label-sorting",
@@ -1481,6 +1580,17 @@
     "n_output_tokens": 172075,
     "steps": 194,
     "peak_context_tokens": 289488
+   },
+   {
+    "task": "datacurve/helm-array-merge-strategies",
+    "trial": "helm-array-merge-strategies__FnDRU2z",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
@@ -1527,6 +1637,50 @@
     "peak_context_tokens": 213328
    },
    {
+    "task": "datacurve/opa-template-string-reconstruction",
+    "trial": "opa-template-string-reconstructi__YPszpkQ",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/onedump-dump-encryption-pipeline",
+    "trial": "onedump-dump-encryption-pipeline__Gx55m3j",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/meriyah-explicit-resource-declarations",
+    "trial": "meriyah-explicit-resource-declar__qGa4YPW",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/dynamodb-toolbox-lazy-recursive-schemas",
+    "trial": "dynamodb-toolbox-lazy-recursive__Y3sGpBi",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/pest-character-class-coalescing",
     "trial": "pest-character-class-coalescing__GStRy8C",
     "status": "scored",
@@ -1536,6 +1690,17 @@
     "n_output_tokens": 85598,
     "steps": 110,
     "peak_context_tokens": 132502
+   },
+   {
+    "task": "datacurve/kombu-virtual-queue-dead-lettering",
+    "trial": "kombu-virtual-queue-dead-letteri__tHC9hBh",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/bandit-structured-nosec-directives",
@@ -1560,6 +1725,17 @@
     "peak_context_tokens": 115682
    },
    {
+    "task": "datacurve/pwntools-tube-multiplexing",
+    "trial": "pwntools-tube-multiplexing__pniSWrW",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/termenv-preserve-ansi-resets",
     "trial": "termenv-preserve-ansi-resets__k7edrxj",
     "status": "scored",
@@ -1569,6 +1745,61 @@
     "n_output_tokens": 76970,
     "steps": 52,
     "peak_context_tokens": 98855
+   },
+   {
+    "task": "datacurve/sqlite-utils-safe-import-checkpoints",
+    "trial": "sqlite-utils-safe-import-checkpo__euqvbqm",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3214.812375,
+    "n_output_tokens": 92064,
+    "steps": 113,
+    "peak_context_tokens": 129393
+   },
+   {
+    "task": "datacurve/boa-hierarchical-evaluation-cancellation",
+    "trial": "boa-hierarchical-evaluation-canc__MzcD3tD",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/dasel-html-document-format",
+    "trial": "dasel-html-document-format__cwWQ4xj",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/clack-async-autocomplete-options",
+    "trial": "clack-async-autocomplete-options__VMwwHJx",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/query-persist-restored-query-state",
+    "trial": "query-persist-restored-query-sta__QtzhEDT",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/numba-stencil-boundary-modes",
@@ -1626,6 +1857,39 @@
     "peak_context_tokens": 136343
    },
    {
+    "task": "datacurve/kcp-go-multiplexed-kcp-streams",
+    "trial": "kcp-go-multiplexed-kcp-streams__xJYyxCS",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/cattrs-partial-structuring-recovery",
+    "trial": "cattrs-partial-structuring-recov__NFCvDwb",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/koota-pair-relation-tracking",
+    "trial": "koota-pair-relation-tracking__bjHgBNs",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/anko-typed-variable-bindings",
     "trial": "anko-typed-variable-bindings__Gp5Hohd",
     "status": "scored",
@@ -1646,6 +1910,28 @@
     "n_output_tokens": 103143,
     "steps": 166,
     "peak_context_tokens": 189576
+   },
+   {
+    "task": "datacurve/dateutil-rfc5545-timezone-interop",
+    "trial": "dateutil-rfc5545-timezone-intero__REVKqoC",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/koota-entity-snapshot-rollback",
+    "trial": "koota-entity-snapshot-rollback__eLwvCcA",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/bandit-incremental-cache-control",
@@ -1681,6 +1967,17 @@
     "peak_context_tokens": 201076
    },
    {
+    "task": "datacurve/yaegi-go-embed-directives",
+    "trial": "yaegi-go-embed-directives__hQAfmiw",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5704.243415,
+    "n_output_tokens": 139999,
+    "steps": 238,
+    "peak_context_tokens": 217102
+   },
+   {
     "task": "datacurve/vitest-duration-sharding",
     "trial": "vitest-duration-sharding__Akg2AxS",
     "status": "scored",
@@ -1690,6 +1987,17 @@
     "n_output_tokens": 62248,
     "steps": 130,
     "peak_context_tokens": 125225
+   },
+   {
+    "task": "datacurve/superjson-error-stack-serialization",
+    "trial": "superjson-error-stack-serializat__G5GZCZY",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/tengo-destructuring-bindings",
@@ -1714,6 +2022,17 @@
     "peak_context_tokens": 69669
    },
    {
+    "task": "datacurve/go-critic-doc-link-checker",
+    "trial": "go-critic-doc-link-checker__cthZfYs",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/ts-pattern-match-each",
     "trial": "ts-pattern-match-each__mqpt5vd",
     "status": "scored",
@@ -1725,6 +2044,28 @@
     "peak_context_tokens": 85961
    },
    {
+    "task": "datacurve/cliffy-config-file-parsing",
+    "trial": "cliffy-config-file-parsing__aBXZB6z",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/textual-kitty-key-phases",
+    "trial": "textual-kitty-key-phases__mGFpbwC",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/yjs-map-conflict-detection",
     "trial": "yjs-map-conflict-detection__LoHDoVm",
     "status": "scored",
@@ -1734,6 +2075,39 @@
     "n_output_tokens": 113424,
     "steps": 127,
     "peak_context_tokens": 175411
+   },
+   {
+    "task": "datacurve/ink-grid-box-layout",
+    "trial": "ink-grid-box-layout__QiDXQJR",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/oxvg-structural-selector-preservation",
+    "trial": "oxvg-structural-selector-preserv__L7x7epz",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/drizzle-orm-window-function-builders",
+    "trial": "drizzle-orm-window-function-buil__RmvxEFh",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/adaptix-name-mapping-aliases",
@@ -1802,6 +2176,28 @@
     "peak_context_tokens": 132598
    },
    {
+    "task": "datacurve/valibot-recursive-schema-composition",
+    "trial": "valibot-recursive-schema-composi__peqjzXh",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/arcane-drift-detection-baselines",
+    "trial": "arcane-drift-detection-baselines__4WBSDhL",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__f63XkCM",
     "status": "scored",
@@ -1813,6 +2209,17 @@
     "peak_context_tokens": 177292
    },
    {
+    "task": "datacurve/dynamodb-toolbox-conditional-attribute-requirements",
+    "trial": "dynamodb-toolbox-conditional-att__uZQCSwj",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/abs-module-cache-flags",
     "trial": "abs-module-cache-flags__b4NENpB",
     "status": "scored",
@@ -1822,6 +2229,17 @@
     "n_output_tokens": 38460,
     "steps": 71,
     "peak_context_tokens": 62938
+   },
+   {
+    "task": "datacurve/fastapi-implicit-head-options",
+    "trial": "fastapi-implicit-head-options__wx3cPaH",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/happy-dom-deterministic-intersectionobserver",
@@ -1855,6 +2273,17 @@
     "n_output_tokens": 62086,
     "steps": 71,
     "peak_context_tokens": 112304
+   },
+   {
+    "task": "datacurve/etree-xml-diff-patch",
+    "trial": "etree-xml-diff-patch__ZgXhFDz",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/vulture-persistent-analysis-cache",
@@ -1899,6 +2328,28 @@
     "n_output_tokens": 161459,
     "steps": 171,
     "peak_context_tokens": 247741
+   },
+   {
+    "task": "datacurve/helm-unified-manifest-stream",
+    "trial": "helm-unified-manifest-stream__Xz3VhJQ",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/mnamer-daemon-watch-lifecycle",
+    "trial": "mnamer-daemon-watch-lifecycle__MqTAyJF",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/actionlint-action-pinning-lint",
@@ -1989,6 +2440,17 @@
     "peak_context_tokens": 109700
    },
    {
+    "task": "datacurve/textual-richlog-follow-state",
+    "trial": "textual-richlog-follow-state__p7FqT3n",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/participle-grammar-conflict-analysis",
     "trial": "participle-grammar-conflict-anal__qkXX6aT",
     "status": "scored",
@@ -1998,6 +2460,39 @@
     "n_output_tokens": 45841,
     "steps": 57,
     "peak_context_tokens": 82870
+   },
+   {
+    "task": "datacurve/ipython-session-bundle-replay",
+    "trial": "ipython-session-bundle-replay__raCYxMh",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/wazero-multi-module-snapshots",
+    "trial": "wazero-multi-module-snapshots__7sHSF7c",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
+    "task": "datacurve/kgateway-consistent-hash-policy",
+    "trial": "kgateway-consistent-hash-policy__odw3pKn",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/quill-shared-toolbar-focus",
@@ -2031,6 +2526,17 @@
     "n_output_tokens": 97315,
     "steps": 98,
     "peak_context_tokens": 157230
+   },
+   {
+    "task": "datacurve/pebble-durability-wait-apis",
+    "trial": "pebble-durability-wait-apis__guKbY44",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    }
   ]
  }
