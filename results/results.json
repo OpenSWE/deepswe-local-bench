@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 08:53 PDT",
+ "generated_at": "2026-09-22 10:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 82,
-   "n_counted": 82,
+   "n_trials": 88,
+   "n_counted": 88,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6097560975609756,
-   "ci_low": 0.5,
-   "ci_high": 0.7195121951219512,
-   "ci_half": 0.1097560975609756,
-   "pass_at_1_3h": 0.6097560975609756,
-   "avg_minutes": 74.00968520264227,
-   "avg_out_tok_k": 87.75208536585366,
-   "avg_steps": 111.6951219512195,
+   "pass_at_1": 0.6136363636363636,
+   "ci_low": 0.5113636363636364,
+   "ci_high": 0.7159090909090909,
+   "ci_half": 0.10227272727272729,
+   "pass_at_1_3h": 0.6136363636363636,
+   "avg_minutes": 74.69912474166667,
+   "avg_out_tok_k": 90.33178409090908,
+   "avg_steps": 112.97727272727273,
    "complete": false
   }
  ],
@@ -1362,6 +1362,17 @@
     "peak_context_tokens": 111738
    },
    {
+    "task": "datacurve/oxvg-structural-selector-preservation",
+    "trial": "oxvg-structural-selector-preserv__6oQmEjP",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6531.505951,
+    "n_output_tokens": 131487,
+    "steps": 204,
+    "peak_context_tokens": 272281
+   },
+   {
     "task": "datacurve/tomlkit-toml-table-converters",
     "trial": "tomlkit-toml-table-converters__qgxRzif",
     "status": "scored",
@@ -1516,6 +1527,17 @@
     "peak_context_tokens": 92494
    },
    {
+    "task": "datacurve/etree-xml-diff-patch",
+    "trial": "etree-xml-diff-patch__sWXmbbg",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3576.08151,
+    "n_output_tokens": 102871,
+    "steps": 67,
+    "peak_context_tokens": 125643
+   },
+   {
     "task": "datacurve/prometheus-transactional-reload-status",
     "trial": "prometheus-transactional-reload__Dk4Hae6",
     "status": "scored",
@@ -1525,6 +1547,17 @@
     "n_output_tokens": 73106,
     "steps": 153,
     "peak_context_tokens": 147445
+   },
+   {
+    "task": "datacurve/go-critic-doc-link-checker",
+    "trial": "go-critic-doc-link-checker__Vy3bqzF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3748.363409,
+    "n_output_tokens": 94367,
+    "steps": 92,
+    "peak_context_tokens": 135517
    },
    {
     "task": "datacurve/koota-query-predicates",
@@ -1780,6 +1813,17 @@
     "peak_context_tokens": 217102
    },
    {
+    "task": "datacurve/cliffy-config-file-parsing",
+    "trial": "cliffy-config-file-parsing__oSTVCXD",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3058.933406,
+    "n_output_tokens": 83390,
+    "steps": 119,
+    "peak_context_tokens": 146748
+   },
+   {
     "task": "datacurve/vitest-duration-sharding",
     "trial": "vitest-duration-sharding__Akg2AxS",
     "status": "scored",
@@ -1844,6 +1888,17 @@
     "n_output_tokens": 113424,
     "steps": 127,
     "peak_context_tokens": 175411
+   },
+   {
+    "task": "datacurve/fastapi-implicit-head-options",
+    "trial": "fastapi-implicit-head-options__o33NXvh",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4275.897372,
+    "n_output_tokens": 112004,
+    "steps": 112,
+    "peak_context_tokens": 177542
    },
    {
     "task": "datacurve/adaptix-name-mapping-aliases",
@@ -1921,6 +1976,17 @@
     "n_output_tokens": 78845,
     "steps": 94,
     "peak_context_tokens": 132598
+   },
+   {
+    "task": "datacurve/valibot-recursive-schema-composition",
+    "trial": "valibot-recursive-schema-composi__Ca6C8G3",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 9092.945791,
+    "n_output_tokens": 229407,
+    "steps": 189,
+    "peak_context_tokens": 348411
    },
    {
     "task": "datacurve/skrub-duration-encoding",
