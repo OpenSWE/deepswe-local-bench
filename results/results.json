@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 12:53 PDT",
+ "generated_at": "2026-09-22 14:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 93,
-   "n_counted": 93,
+   "n_trials": 96,
+   "n_counted": 96,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5913978494623656,
-   "ci_low": 0.4946236559139785,
-   "ci_high": 0.6881720430107527,
-   "ci_half": 0.09677419354838712,
-   "pass_at_1_3h": 0.5913978494623656,
-   "avg_minutes": 74.46117174480287,
-   "avg_out_tok_k": 90.32282795698924,
-   "avg_steps": 114.15053763440861,
+   "pass_at_1": 0.59375,
+   "ci_low": 0.4895833333333333,
+   "ci_high": 0.6979166666666666,
+   "ci_half": 0.10416666666666666,
+   "pass_at_1_3h": 0.59375,
+   "avg_minutes": 75.42032016059028,
+   "avg_out_tok_k": 92.09994791666666,
+   "avg_steps": 117.86458333333333,
    "complete": false
   }
  ],
@@ -1989,6 +1989,17 @@
     "peak_context_tokens": 230043
    },
    {
+    "task": "datacurve/helm-unified-manifest-stream",
+    "trial": "helm-unified-manifest-stream__NEZDdLx",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4564.078199,
+    "n_output_tokens": 103814,
+    "steps": 162,
+    "peak_context_tokens": 181452
+   },
+   {
     "task": "datacurve/csstree-shorthand-expansion-compression",
     "trial": "csstree-shorthand-expansion-comp__fUABpaT",
     "status": "failure",
@@ -2055,6 +2066,17 @@
     "peak_context_tokens": 177292
    },
    {
+    "task": "datacurve/scriggo-method-declarations",
+    "trial": "scriggo-method-declarations__H4Pj7D3",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 8311.552318,
+    "n_output_tokens": 195497,
+    "steps": 335,
+    "peak_context_tokens": 313348
+   },
+   {
     "task": "datacurve/abs-module-cache-flags",
     "trial": "abs-module-cache-flags__b4NENpB",
     "status": "scored",
@@ -2097,6 +2119,17 @@
     "n_output_tokens": 62086,
     "steps": 71,
     "peak_context_tokens": 112304
+   },
+   {
+    "task": "datacurve/effect-sse-httpapi-streaming",
+    "trial": "effect-sse-httpapi-streaming__SPb6yTX",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6052.075272,
+    "n_output_tokens": 142261,
+    "steps": 202,
+    "peak_context_tokens": 271784
    },
    {
     "task": "datacurve/vulture-persistent-analysis-cache",
