@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 04:53 PDT",
+ "generated_at": "2026-09-22 06:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 74,
-   "n_counted": 74,
+   "n_trials": 79,
+   "n_counted": 79,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6081081081081081,
-   "ci_low": 0.5,
-   "ci_high": 0.7162162162162162,
-   "ci_half": 0.10810810810810811,
-   "pass_at_1_3h": 0.6081081081081081,
-   "avg_minutes": 74.33349886846847,
-   "avg_out_tok_k": 86.40551351351353,
-   "avg_steps": 109.24324324324324,
+   "pass_at_1": 0.6075949367088608,
+   "ci_low": 0.4936708860759494,
+   "ci_high": 0.7088607594936709,
+   "ci_half": 0.10759493670886075,
+   "pass_at_1_3h": 0.6075949367088608,
+   "avg_minutes": 73.23143450590717,
+   "avg_out_tok_k": 86.11143037974684,
+   "avg_steps": 109.21518987341773,
    "complete": false
   }
  ],
@@ -1384,6 +1384,17 @@
     "peak_context_tokens": 172789
    },
    {
+    "task": "datacurve/wazero-multi-module-snapshots",
+    "trial": "wazero-multi-module-snapshots__Nyy5LCt",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2346.931136,
+    "n_output_tokens": 61655,
+    "steps": 60,
+    "peak_context_tokens": 76308
+   },
+   {
     "task": "datacurve/bandit-interprocedural-taint-checks",
     "trial": "bandit-interprocedural-taint-che__S775peB",
     "status": "scored",
@@ -1538,6 +1549,17 @@
     "peak_context_tokens": 213328
    },
    {
+    "task": "datacurve/pebble-durability-wait-apis",
+    "trial": "pebble-durability-wait-apis__hAqMndT",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4806.012085,
+    "n_output_tokens": 97045,
+    "steps": 142,
+    "peak_context_tokens": 179677
+   },
+   {
     "task": "datacurve/kombu-virtual-queue-dead-lettering",
     "trial": "kombu-virtual-queue-dead-letteri__vemi6Mp",
     "status": "scored",
@@ -1602,6 +1624,17 @@
     "n_output_tokens": 76970,
     "steps": 52,
     "peak_context_tokens": 98855
+   },
+   {
+    "task": "datacurve/dateutil-rfc5545-timezone-interop",
+    "trial": "dateutil-rfc5545-timezone-intero__xjrcwkZ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3044.0331,
+    "n_output_tokens": 94443,
+    "steps": 88,
+    "peak_context_tokens": 152898
    },
    {
     "task": "datacurve/sqlite-utils-safe-import-checkpoints",
@@ -1780,6 +1813,17 @@
     "peak_context_tokens": 85961
    },
    {
+    "task": "datacurve/kgateway-consistent-hash-policy",
+    "trial": "kgateway-consistent-hash-policy__oYgiWmm",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2580.26395,
+    "n_output_tokens": 41357,
+    "steps": 143,
+    "peak_context_tokens": 88134
+   },
+   {
     "task": "datacurve/yjs-map-conflict-detection",
     "trial": "yjs-map-conflict-detection__LoHDoVm",
     "status": "scored",
@@ -1932,6 +1976,17 @@
     "n_output_tokens": 50519,
     "steps": 74,
     "peak_context_tokens": 81860
+   },
+   {
+    "task": "datacurve/mashumaro-flattened-dataclass-fields",
+    "trial": "mashumaro-flattened-dataclass-fi__qGKvvbM",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4299.024311,
+    "n_output_tokens": 114295,
+    "steps": 111,
+    "peak_context_tokens": 167614
    },
    {
     "task": "datacurve/testem-per-launcher-reports",
