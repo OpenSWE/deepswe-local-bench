@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 16:53 PDT",
+ "generated_at": "2026-09-21 18:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 47,
-   "n_counted": 47,
+   "n_trials": 49,
+   "n_counted": 49,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6170212765957447,
-   "ci_low": 0.46808510638297873,
-   "ci_high": 0.7446808510638298,
-   "ci_half": 0.1382978723404255,
-   "pass_at_1_3h": 0.6170212765957447,
-   "avg_minutes": 74.92258996205673,
-   "avg_out_tok_k": 89.38712765957447,
-   "avg_steps": 108.57446808510639,
+   "pass_at_1": 0.5918367346938775,
+   "ci_low": 0.4489795918367347,
+   "ci_high": 0.7346938775510204,
+   "ci_half": 0.14285714285714288,
+   "pass_at_1_3h": 0.5918367346938775,
+   "avg_minutes": 76.14595437721088,
+   "avg_out_tok_k": 90.99730612244898,
+   "avg_steps": 110.34693877551021,
    "complete": false
   }
  ],
@@ -1439,6 +1439,17 @@
     "peak_context_tokens": 161021
    },
    {
+    "task": "datacurve/koota-composite-trait-aspects",
+    "trial": "koota-composite-trait-aspects__ug8uN3d",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8715.724551,
+    "n_output_tokens": 172075,
+    "steps": 194,
+    "peak_context_tokens": 289488
+   },
+   {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
     "trial": "ofetch-per-origin-circuit-breake__DgXm2rp",
     "status": "scored",
@@ -1459,6 +1470,17 @@
     "n_output_tokens": 146219,
     "steps": 126,
     "peak_context_tokens": 232246
+   },
+   {
+    "task": "datacurve/pest-character-class-coalescing",
+    "trial": "pest-character-class-coalescing__GStRy8C",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3871.677625,
+    "n_output_tokens": 85598,
+    "steps": 110,
+    "peak_context_tokens": 132502
    },
    {
     "task": "datacurve/bandit-structured-nosec-directives",
