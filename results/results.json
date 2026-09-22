@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 06:53 PDT",
+ "generated_at": "2026-09-22 08:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 79,
-   "n_counted": 79,
+   "n_trials": 82,
+   "n_counted": 82,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6075949367088608,
-   "ci_low": 0.4936708860759494,
-   "ci_high": 0.7088607594936709,
-   "ci_half": 0.10759493670886075,
-   "pass_at_1_3h": 0.6075949367088608,
-   "avg_minutes": 73.23143450590717,
-   "avg_out_tok_k": 86.11143037974684,
-   "avg_steps": 109.21518987341773,
+   "pass_at_1": 0.6097560975609756,
+   "ci_low": 0.5,
+   "ci_high": 0.7195121951219512,
+   "ci_half": 0.1097560975609756,
+   "pass_at_1_3h": 0.6097560975609756,
+   "avg_minutes": 74.00968520264227,
+   "avg_out_tok_k": 87.75208536585366,
+   "avg_steps": 111.6951219512195,
    "complete": false
   }
  ],
@@ -1648,6 +1648,17 @@
     "peak_context_tokens": 129393
    },
    {
+    "task": "datacurve/textual-richlog-follow-state",
+    "trial": "textual-richlog-follow-state__eZJwvhN",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4393.944125,
+    "n_output_tokens": 103604,
+    "steps": 157,
+    "peak_context_tokens": 162064
+   },
+   {
     "task": "datacurve/numba-stencil-boundary-modes",
     "trial": "numba-stencil-boundary-modes__9o7Z8zF",
     "status": "scored",
@@ -1857,6 +1868,17 @@
     "peak_context_tokens": 223551
    },
    {
+    "task": "datacurve/boa-hierarchical-evaluation-cancellation",
+    "trial": "boa-hierarchical-evaluation-canc__wfdjR2o",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6540.885475,
+    "n_output_tokens": 143894,
+    "steps": 183,
+    "peak_context_tokens": 230043
+   },
+   {
     "task": "datacurve/csstree-shorthand-expansion-compression",
     "trial": "csstree-shorthand-expansion-comp__fUABpaT",
     "status": "failure",
@@ -2064,6 +2086,17 @@
     "n_output_tokens": 103589,
     "steps": 144,
     "peak_context_tokens": 176789
+   },
+   {
+    "task": "datacurve/optique-conditional-option-dependencies",
+    "trial": "optique-conditional-option-depen__hPg59mT",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6075.822039,
+    "n_output_tokens": 145370,
+    "steps": 191,
+    "peak_context_tokens": 248954
    },
    {
     "task": "datacurve/httpx-streaming-json-iteration",
