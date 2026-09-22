@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-21 18:53 PDT",
+ "generated_at": "2026-09-21 20:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 49,
-   "n_counted": 49,
+   "n_trials": 55,
+   "n_counted": 55,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5918367346938775,
-   "ci_low": 0.4489795918367347,
-   "ci_high": 0.7346938775510204,
-   "ci_half": 0.14285714285714288,
-   "pass_at_1_3h": 0.5918367346938775,
-   "avg_minutes": 76.14595437721088,
-   "avg_out_tok_k": 90.99730612244898,
-   "avg_steps": 110.34693877551021,
+   "pass_at_1": 0.5818181818181818,
+   "ci_low": 0.45454545454545453,
+   "ci_high": 0.7090909090909091,
+   "ci_half": 0.1272727272727273,
+   "pass_at_1_3h": 0.5818181818181818,
+   "avg_minutes": 79.59681179969697,
+   "avg_out_tok_k": 87.67507272727272,
+   "avg_steps": 107.81818181818181,
    "complete": false
   }
  ],
@@ -1395,6 +1395,17 @@
     "peak_context_tokens": 127393
    },
    {
+    "task": "datacurve/wasmi-trap-coredumps",
+    "trial": "wasmi-trap-coredumps__6etUvUk",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.087673,
+    "n_output_tokens": 49215,
+    "steps": 74,
+    "peak_context_tokens": 131623
+   },
+   {
     "task": "datacurve/igel-persist-feature-schema",
     "trial": "igel-persist-feature-schema__G2wHKBi",
     "status": "scored",
@@ -1461,6 +1472,17 @@
     "peak_context_tokens": 92494
    },
    {
+    "task": "datacurve/prometheus-transactional-reload-status",
+    "trial": "prometheus-transactional-reload__Dk4Hae6",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4641.72825,
+    "n_output_tokens": 73106,
+    "steps": 153,
+    "peak_context_tokens": 147445
+   },
+   {
     "task": "datacurve/koota-query-predicates",
     "trial": "koota-query-predicates__VqGFvSk",
     "status": "scored",
@@ -1503,6 +1525,17 @@
     "n_output_tokens": 63992,
     "steps": 70,
     "peak_context_tokens": 115682
+   },
+   {
+    "task": "datacurve/termenv-preserve-ansi-resets",
+    "trial": "termenv-preserve-ansi-resets__k7edrxj",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4842.622976,
+    "n_output_tokens": 76970,
+    "steps": 52,
+    "peak_context_tokens": 98855
    },
    {
     "task": "datacurve/numba-stencil-boundary-modes",
@@ -1615,6 +1648,17 @@
     "peak_context_tokens": 69669
    },
    {
+    "task": "datacurve/ts-pattern-match-each",
+    "trial": "ts-pattern-match-each__mqpt5vd",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 2285.228165,
+    "n_output_tokens": 52831,
+    "steps": 52,
+    "peak_context_tokens": 85961
+   },
+   {
     "task": "datacurve/tengo-callable-instance-isolation",
     "trial": "tengo-callable-instance-isolatio__hqodcLB",
     "status": "scored",
@@ -1681,6 +1725,17 @@
     "peak_context_tokens": 177292
    },
    {
+    "task": "datacurve/abs-module-cache-flags",
+    "trial": "abs-module-cache-flags__b4NENpB",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1831.555262,
+    "n_output_tokens": 38460,
+    "steps": 71,
+    "peak_context_tokens": 62938
+   },
+   {
     "task": "datacurve/happy-dom-deterministic-intersectionobserver",
     "trial": "happy-dom-deterministic-intersec__ASGt4HF",
     "status": "scored",
@@ -1734,6 +1789,17 @@
     "n_output_tokens": 161459,
     "steps": 171,
     "peak_context_tokens": 247741
+   },
+   {
+    "task": "datacurve/actionlint-action-pinning-lint",
+    "trial": "actionlint-action-pinning-lint__AsSiGTe",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3599.150744,
+    "n_output_tokens": 72679,
+    "steps": 121,
+    "peak_context_tokens": 143091
    },
    {
     "task": "datacurve/goreleaser-retry-publish-auditing",
