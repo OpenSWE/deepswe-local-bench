@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 14:53 PDT",
+ "generated_at": "2026-09-22 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 96,
-   "n_counted": 96,
+   "n_trials": 101,
+   "n_counted": 101,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.59375,
-   "ci_low": 0.4895833333333333,
-   "ci_high": 0.6979166666666666,
-   "ci_half": 0.10416666666666666,
-   "pass_at_1_3h": 0.59375,
-   "avg_minutes": 75.42032016059028,
-   "avg_out_tok_k": 92.09994791666666,
-   "avg_steps": 117.86458333333333,
+   "pass_at_1": 0.594059405940594,
+   "ci_low": 0.49504950495049505,
+   "ci_high": 0.6831683168316832,
+   "ci_half": 0.09405940594059409,
+   "pass_at_1_3h": 0.594059405940594,
+   "avg_minutes": 75.21431348217821,
+   "avg_out_tok_k": 91.59560396039603,
+   "avg_steps": 117.73267326732673,
    "complete": false
   }
  ],
@@ -1340,6 +1340,17 @@
     "peak_context_tokens": 95003
    },
    {
+    "task": "datacurve/onedump-dump-encryption-pipeline",
+    "trial": "onedump-dump-encryption-pipeline__8fnrBSh",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2388.563376,
+    "n_output_tokens": 34949,
+    "steps": 47,
+    "peak_context_tokens": 55064
+   },
+   {
     "task": "datacurve/returns-validated-error-accumulation",
     "trial": "returns-validated-error-accumula__nNxVBFv",
     "status": "scored",
@@ -1393,6 +1404,17 @@
     "n_output_tokens": 100265,
     "steps": 144,
     "peak_context_tokens": 172789
+   },
+   {
+    "task": "datacurve/query-persist-restored-query-state",
+    "trial": "query-persist-restored-query-sta__9Mubout",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4498.58357,
+    "n_output_tokens": 78384,
+    "steps": 171,
+    "peak_context_tokens": 149608
    },
    {
     "task": "datacurve/drizzle-orm-window-function-builders",
@@ -1549,6 +1571,17 @@
     "peak_context_tokens": 125643
    },
    {
+    "task": "datacurve/kea-atomic-signal-selectors",
+    "trial": "kea-atomic-signal-selectors__DCDfgBC",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6513.676245,
+    "n_output_tokens": 125476,
+    "steps": 93,
+    "peak_context_tokens": 184547
+   },
+   {
     "task": "datacurve/prometheus-transactional-reload-status",
     "trial": "prometheus-transactional-reload__Dk4Hae6",
     "status": "scored",
@@ -1558,6 +1591,17 @@
     "n_output_tokens": 73106,
     "steps": 153,
     "peak_context_tokens": 147445
+   },
+   {
+    "task": "datacurve/dynamodb-toolbox-lazy-recursive-schemas",
+    "trial": "dynamodb-toolbox-lazy-recursive__6JRfvCu",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6248.256774,
+    "n_output_tokens": 126906,
+    "steps": 224,
+    "peak_context_tokens": 276277
    },
    {
     "task": "datacurve/go-critic-doc-link-checker",
@@ -2251,6 +2295,17 @@
     "n_output_tokens": 145370,
     "steps": 191,
     "peak_context_tokens": 248954
+   },
+   {
+    "task": "datacurve/mnamer-daemon-watch-lifecycle",
+    "trial": "mnamer-daemon-watch-lifecycle__GGym5ad",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 1728.615612,
+    "n_output_tokens": 43846,
+    "steps": 41,
+    "peak_context_tokens": 61324
    },
    {
     "task": "datacurve/httpx-streaming-json-iteration",
