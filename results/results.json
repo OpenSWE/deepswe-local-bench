@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 20:53 PDT",
+ "generated_at": "2026-09-22 22:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,19 +33,19 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 110,
-   "n_counted": 110,
+   "n_trials": 113,
+   "n_counted": 113,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6,
-   "ci_low": 0.509090909090909,
-   "ci_high": 0.6909090909090909,
-   "ci_half": 0.09090909090909094,
-   "pass_at_1_3h": 0.6,
-   "avg_minutes": 75.34222821454546,
-   "avg_out_tok_k": 91.80543636363637,
-   "avg_steps": 119.96363636363637,
-   "complete": false
+   "pass_at_1": 0.584070796460177,
+   "ci_low": 0.48672566371681414,
+   "ci_high": 0.672566371681416,
+   "ci_half": 0.09292035398230092,
+   "pass_at_1_3h": 0.584070796460177,
+   "avg_minutes": 75.96546675339233,
+   "avg_out_tok_k": 93.24374336283185,
+   "avg_steps": 121.12389380530973,
+   "complete": true
   }
  ],
  "trials": {
@@ -1439,6 +1439,17 @@
     "peak_context_tokens": 104250
    },
    {
+    "task": "datacurve/kcp-go-multiplexed-kcp-streams",
+    "trial": "kcp-go-multiplexed-kcp-streams__7moEv7N",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8532.924474,
+    "n_output_tokens": 196616,
+    "steps": 203,
+    "peak_context_tokens": 270192
+   },
+   {
     "task": "datacurve/ipython-session-bundle-replay",
     "trial": "ipython-session-bundle-replay__ZvTDEmh",
     "status": "scored",
@@ -1679,6 +1690,17 @@
     "n_output_tokens": 83480,
     "steps": 208,
     "peak_context_tokens": 213328
+   },
+   {
+    "task": "datacurve/ink-grid-box-layout",
+    "trial": "ink-grid-box-layout__aKr7EJF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4867.461423,
+    "n_output_tokens": 116929,
+    "steps": 141,
+    "peak_context_tokens": 181024
    },
    {
     "task": "datacurve/pebble-durability-wait-apis",
@@ -2449,6 +2471,17 @@
     "n_output_tokens": 61672,
     "steps": 69,
     "peak_context_tokens": 109700
+   },
+   {
+    "task": "datacurve/textual-kitty-key-phases",
+    "trial": "textual-kitty-key-phases__CAU48wi",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4386.772475,
+    "n_output_tokens": 124400,
+    "steps": 147,
+    "peak_context_tokens": 200407
    },
    {
     "task": "datacurve/participle-grammar-conflict-analysis",
