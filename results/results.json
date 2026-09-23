@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 14:53 PDT",
+ "generated_at": "2026-09-23 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 20,
-   "n_counted": 20,
+   "n_trials": 23,
+   "n_counted": 23,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.4,
-   "ci_low": 0.2,
-   "ci_high": 0.6,
-   "ci_half": 0.19999999999999998,
-   "pass_at_1_3h": 0.35,
-   "avg_minutes": 130.76303259083335,
-   "avg_out_tok_k": 135.48165,
-   "avg_steps": 153.4,
+   "pass_at_1": 0.391304347826087,
+   "ci_low": 0.17391304347826086,
+   "ci_high": 0.6086956521739131,
+   "ci_half": 0.2173913043478261,
+   "pass_at_1_3h": 0.34782608695652173,
+   "avg_minutes": 137.9589644289855,
+   "avg_out_tok_k": 137.6941739130435,
+   "avg_steps": 152.7391304347826,
    "complete": false
   },
   {
@@ -74,6 +74,17 @@
  "trials": {
   "qwen3.8-flash-next-q2__high": [
    {
+    "task": "datacurve/bandit-interprocedural-taint-checks",
+    "trial": "bandit-interprocedural-taint-che__L6waZPa",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5418.171244,
+    "n_output_tokens": 129580,
+    "steps": 151,
+    "peak_context_tokens": 205113
+   },
+   {
     "task": "datacurve/kombu-single-active-consumer-priority",
     "trial": "kombu-single-active-consumer-pri__7XEXcwx",
     "status": "scored",
@@ -83,6 +94,17 @@
     "n_output_tokens": 150640,
     "steps": 196,
     "peak_context_tokens": 249489
+   },
+   {
+    "task": "datacurve/katex-multicolumn-array-spans",
+    "trial": "katex-multicolumn-array-spans__CWdLwJw",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8914.893316,
+    "n_output_tokens": 163245,
+    "steps": 134,
+    "peak_context_tokens": 275393
    },
    {
     "task": "datacurve/skrub-duration-encoding",
@@ -259,6 +281,17 @@
     "n_output_tokens": 150099,
     "steps": 205,
     "peak_context_tokens": 253078
+   },
+   {
+    "task": "datacurve/quill-shared-toolbar-focus",
+    "trial": "quill-shared-toolbar-focus__eqRzQHm",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 19134.667243,
+    "n_output_tokens": 164508,
+    "steps": 160,
+    "peak_context_tokens": 267679
    },
    {
     "task": "datacurve/sqlfmt-create-table-ddl-formatting",
