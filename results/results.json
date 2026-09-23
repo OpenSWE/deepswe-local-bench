@@ -1,6 +1,29 @@
 {
- "generated_at": "2026-09-22 22:53 PDT",
+ "generated_at": "2026-09-23 00:53 PDT",
  "rows": [
+  {
+   "server_id": "qwen3.8-flash-next-q2",
+   "label": "Qwen3.8 Flash Next Q2",
+   "family": "Qwen3.8 Flash Next",
+   "quant": "Q2",
+   "ctx": 393216,
+   "sessions": 3,
+   "mtp": true,
+   "effort": "high",
+   "n_trials": 3,
+   "n_counted": 3,
+   "n_infra": 0,
+   "n_flagged": 0,
+   "pass_at_1": 1.0,
+   "ci_low": 1.0,
+   "ci_high": 1.0,
+   "ci_half": 0.0,
+   "pass_at_1_3h": 1.0,
+   "avg_minutes": 108.80325690555557,
+   "avg_out_tok_k": 143.74766666666665,
+   "avg_steps": 198.66666666666666,
+   "complete": false
+  },
   {
    "server_id": "qwen3.8-flash-next-q2",
    "label": "Qwen3.8 Flash Next Q2",
@@ -49,6 +72,41 @@
   }
  ],
  "trials": {
+  "qwen3.8-flash-next-q2__high": [
+   {
+    "task": "datacurve/skrub-duration-encoding",
+    "trial": "skrub-duration-encoding__67a43yA",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5695.780405,
+    "n_output_tokens": 117581,
+    "steps": 219,
+    "peak_context_tokens": 253806
+   },
+   {
+    "task": "datacurve/prometheus-typed-label-sorting",
+    "trial": "prometheus-typed-label-sorting__odcRu2f",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7064.878766,
+    "n_output_tokens": 158674,
+    "steps": 181,
+    "peak_context_tokens": 243830
+   },
+   {
+    "task": "datacurve/python-statemachine-state-data-scoping",
+    "trial": "python-statemachine-state-data-s__bFEXvmt",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6823.927072,
+    "n_output_tokens": 154988,
+    "steps": 196,
+    "peak_context_tokens": 292201
+   }
+  ],
   "qwen3.8-flash-next-q2__low": [
    {
     "task": "datacurve/kcp-go-multiplexed-kcp-streams",
