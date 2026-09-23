@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 00:53 PDT",
+ "generated_at": "2026-09-23 02:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 3,
-   "n_counted": 3,
+   "n_trials": 6,
+   "n_counted": 6,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 1.0,
-   "ci_low": 1.0,
+   "pass_at_1": 0.6666666666666666,
+   "ci_low": 0.3333333333333333,
    "ci_high": 1.0,
-   "ci_half": 0.0,
-   "pass_at_1_3h": 1.0,
-   "avg_minutes": 108.80325690555557,
-   "avg_out_tok_k": 143.74766666666665,
-   "avg_steps": 198.66666666666666,
+   "ci_half": 0.33333333333333337,
+   "pass_at_1_3h": 0.6666666666666666,
+   "avg_minutes": 114.00660090555556,
+   "avg_out_tok_k": 139.378,
+   "avg_steps": 166.16666666666666,
    "complete": false
   },
   {
@@ -105,6 +105,39 @@
     "n_output_tokens": 154988,
     "steps": 196,
     "peak_context_tokens": 292201
+   },
+   {
+    "task": "datacurve/ofetch-per-origin-circuit-breaker",
+    "trial": "ofetch-per-origin-circuit-breake__BNrVVba",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7365.050753,
+    "n_output_tokens": 124903,
+    "steps": 78,
+    "peak_context_tokens": 213768
+   },
+   {
+    "task": "datacurve/anko-typed-variable-bindings",
+    "trial": "anko-typed-variable-bindings__uCtdMQb",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6437.525445,
+    "n_output_tokens": 130023,
+    "steps": 118,
+    "peak_context_tokens": 208360
+   },
+   {
+    "task": "datacurve/numba-stencil-boundary-modes",
+    "trial": "numba-stencil-boundary-modes__KMKHwv4",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7655.213885,
+    "n_output_tokens": 150099,
+    "steps": 205,
+    "peak_context_tokens": 253078
    }
   ],
   "qwen3.8-flash-next-q2__low": [
