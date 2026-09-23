@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 04:53 PDT",
+ "generated_at": "2026-09-23 06:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 9,
-   "n_counted": 9,
+   "n_trials": 12,
+   "n_counted": 12,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.6666666666666666,
-   "ci_low": 0.3333333333333333,
-   "ci_high": 0.8888888888888888,
-   "ci_half": 0.2777777777777778,
-   "pass_at_1_3h": 0.6666666666666666,
-   "avg_minutes": 109.50659094444445,
-   "avg_out_tok_k": 136.16488888888887,
-   "avg_steps": 157.44444444444446,
+   "pass_at_1": 0.5,
+   "ci_low": 0.25,
+   "ci_high": 0.75,
+   "ci_half": 0.25,
+   "pass_at_1_3h": 0.5,
+   "avg_minutes": 107.56770837916666,
+   "avg_out_tok_k": 135.54375,
+   "avg_steps": 159.5,
    "complete": false
   },
   {
@@ -162,6 +162,17 @@
     "peak_context_tokens": 208360
    },
    {
+    "task": "datacurve/abs-stepped-slices",
+    "trial": "abs-stepped-slices__2hJwenF",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4683.02249,
+    "n_output_tokens": 104761,
+    "steps": 123,
+    "peak_context_tokens": 165054
+   },
+   {
     "task": "datacurve/numba-stencil-boundary-modes",
     "trial": "numba-stencil-boundary-modes__KMKHwv4",
     "status": "scored",
@@ -171,6 +182,28 @@
     "n_output_tokens": 150099,
     "steps": 205,
     "peak_context_tokens": 253078
+   },
+   {
+    "task": "datacurve/sqlfmt-create-table-ddl-formatting",
+    "trial": "sqlfmt-create-table-ddl-formatti__vC5Tw34",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7935.03639,
+    "n_output_tokens": 180029,
+    "steps": 157,
+    "peak_context_tokens": 270270
+   },
+   {
+    "task": "datacurve/eicrud-keyset-pagination-cursor",
+    "trial": "eicrud-keyset-pagination-cursor__gFGR8To",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5697.132043,
+    "n_output_tokens": 116251,
+    "steps": 217,
+    "peak_context_tokens": 225760
    }
   ],
   "qwen3.8-flash-next-q2__low": [
