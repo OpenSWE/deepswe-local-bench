@@ -86,7 +86,7 @@ The driver is resumable and idempotent. If the tab closes, the machine reboots, 
 interrupted, rerun exactly the same command:
 
 ```bash
-python3 scripts/run_matrix.py 2>&1 | tee -a runs/driver.log
+python3 scripts/run_matrix.py 2>&1 | tee -a runs/matrix.log
 ```
 
 Finished jobs are skipped, an unfinished job is continued with `pier job resume`, and trials that
