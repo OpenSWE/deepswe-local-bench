@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 02:53 PDT",
+ "generated_at": "2026-09-23 04:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 6,
-   "n_counted": 6,
+   "n_trials": 9,
+   "n_counted": 9,
    "n_infra": 0,
    "n_flagged": 0,
    "pass_at_1": 0.6666666666666666,
    "ci_low": 0.3333333333333333,
-   "ci_high": 1.0,
-   "ci_half": 0.33333333333333337,
+   "ci_high": 0.8888888888888888,
+   "ci_half": 0.2777777777777778,
    "pass_at_1_3h": 0.6666666666666666,
-   "avg_minutes": 114.00660090555556,
-   "avg_out_tok_k": 139.378,
-   "avg_steps": 166.16666666666666,
+   "avg_minutes": 109.50659094444445,
+   "avg_out_tok_k": 136.16488888888887,
+   "avg_steps": 157.44444444444446,
    "complete": false
   },
   {
@@ -74,6 +74,17 @@
  "trials": {
   "qwen3.8-flash-next-q2__high": [
    {
+    "task": "datacurve/kombu-single-active-consumer-priority",
+    "trial": "kombu-single-active-consumer-pri__7XEXcwx",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8095.988388,
+    "n_output_tokens": 150640,
+    "steps": 196,
+    "peak_context_tokens": 249489
+   },
+   {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__67a43yA",
     "status": "scored",
@@ -83,6 +94,28 @@
     "n_output_tokens": 117581,
     "steps": 219,
     "peak_context_tokens": 253806
+   },
+   {
+    "task": "datacurve/true-myth-iterable-collection-combinators",
+    "trial": "true-myth-iterable-collection-co__EGKvmEx",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5473.450747,
+    "n_output_tokens": 127444,
+    "steps": 131,
+    "peak_context_tokens": 252807
+   },
+   {
+    "task": "datacurve/ytt-jsonpath-query-api",
+    "trial": "ytt-jsonpath-query-api__6ksapwr",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4521.743649,
+    "n_output_tokens": 111132,
+    "steps": 93,
+    "peak_context_tokens": 155861
    },
    {
     "task": "datacurve/prometheus-typed-label-sorting",
