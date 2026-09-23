@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 12:53 PDT",
+ "generated_at": "2026-09-23 14:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 17,
-   "n_counted": 17,
+   "n_trials": 20,
+   "n_counted": 20,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.35294117647058826,
-   "ci_low": 0.11764705882352941,
-   "ci_high": 0.5882352941176471,
-   "ci_half": 0.23529411764705882,
-   "pass_at_1_3h": 0.35294117647058826,
-   "avg_minutes": 126.58851597058825,
-   "avg_out_tok_k": 133.7984705882353,
-   "avg_steps": 152.76470588235293,
+   "pass_at_1": 0.4,
+   "ci_low": 0.2,
+   "ci_high": 0.6,
+   "ci_half": 0.19999999999999998,
+   "pass_at_1_3h": 0.35,
+   "avg_minutes": 130.76303259083335,
+   "avg_out_tok_k": 135.48165,
+   "avg_steps": 153.4,
    "complete": false
   },
   {
@@ -184,6 +184,17 @@
     "peak_context_tokens": 213768
    },
    {
+    "task": "datacurve/claude-code-by-agents-recursive-delegation",
+    "trial": "claude-code-by-agents-recursive__pv9o6W7",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4642.085415,
+    "n_output_tokens": 86371,
+    "steps": 113,
+    "peak_context_tokens": 159589
+   },
+   {
     "task": "datacurve/kysely-window-grouping-helpers",
     "trial": "kysely-window-grouping-helpers__eNwart5",
     "status": "scored",
@@ -193,6 +204,17 @@
     "n_output_tokens": 146263,
     "steps": 154,
     "peak_context_tokens": 240136
+   },
+   {
+    "task": "datacurve/langchain-request-coalescing",
+    "trial": "langchain-request-coalescing__HevzCQv",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 16914.860924,
+    "n_output_tokens": 247265,
+    "steps": 214,
+    "peak_context_tokens": 344851
    },
    {
     "task": "datacurve/httpx-multipart-response-parsing",
@@ -248,6 +270,17 @@
     "n_output_tokens": 180029,
     "steps": 157,
     "peak_context_tokens": 270270
+   },
+   {
+    "task": "datacurve/fd-deterministic-multi-key-sorting",
+    "trial": "fd-deterministic-multi-key-sorti__BBrqsf8",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6238.40648,
+    "n_output_tokens": 101423,
+    "steps": 144,
+    "peak_context_tokens": 198778
    },
    {
     "task": "datacurve/eicrud-keyset-pagination-cursor",
