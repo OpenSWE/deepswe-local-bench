@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 18:53 PDT",
+ "generated_at": "2026-09-22 20:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 105,
-   "n_counted": 105,
+   "n_trials": 110,
+   "n_counted": 110,
    "n_infra": 0,
    "n_flagged": 0,
    "pass_at_1": 0.6,
-   "ci_low": 0.5047619047619047,
-   "ci_high": 0.6952380952380952,
-   "ci_half": 0.09523809523809523,
+   "ci_low": 0.509090909090909,
+   "ci_high": 0.6909090909090909,
+   "ci_half": 0.09090909090909094,
    "pass_at_1_3h": 0.6,
-   "avg_minutes": 75.2283093215873,
-   "avg_out_tok_k": 91.5483619047619,
-   "avg_steps": 118.47619047619048,
+   "avg_minutes": 75.34222821454546,
+   "avg_out_tok_k": 91.80543636363637,
+   "avg_steps": 119.96363636363637,
    "complete": false
   }
  ],
@@ -1428,6 +1428,28 @@
     "peak_context_tokens": 116884
    },
    {
+    "task": "datacurve/koota-entity-snapshot-rollback",
+    "trial": "koota-entity-snapshot-rollback__bt6Jib7",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3119.64933,
+    "n_output_tokens": 53888,
+    "steps": 71,
+    "peak_context_tokens": 104250
+   },
+   {
+    "task": "datacurve/ipython-session-bundle-replay",
+    "trial": "ipython-session-bundle-replay__ZvTDEmh",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3217.745826,
+    "n_output_tokens": 72933,
+    "steps": 125,
+    "peak_context_tokens": 120945
+   },
+   {
     "task": "datacurve/wazero-multi-module-snapshots",
     "trial": "wazero-multi-module-snapshots__Nyy5LCt",
     "status": "scored",
@@ -1879,6 +1901,17 @@
     "peak_context_tokens": 136343
    },
    {
+    "task": "datacurve/dynamodb-toolbox-conditional-attribute-requirements",
+    "trial": "dynamodb-toolbox-conditional-att__ciw4AMP",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5923.723901,
+    "n_output_tokens": 104423,
+    "steps": 254,
+    "peak_context_tokens": 254157
+   },
+   {
     "task": "datacurve/anko-typed-variable-bindings",
     "trial": "anko-typed-variable-bindings__Gp5Hohd",
     "status": "scored",
@@ -1987,6 +2020,17 @@
     "n_output_tokens": 63226,
     "steps": 105,
     "peak_context_tokens": 109687
+   },
+   {
+    "task": "datacurve/helm-array-merge-strategies",
+    "trial": "helm-array-merge-strategies__9Q6u4qG",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4413.533797,
+    "n_output_tokens": 99796,
+    "steps": 151,
+    "peak_context_tokens": 160746
    },
    {
     "task": "datacurve/updo-policy-alerting",
@@ -2196,6 +2240,17 @@
     "n_output_tokens": 102780,
     "steps": 160,
     "peak_context_tokens": 167230
+   },
+   {
+    "task": "datacurve/koota-pair-relation-tracking",
+    "trial": "koota-pair-relation-tracking__4fGSjU6",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6645.704636,
+    "n_output_tokens": 154980,
+    "steps": 155,
+    "peak_context_tokens": 253319
    },
    {
     "task": "datacurve/aiomonitor-task-snapshots-diff",
