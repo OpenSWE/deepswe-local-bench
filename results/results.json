@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 10:53 PDT",
+ "generated_at": "2026-09-23 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 15,
-   "n_counted": 15,
+   "n_trials": 17,
+   "n_counted": 17,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.4,
-   "ci_low": 0.13333333333333333,
-   "ci_high": 0.6666666666666666,
-   "ci_half": 0.26666666666666666,
-   "pass_at_1_3h": 0.4,
-   "avg_minutes": 107.38519765222222,
-   "avg_out_tok_k": 133.241,
-   "avg_steps": 156.66666666666666,
+   "pass_at_1": 0.35294117647058826,
+   "ci_low": 0.11764705882352941,
+   "ci_high": 0.5882352941176471,
+   "ci_half": 0.23529411764705882,
+   "pass_at_1_3h": 0.35294117647058826,
+   "avg_minutes": 126.58851597058825,
+   "avg_out_tok_k": 133.7984705882353,
+   "avg_steps": 152.76470588235293,
    "complete": false
   },
   {
@@ -96,6 +96,17 @@
     "peak_context_tokens": 253806
    },
    {
+    "task": "datacurve/happy-dom-deterministic-intersectionobserver",
+    "trial": "happy-dom-deterministic-intersec__rgdtndQ",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 10873.522864,
+    "n_output_tokens": 156092,
+    "steps": 192,
+    "peak_context_tokens": 250311
+   },
+   {
     "task": "datacurve/true-myth-iterable-collection-combinators",
     "trial": "true-myth-iterable-collection-co__EGKvmEx",
     "status": "scored",
@@ -127,6 +138,17 @@
     "n_output_tokens": 158674,
     "steps": 181,
     "peak_context_tokens": 243830
+   },
+   {
+    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
+    "trial": "sql-formatter-bigquery-pipe-form__nTTJdp3",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.085539,
+    "n_output_tokens": 119867,
+    "steps": 55,
+    "peak_context_tokens": 182438
    },
    {
     "task": "datacurve/geo-shapeindex-serialization",
