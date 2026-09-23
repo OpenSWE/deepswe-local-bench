@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 06:53 PDT",
+ "generated_at": "2026-09-23 08:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 12,
-   "n_counted": 12,
+   "n_trials": 14,
+   "n_counted": 14,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5,
-   "ci_low": 0.25,
-   "ci_high": 0.75,
-   "ci_half": 0.25,
-   "pass_at_1_3h": 0.5,
-   "avg_minutes": 107.56770837916666,
-   "avg_out_tok_k": 135.54375,
-   "avg_steps": 159.5,
+   "pass_at_1": 0.42857142857142855,
+   "ci_low": 0.14285714285714285,
+   "ci_high": 0.7142857142857143,
+   "ci_half": 0.2857142857142857,
+   "pass_at_1_3h": 0.42857142857142855,
+   "avg_minutes": 106.89130756547618,
+   "avg_out_tok_k": 133.33214285714286,
+   "avg_steps": 156.07142857142858,
    "complete": false
   },
   {
@@ -149,6 +149,28 @@
     "n_output_tokens": 124903,
     "steps": 78,
     "peak_context_tokens": 213768
+   },
+   {
+    "task": "datacurve/kysely-window-grouping-helpers",
+    "trial": "kysely-window-grouping-helpers__eNwart5",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7003.146874,
+    "n_output_tokens": 146263,
+    "steps": 154,
+    "peak_context_tokens": 240136
+   },
+   {
+    "task": "datacurve/httpx-multipart-response-parsing",
+    "trial": "httpx-multipart-response-parsing__CgpMtrq",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5336.801448,
+    "n_output_tokens": 93862,
+    "steps": 117,
+    "peak_context_tokens": 178230
    },
    {
     "task": "datacurve/anko-typed-variable-bindings",
