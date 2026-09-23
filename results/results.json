@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-22 16:53 PDT",
+ "generated_at": "2026-09-22 18:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -33,18 +33,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 101,
-   "n_counted": 101,
+   "n_trials": 105,
+   "n_counted": 105,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.594059405940594,
-   "ci_low": 0.49504950495049505,
-   "ci_high": 0.6831683168316832,
-   "ci_half": 0.09405940594059409,
-   "pass_at_1_3h": 0.594059405940594,
-   "avg_minutes": 75.21431348217821,
-   "avg_out_tok_k": 91.59560396039603,
-   "avg_steps": 117.73267326732673,
+   "pass_at_1": 0.6,
+   "ci_low": 0.5047619047619047,
+   "ci_high": 0.6952380952380952,
+   "ci_half": 0.09523809523809523,
+   "pass_at_1_3h": 0.6,
+   "avg_minutes": 75.2283093215873,
+   "avg_out_tok_k": 91.5483619047619,
+   "avg_steps": 118.47619047619048,
    "complete": false
   }
  ],
@@ -1626,6 +1626,17 @@
     "peak_context_tokens": 232246
    },
    {
+    "task": "datacurve/awilix-async-container-initialization",
+    "trial": "awilix-async-container-initializ__XgjqrMc",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6435.876414,
+    "n_output_tokens": 93998,
+    "steps": 87,
+    "peak_context_tokens": 137292
+   },
+   {
     "task": "datacurve/arcane-drift-detection-baselines",
     "trial": "arcane-drift-detection-baselines__hmCBbfJ",
     "status": "scored",
@@ -1668,6 +1679,28 @@
     "n_output_tokens": 96569,
     "steps": 82,
     "peak_context_tokens": 145668
+   },
+   {
+    "task": "datacurve/meriyah-explicit-resource-declarations",
+    "trial": "meriyah-explicit-resource-declar__MVQ9b5R",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6570.847539,
+    "n_output_tokens": 130927,
+    "steps": 248,
+    "peak_context_tokens": 251090
+   },
+   {
+    "task": "datacurve/clack-async-autocomplete-options",
+    "trial": "clack-async-autocomplete-options__Z9kDo3p",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2936.823263,
+    "n_output_tokens": 73271,
+    "steps": 109,
+    "peak_context_tokens": 130557
    },
    {
     "task": "datacurve/pest-character-class-coalescing",
@@ -1943,6 +1976,17 @@
     "n_output_tokens": 104853,
     "steps": 137,
     "peak_context_tokens": 174728
+   },
+   {
+    "task": "datacurve/cattrs-partial-structuring-recovery",
+    "trial": "cattrs-partial-structuring-recov__SHa8X7p",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 2196.061808,
+    "n_output_tokens": 63226,
+    "steps": 105,
+    "peak_context_tokens": 109687
    },
    {
     "task": "datacurve/updo-policy-alerting",
