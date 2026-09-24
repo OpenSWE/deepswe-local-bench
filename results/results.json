@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 02:53 PDT",
+ "generated_at": "2026-09-24 04:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 39,
-   "n_counted": 39,
+   "n_trials": 41,
+   "n_counted": 41,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5128205128205128,
-   "ci_low": 0.358974358974359,
-   "ci_high": 0.6666666666666666,
-   "ci_half": 0.15384615384615383,
-   "pass_at_1_3h": 0.48717948717948717,
-   "avg_minutes": 126.80689118632479,
-   "avg_out_tok_k": 136.7258205128205,
-   "avg_steps": 155.15384615384616,
+   "pass_at_1": 0.4878048780487805,
+   "ci_low": 0.34146341463414637,
+   "ci_high": 0.6341463414634146,
+   "ci_half": 0.14634146341463414,
+   "pass_at_1_3h": 0.4634146341463415,
+   "avg_minutes": 126.22936547804878,
+   "avg_out_tok_k": 137.52046341463415,
+   "avg_steps": 154.390243902439,
    "complete": false
   },
   {
@@ -382,6 +382,17 @@
     "peak_context_tokens": 165054
    },
    {
+    "task": "datacurve/koota-deferred-mutation-buffer",
+    "trial": "koota-deferred-mutation-buffer__LZ2i3kL",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6183.681902,
+    "n_output_tokens": 151534,
+    "steps": 143,
+    "peak_context_tokens": 268711
+   },
+   {
     "task": "datacurve/httpx-streaming-json-iteration",
     "trial": "httpx-streaming-json-iteration__cd3aUTQ",
     "status": "scored",
@@ -446,6 +457,17 @@
     "n_output_tokens": 180029,
     "steps": 157,
     "peak_context_tokens": 270270
+   },
+   {
+    "task": "datacurve/bandit-structured-nosec-directives",
+    "trial": "bandit-structured-nosec-directiv__zat3PRg",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7612.431798,
+    "n_output_tokens": 154498,
+    "steps": 136,
+    "peak_context_tokens": 247162
    },
    {
     "task": "datacurve/httpx-deterministic-cookie-store",
