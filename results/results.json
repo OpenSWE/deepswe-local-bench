@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 20:53 PDT",
+ "generated_at": "2026-09-23 22:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 29,
-   "n_counted": 29,
+   "n_trials": 33,
+   "n_counted": 33,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.4827586206896552,
-   "ci_low": 0.3103448275862069,
-   "ci_high": 0.6551724137931034,
-   "ci_half": 0.17241379310344826,
-   "pass_at_1_3h": 0.4482758620689655,
-   "avg_minutes": 131.99930437413792,
-   "avg_out_tok_k": 136.24131034482758,
-   "avg_steps": 154.06896551724137,
+   "pass_at_1": 0.5151515151515151,
+   "ci_low": 0.3333333333333333,
+   "ci_high": 0.696969696969697,
+   "ci_half": 0.18181818181818185,
+   "pass_at_1_3h": 0.48484848484848486,
+   "avg_minutes": 127.39582443535352,
+   "avg_out_tok_k": 137.51742424242425,
+   "avg_steps": 156.57575757575756,
    "complete": false
   },
   {
@@ -272,6 +272,17 @@
     "peak_context_tokens": 344851
    },
    {
+    "task": "datacurve/arktype-json-schema-refs-dependencies",
+    "trial": "arktype-json-schema-refs-depende__r4Hseya",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7977.593109,
+    "n_output_tokens": 192299,
+    "steps": 265,
+    "peak_context_tokens": 304261
+   },
+   {
     "task": "datacurve/httpx-multipart-response-parsing",
     "trial": "httpx-multipart-response-parsing__CgpMtrq",
     "status": "scored",
@@ -305,6 +316,17 @@
     "peak_context_tokens": 208360
    },
    {
+    "task": "datacurve/koota-query-predicates",
+    "trial": "koota-query-predicates__bWSLwNd",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6035.726668,
+    "n_output_tokens": 151166,
+    "steps": 188,
+    "peak_context_tokens": 293607
+   },
+   {
     "task": "datacurve/abs-stepped-slices",
     "trial": "abs-stepped-slices__2hJwenF",
     "status": "scored",
@@ -314,6 +336,17 @@
     "n_output_tokens": 104761,
     "steps": 123,
     "peak_context_tokens": 165054
+   },
+   {
+    "task": "datacurve/mobly-grouped-test-barriers",
+    "trial": "mobly-grouped-test-barriers__KZHpFAh",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4634.653618,
+    "n_output_tokens": 140645,
+    "steps": 116,
+    "peak_context_tokens": 205329
    },
    {
     "task": "datacurve/numba-stencil-boundary-modes",
@@ -380,6 +413,17 @@
     "n_output_tokens": 116251,
     "steps": 217,
     "peak_context_tokens": 225760
+   },
+   {
+    "task": "datacurve/testem-bail-on-test-failure",
+    "trial": "testem-bail-on-test-failure__tM2y7gJ",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 3916.969376,
+    "n_output_tokens": 102967,
+    "steps": 130,
+    "peak_context_tokens": 175886
    },
    {
     "task": "datacurve/vitest-duration-sharding",
