@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 14:53 PDT",
+ "generated_at": "2026-09-24 16:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 48,
-   "n_counted": 48,
+   "n_trials": 50,
+   "n_counted": 50,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.4791666666666667,
-   "ci_low": 0.3333333333333333,
-   "ci_high": 0.625,
-   "ci_half": 0.14583333333333334,
-   "pass_at_1_3h": 0.4583333333333333,
-   "avg_minutes": 135.49953574131945,
-   "avg_out_tok_k": 133.92497916666665,
-   "avg_steps": 147.52083333333334,
+   "pass_at_1": 0.48,
+   "ci_low": 0.34,
+   "ci_high": 0.62,
+   "ci_half": 0.13999999999999999,
+   "pass_at_1_3h": 0.46,
+   "avg_minutes": 135.84984789566667,
+   "avg_out_tok_k": 133.26764,
+   "avg_steps": 148.78,
    "complete": false
   },
   {
@@ -237,6 +237,17 @@
     "n_output_tokens": 131965,
     "steps": 165,
     "peak_context_tokens": 215662
+   },
+   {
+    "task": "datacurve/pest-character-class-coalescing",
+    "trial": "pest-character-class-coalescing__R9iNMyR",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 8368.965092,
+    "n_output_tokens": 137296,
+    "steps": 182,
+    "peak_context_tokens": 229238
    },
    {
     "task": "datacurve/python-statemachine-state-data-scoping",
@@ -490,6 +501,17 @@
     "n_output_tokens": 130562,
     "steps": 246,
     "peak_context_tokens": 267795
+   },
+   {
+    "task": "datacurve/prometheus-transactional-reload-status",
+    "trial": "prometheus-transactional-reload__mSXmvF8",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8941.91566,
+    "n_output_tokens": 97687,
+    "steps": 176,
+    "peak_context_tokens": 189458
    },
    {
     "task": "datacurve/numba-stencil-boundary-modes",
