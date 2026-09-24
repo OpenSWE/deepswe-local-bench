@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-23 18:53 PDT",
+ "generated_at": "2026-09-23 20:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 25,
-   "n_counted": 25,
+   "n_trials": 29,
+   "n_counted": 29,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.44,
-   "ci_low": 0.24,
-   "ci_high": 0.64,
-   "ci_half": 0.2,
-   "pass_at_1_3h": 0.4,
-   "avg_minutes": 137.27348686866665,
-   "avg_out_tok_k": 136.1418,
-   "avg_steps": 152.68,
+   "pass_at_1": 0.4827586206896552,
+   "ci_low": 0.3103448275862069,
+   "ci_high": 0.6551724137931034,
+   "ci_half": 0.17241379310344826,
+   "pass_at_1_3h": 0.4482758620689655,
+   "avg_minutes": 131.99930437413792,
+   "avg_out_tok_k": 136.24131034482758,
+   "avg_steps": 154.06896551724137,
    "complete": false
   },
   {
@@ -173,6 +173,17 @@
     "peak_context_tokens": 182438
    },
    {
+    "task": "datacurve/expr-try-catch-errors",
+    "trial": "expr-try-catch-errors__Ev36MGi",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5864.890531,
+    "n_output_tokens": 148672,
+    "steps": 155,
+    "peak_context_tokens": 244784
+   },
+   {
     "task": "datacurve/geo-shapeindex-serialization",
     "trial": "geo-shapeindex-serialization__PJnJ6gN",
     "status": "scored",
@@ -204,6 +215,17 @@
     "n_output_tokens": 124903,
     "steps": 78,
     "peak_context_tokens": 213768
+   },
+   {
+    "task": "datacurve/psd-tools-blend-range-api",
+    "trial": "psd-tools-blend-range-api__xT6GCKU",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4352.246789,
+    "n_output_tokens": 117313,
+    "steps": 114,
+    "peak_context_tokens": 194607
    },
    {
     "task": "datacurve/claude-code-by-agents-recursive-delegation",
@@ -259,6 +281,17 @@
     "n_output_tokens": 93862,
     "steps": 117,
     "peak_context_tokens": 178230
+   },
+   {
+    "task": "datacurve/vulture-persistent-analysis-cache",
+    "trial": "vulture-persistent-analysis-cach__ubrPuhZ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7769.481021,
+    "n_output_tokens": 165118,
+    "steps": 152,
+    "peak_context_tokens": 234962
    },
    {
     "task": "datacurve/anko-typed-variable-bindings",
@@ -347,6 +380,17 @@
     "n_output_tokens": 116251,
     "steps": 217,
     "peak_context_tokens": 225760
+   },
+   {
+    "task": "datacurve/vitest-duration-sharding",
+    "trial": "vitest-duration-sharding__eokdwoL",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5781.940967,
+    "n_output_tokens": 116350,
+    "steps": 230,
+    "peak_context_tokens": 235239
    }
   ],
   "qwen3.8-flash-next-q2__low": [
