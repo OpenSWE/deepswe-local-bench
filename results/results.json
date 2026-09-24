@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 04:53 PDT",
+ "generated_at": "2026-09-24 06:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 41,
-   "n_counted": 41,
+   "n_trials": 43,
+   "n_counted": 43,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.4878048780487805,
-   "ci_low": 0.34146341463414637,
-   "ci_high": 0.6341463414634146,
-   "ci_half": 0.14634146341463414,
-   "pass_at_1_3h": 0.4634146341463415,
-   "avg_minutes": 126.22936547804878,
-   "avg_out_tok_k": 137.52046341463415,
-   "avg_steps": 154.390243902439,
+   "pass_at_1": 0.5116279069767442,
+   "ci_low": 0.37209302325581395,
+   "ci_high": 0.6511627906976745,
+   "ci_half": 0.13953488372093026,
+   "pass_at_1_3h": 0.4883720930232558,
+   "avg_minutes": 125.28018737480622,
+   "avg_out_tok_k": 136.77751162790696,
+   "avg_steps": 152.69767441860466,
    "complete": false
   },
   {
@@ -250,6 +250,17 @@
     "peak_context_tokens": 213768
    },
    {
+    "task": "datacurve/participle-grammar-conflict-analysis",
+    "trial": "participle-grammar-conflict-anal__DFgzspF",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7773.731839,
+    "n_output_tokens": 119407,
+    "steps": 113,
+    "peak_context_tokens": 193531
+   },
+   {
     "task": "datacurve/updo-policy-alerting",
     "trial": "updo-policy-alerting__ouni3cR",
     "status": "scored",
@@ -292,6 +303,17 @@
     "n_output_tokens": 146263,
     "steps": 154,
     "peak_context_tokens": 240136
+   },
+   {
+    "task": "datacurve/aiomonitor-task-snapshots-diff",
+    "trial": "aiomonitor-task-snapshots-diff__jmFcRj3",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4924.912512,
+    "n_output_tokens": 123687,
+    "steps": 123,
+    "peak_context_tokens": 211584
    },
    {
     "task": "datacurve/goreleaser-retry-publish-auditing",
