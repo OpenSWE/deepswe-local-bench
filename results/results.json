@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 10:53 PDT",
+ "generated_at": "2026-09-24 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 46,
-   "n_counted": 46,
+   "n_trials": 48,
+   "n_counted": 48,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5,
-   "ci_low": 0.3695652173913043,
-   "ci_high": 0.6304347826086957,
-   "ci_half": 0.13043478260869568,
-   "pass_at_1_3h": 0.4782608695652174,
-   "avg_minutes": 129.370831767029,
-   "avg_out_tok_k": 134.206,
-   "avg_steps": 148.34782608695653,
+   "pass_at_1": 0.4791666666666667,
+   "ci_low": 0.3333333333333333,
+   "ci_high": 0.625,
+   "ci_half": 0.14583333333333334,
+   "pass_at_1_3h": 0.4583333333333333,
+   "avg_minutes": 135.49953574131945,
+   "avg_out_tok_k": 133.92497916666665,
+   "avg_steps": 147.52083333333334,
    "complete": false
   },
   {
@@ -415,6 +415,17 @@
     "peak_context_tokens": 293607
    },
    {
+    "task": "datacurve/koota-composite-trait-aspects",
+    "trial": "koota-composite-trait-aspects__wrBKXiE",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 11575.074111,
+    "n_output_tokens": 140228,
+    "steps": 163,
+    "peak_context_tokens": 297418
+   },
+   {
     "task": "datacurve/abs-stepped-slices",
     "trial": "abs-stepped-slices__2hJwenF",
     "status": "scored",
@@ -567,6 +578,17 @@
     "n_output_tokens": 102967,
     "steps": 130,
     "peak_context_tokens": 175886
+   },
+   {
+    "task": "datacurve/tengo-callable-instance-isolation",
+    "trial": "tengo-callable-instance-isolatio__4Ac73BJ",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.093147,
+    "n_output_tokens": 114695,
+    "steps": 94,
+    "peak_context_tokens": 170242
    },
    {
     "task": "datacurve/vitest-duration-sharding",
