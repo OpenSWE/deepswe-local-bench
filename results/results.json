@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 00:53 PDT",
+ "generated_at": "2026-09-25 02:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 60,
-   "n_counted": 60,
+   "n_trials": 62,
+   "n_counted": 62,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5166666666666667,
-   "ci_low": 0.4,
-   "ci_high": 0.65,
-   "ci_half": 0.125,
-   "pass_at_1_3h": 0.4666666666666667,
-   "avg_minutes": 140.6473919888889,
-   "avg_out_tok_k": 129.23765,
-   "avg_steps": 147.35,
+   "pass_at_1": 0.5161290322580645,
+   "ci_low": 0.3870967741935484,
+   "ci_high": 0.6451612903225806,
+   "ci_half": 0.12903225806451613,
+   "pass_at_1_3h": 0.46774193548387094,
+   "avg_minutes": 140.7004343873656,
+   "avg_out_tok_k": 129.4421129032258,
+   "avg_steps": 148.43548387096774,
    "complete": false
   },
   {
@@ -239,6 +239,17 @@
     "peak_context_tokens": 147523
    },
    {
+    "task": "datacurve/gql-incremental-graphql-delivery",
+    "trial": "gql-incremental-graphql-delivery__b2JzTqu",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 9537.362883,
+    "n_output_tokens": 152188,
+    "steps": 240,
+    "peak_context_tokens": 256572
+   },
+   {
     "task": "datacurve/expr-try-catch-errors",
     "trial": "expr-try-catch-errors__Ev36MGi",
     "status": "scored",
@@ -314,6 +325,17 @@
     "n_output_tokens": 139802,
     "steps": 174,
     "peak_context_tokens": 251013
+   },
+   {
+    "task": "datacurve/bandit-incremental-cache-control",
+    "trial": "bandit-incremental-cache-control__sfwSzDM",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7537.641878,
+    "n_output_tokens": 118964,
+    "steps": 122,
+    "peak_context_tokens": 183572
    },
    {
     "task": "datacurve/participle-grammar-conflict-analysis",
