@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 20:53 PDT",
+ "generated_at": "2026-09-24 22:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 55,
-   "n_counted": 55,
+   "n_trials": 58,
+   "n_counted": 58,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.509090909090909,
-   "ci_low": 0.38181818181818183,
-   "ci_high": 0.6363636363636364,
-   "ci_half": 0.12727272727272726,
-   "pass_at_1_3h": 0.4727272727272727,
-   "avg_minutes": 139.31429417484847,
-   "avg_out_tok_k": 129.48561818181818,
-   "avg_steps": 145.83636363636364,
+   "pass_at_1": 0.5172413793103449,
+   "ci_low": 0.39655172413793105,
+   "ci_high": 0.6551724137931034,
+   "ci_half": 0.1293103448275862,
+   "pass_at_1_3h": 0.46551724137931033,
+   "avg_minutes": 140.62540312442528,
+   "avg_out_tok_k": 129.53063793103448,
+   "avg_steps": 147.18965517241378,
    "complete": false
   },
   {
@@ -294,6 +294,17 @@
     "peak_context_tokens": 213768
    },
    {
+    "task": "datacurve/adaptix-name-mapping-aliases",
+    "trial": "adaptix-name-mapping-aliases__or9NuKN",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 8422.586722,
+    "n_output_tokens": 139802,
+    "steps": 174,
+    "peak_context_tokens": 251013
+   },
+   {
     "task": "datacurve/participle-grammar-conflict-analysis",
     "trial": "participle-grammar-conflict-anal__DFgzspF",
     "status": "scored",
@@ -525,6 +536,17 @@
     "peak_context_tokens": 126339
    },
    {
+    "task": "datacurve/happy-dom-abort-pending-body-reads",
+    "trial": "happy-dom-abort-pending-body-rea__ML74Rmj",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 15026.066334,
+    "n_output_tokens": 138340,
+    "steps": 211,
+    "peak_context_tokens": 302955
+   },
+   {
     "task": "datacurve/obsidian-linter-scoped-ignore-markers",
     "trial": "obsidian-linter-scoped-ignore-ma__ffp6wYv",
     "status": "scored",
@@ -677,6 +699,17 @@
     "n_output_tokens": 116350,
     "steps": 230,
     "peak_context_tokens": 235239
+   },
+   {
+    "task": "datacurve/fastapi-deprecation-response-headers",
+    "trial": "fastapi-deprecation-response-hea__QZiPHq9",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6190.57904,
+    "n_output_tokens": 112926,
+    "steps": 131,
+    "peak_context_tokens": 176035
    }
   ],
   "qwen3.8-flash-next-q2__low": [
