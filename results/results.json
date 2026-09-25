@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 10:53 PDT",
+ "generated_at": "2026-09-25 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 70,
-   "n_counted": 70,
+   "n_trials": 74,
+   "n_counted": 74,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5142857142857142,
-   "ci_low": 0.4,
-   "ci_high": 0.6285714285714286,
-   "ci_half": 0.11428571428571427,
-   "pass_at_1_3h": 0.45714285714285713,
-   "avg_minutes": 146.62670402809525,
-   "avg_out_tok_k": 130.25761428571428,
-   "avg_steps": 148.42857142857142,
+   "pass_at_1": 0.527027027027027,
+   "ci_low": 0.4189189189189189,
+   "ci_high": 0.6351351351351351,
+   "ci_half": 0.10810810810810809,
+   "pass_at_1_3h": 0.47297297297297297,
+   "avg_minutes": 145.11027438423423,
+   "avg_out_tok_k": 131.66243243243244,
+   "avg_steps": 148.24324324324326,
    "complete": false
   },
   {
@@ -272,6 +272,17 @@
     "peak_context_tokens": 244784
    },
    {
+    "task": "datacurve/pwntools-tube-multiplexing",
+    "trial": "pwntools-tube-multiplexing__w5rg9do",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7979.860459,
+    "n_output_tokens": 164008,
+    "steps": 147,
+    "peak_context_tokens": 230367
+   },
+   {
     "task": "datacurve/geo-shapeindex-serialization",
     "trial": "geo-shapeindex-serialization__PJnJ6gN",
     "status": "scored",
@@ -391,6 +402,17 @@
     "n_output_tokens": 116752,
     "steps": 78,
     "peak_context_tokens": 161927
+   },
+   {
+    "task": "datacurve/scc-bounded-memory-spilling",
+    "trial": "scc-bounded-memory-spilling__GnMRwjE",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6893.44231,
+    "n_output_tokens": 152464,
+    "steps": 171,
+    "peak_context_tokens": 249399
    },
    {
     "task": "datacurve/claude-code-by-agents-recursive-delegation",
@@ -789,6 +811,17 @@
     "peak_context_tokens": 198778
    },
    {
+    "task": "datacurve/kombu-virtual-queue-dead-lettering",
+    "trial": "kombu-virtual-queue-dead-letteri__okTijpS",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7527.628505,
+    "n_output_tokens": 185303,
+    "steps": 148,
+    "peak_context_tokens": 269738
+   },
+   {
     "task": "datacurve/eicrud-keyset-pagination-cursor",
     "trial": "eicrud-keyset-pagination-cursor__gFGR8To",
     "status": "scored",
@@ -809,6 +842,17 @@
     "n_output_tokens": 102967,
     "steps": 130,
     "peak_context_tokens": 175886
+   },
+   {
+    "task": "datacurve/mashumaro-flattened-dataclass-fields",
+    "trial": "mashumaro-flattened-dataclass-fi__tgnvCKP",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 6056.530074,
+    "n_output_tokens": 123212,
+    "steps": 114,
+    "peak_context_tokens": 194267
    },
    {
     "task": "datacurve/tengo-callable-instance-isolation",
