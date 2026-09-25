@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 12:53 PDT",
+ "generated_at": "2026-09-25 14:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 74,
-   "n_counted": 74,
+   "n_trials": 78,
+   "n_counted": 78,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.527027027027027,
-   "ci_low": 0.4189189189189189,
-   "ci_high": 0.6351351351351351,
-   "ci_half": 0.10810810810810809,
-   "pass_at_1_3h": 0.47297297297297297,
-   "avg_minutes": 145.11027438423423,
-   "avg_out_tok_k": 131.66243243243244,
-   "avg_steps": 148.24324324324326,
+   "pass_at_1": 0.5256410256410257,
+   "ci_low": 0.4230769230769231,
+   "ci_high": 0.6410256410256411,
+   "ci_half": 0.108974358974359,
+   "pass_at_1_3h": 0.47435897435897434,
+   "avg_minutes": 143.13316081474358,
+   "avg_out_tok_k": 131.59170512820512,
+   "avg_steps": 148.7948717948718,
    "complete": false
   },
   {
@@ -305,6 +305,17 @@
     "peak_context_tokens": 229238
    },
    {
+    "task": "datacurve/dasel-html-document-format",
+    "trial": "dasel-html-document-format__zLJDAxJ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7108.71041,
+    "n_output_tokens": 140082,
+    "steps": 136,
+    "peak_context_tokens": 218322
+   },
+   {
     "task": "datacurve/python-statemachine-state-data-scoping",
     "trial": "python-statemachine-state-data-s__bFEXvmt",
     "status": "scored",
@@ -435,6 +446,17 @@
     "n_output_tokens": 93936,
     "steps": 140,
     "peak_context_tokens": 156918
+   },
+   {
+    "task": "datacurve/pebble-durability-wait-apis",
+    "trial": "pebble-durability-wait-apis__wjNCfEm",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8989.688007,
+    "n_output_tokens": 167592,
+    "steps": 197,
+    "peak_context_tokens": 266656
    },
    {
     "task": "datacurve/kysely-window-grouping-helpers",
@@ -754,6 +776,28 @@
     "n_output_tokens": 164508,
     "steps": 160,
     "peak_context_tokens": 267679
+   },
+   {
+    "task": "datacurve/wazero-multi-module-snapshots",
+    "trial": "wazero-multi-module-snapshots__vc3YFNZ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4277.176736,
+    "n_output_tokens": 104528,
+    "steps": 89,
+    "peak_context_tokens": 153391
+   },
+   {
+    "task": "datacurve/kgateway-consistent-hash-policy",
+    "trial": "kgateway-consistent-hash-policy__xVtML9U",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 5197.999194,
+    "n_output_tokens": 108931,
+    "steps": 214,
+    "peak_context_tokens": 208734
    },
    {
     "task": "datacurve/sqlfmt-create-table-ddl-formatting",
