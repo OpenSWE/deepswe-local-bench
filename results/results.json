@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 08:53 PDT",
+ "generated_at": "2026-09-25 10:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 68,
-   "n_counted": 68,
+   "n_trials": 70,
+   "n_counted": 70,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5147058823529411,
-   "ci_low": 0.39705882352941174,
-   "ci_high": 0.6323529411764706,
-   "ci_half": 0.11764705882352941,
-   "pass_at_1_3h": 0.45588235294117646,
-   "avg_minutes": 148.14449129828432,
-   "avg_out_tok_k": 129.69926470588234,
-   "avg_steps": 147.61764705882354,
+   "pass_at_1": 0.5142857142857142,
+   "ci_low": 0.4,
+   "ci_high": 0.6285714285714286,
+   "ci_half": 0.11428571428571427,
+   "pass_at_1_3h": 0.45714285714285713,
+   "avg_minutes": 146.62670402809525,
+   "avg_out_tok_k": 130.25761428571428,
+   "avg_steps": 148.42857142857142,
    "complete": false
   },
   {
@@ -459,6 +459,17 @@
     "peak_context_tokens": 344851
    },
    {
+    "task": "datacurve/sqlite-utils-safe-import-checkpoints",
+    "trial": "sqlite-utils-safe-import-checkpo__EodmodC",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6963.22562,
+    "n_output_tokens": 192982,
+    "steps": 176,
+    "peak_context_tokens": 284606
+   },
+   {
     "task": "datacurve/tengo-destructuring-bindings",
     "trial": "tengo-destructuring-bindings__fvY6A9t",
     "status": "failure",
@@ -468,6 +479,17 @@
     "n_output_tokens": 73022,
     "steps": 50,
     "peak_context_tokens": 142444
+   },
+   {
+    "task": "datacurve/returns-validated-error-accumulation",
+    "trial": "returns-validated-error-accumula__7Ewdgpy",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 4439.406801,
+    "n_output_tokens": 105501,
+    "steps": 176,
+    "peak_context_tokens": 215990
    },
    {
     "task": "datacurve/arktype-json-schema-refs-dependencies",
