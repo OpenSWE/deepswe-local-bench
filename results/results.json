@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-24 18:53 PDT",
+ "generated_at": "2026-09-24 20:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 53,
-   "n_counted": 53,
+   "n_trials": 55,
+   "n_counted": 55,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.49056603773584906,
-   "ci_low": 0.3584905660377358,
-   "ci_high": 0.6226415094339622,
-   "ci_half": 0.1320754716981132,
-   "pass_at_1_3h": 0.4716981132075472,
-   "avg_minutes": 138.3684395544025,
-   "avg_out_tok_k": 130.60050943396226,
-   "avg_steps": 148.0566037735849,
+   "pass_at_1": 0.509090909090909,
+   "ci_low": 0.38181818181818183,
+   "ci_high": 0.6363636363636364,
+   "ci_half": 0.12727272727272726,
+   "pass_at_1_3h": 0.4727272727272727,
+   "avg_minutes": 139.31429417484847,
+   "avg_out_tok_k": 129.48561818181818,
+   "avg_steps": 145.83636363636364,
    "complete": false
   },
   {
@@ -217,6 +217,17 @@
     "peak_context_tokens": 276182
    },
    {
+    "task": "datacurve/ts-pattern-match-each",
+    "trial": "ts-pattern-match-each__y5Jx7BY",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 3895.501057,
+    "n_output_tokens": 83130,
+    "steps": 96,
+    "peak_context_tokens": 147523
+   },
+   {
     "task": "datacurve/expr-try-catch-errors",
     "trial": "expr-try-catch-errors__Ev36MGi",
     "status": "scored",
@@ -314,6 +325,17 @@
     "n_output_tokens": 117313,
     "steps": 114,
     "peak_context_tokens": 194607
+   },
+   {
+    "task": "datacurve/termenv-preserve-ansi-resets",
+    "trial": "termenv-preserve-ansi-resets__GKXSugW",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 15830.031937,
+    "n_output_tokens": 116752,
+    "steps": 78,
+    "peak_context_tokens": 161927
    },
    {
     "task": "datacurve/claude-code-by-agents-recursive-delegation",
