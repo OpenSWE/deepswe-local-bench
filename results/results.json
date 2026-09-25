@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 06:53 PDT",
+ "generated_at": "2026-09-25 08:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 65,
-   "n_counted": 65,
+   "n_trials": 68,
+   "n_counted": 68,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5076923076923077,
-   "ci_low": 0.38461538461538464,
-   "ci_high": 0.6307692307692307,
-   "ci_half": 0.12307692307692306,
-   "pass_at_1_3h": 0.46153846153846156,
-   "avg_minutes": 143.72045692871797,
-   "avg_out_tok_k": 127.791,
-   "avg_steps": 146.76923076923077,
+   "pass_at_1": 0.5147058823529411,
+   "ci_low": 0.39705882352941174,
+   "ci_high": 0.6323529411764706,
+   "ci_half": 0.11764705882352941,
+   "pass_at_1_3h": 0.45588235294117646,
+   "avg_minutes": 148.14449129828432,
+   "avg_out_tok_k": 129.69926470588234,
+   "avg_steps": 147.61764705882354,
    "complete": false
   },
   {
@@ -226,6 +226,17 @@
     "n_output_tokens": 170652,
     "steps": 171,
     "peak_context_tokens": 276182
+   },
+   {
+    "task": "datacurve/yaegi-go-embed-directives",
+    "trial": "yaegi-go-embed-directives__6gyUjk4",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 9119.619969,
+    "n_output_tokens": 185330,
+    "steps": 251,
+    "peak_context_tokens": 288709
    },
    {
     "task": "datacurve/ts-pattern-match-each",
@@ -514,6 +525,17 @@
     "peak_context_tokens": 208360
    },
    {
+    "task": "datacurve/obsidian-linter-auto-table-of-contents",
+    "trial": "obsidian-linter-auto-table-of-co__3YdoCeg",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 15765.12864,
+    "n_output_tokens": 104328,
+    "steps": 115,
+    "peak_context_tokens": 223315
+   },
+   {
     "task": "datacurve/koota-query-predicates",
     "trial": "koota-query-predicates__bWSLwNd",
     "status": "scored",
@@ -699,6 +721,17 @@
     "n_output_tokens": 180029,
     "steps": 157,
     "peak_context_tokens": 270270
+   },
+   {
+    "task": "datacurve/tomlkit-toml-table-converters",
+    "trial": "tomlkit-toml-table-converters__ya4K9P2",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 19034.993866,
+    "n_output_tokens": 223477,
+    "steps": 132,
+    "peak_context_tokens": 317203
    },
    {
     "task": "datacurve/bandit-structured-nosec-directives",
