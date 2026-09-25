@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 02:53 PDT",
+ "generated_at": "2026-09-25 04:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 62,
-   "n_counted": 62,
+   "n_trials": 64,
+   "n_counted": 64,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5161290322580645,
-   "ci_low": 0.3870967741935484,
-   "ci_high": 0.6451612903225806,
-   "ci_half": 0.12903225806451613,
-   "pass_at_1_3h": 0.46774193548387094,
-   "avg_minutes": 140.7004343873656,
-   "avg_out_tok_k": 129.4421129032258,
-   "avg_steps": 148.43548387096774,
+   "pass_at_1": 0.5,
+   "ci_low": 0.375,
+   "ci_high": 0.625,
+   "ci_half": 0.125,
+   "pass_at_1_3h": 0.453125,
+   "avg_minutes": 143.90301644609374,
+   "avg_out_tok_k": 128.3799375,
+   "avg_steps": 146.78125,
    "complete": false
   },
   {
@@ -448,6 +448,17 @@
     "peak_context_tokens": 344851
    },
    {
+    "task": "datacurve/tengo-destructuring-bindings",
+    "trial": "tengo-destructuring-bindings__fvY6A9t",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.095367,
+    "n_output_tokens": 73022,
+    "steps": 50,
+    "peak_context_tokens": 142444
+   },
+   {
     "task": "datacurve/arktype-json-schema-refs-dependencies",
     "trial": "arktype-json-schema-refs-depende__r4Hseya",
     "status": "scored",
@@ -567,6 +578,17 @@
     "n_output_tokens": 80985,
     "steps": 101,
     "peak_context_tokens": 126339
+   },
+   {
+    "task": "datacurve/opa-rego-rule-profiling",
+    "trial": "opa-rego-rule-profiling__fEiou7m",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 7581.871865,
+    "n_output_tokens": 117883,
+    "steps": 141,
+    "peak_context_tokens": 184872
    },
    {
     "task": "datacurve/happy-dom-abort-pending-body-reads",
