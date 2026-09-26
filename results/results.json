@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 22:53 PDT",
+ "generated_at": "2026-09-26 00:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 83,
-   "n_counted": 83,
+   "n_trials": 87,
+   "n_counted": 87,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5301204819277109,
-   "ci_low": 0.42168674698795183,
-   "ci_high": 0.6385542168674698,
-   "ci_half": 0.108433734939759,
-   "pass_at_1_3h": 0.4819277108433735,
-   "avg_minutes": 145.69763978855423,
-   "avg_out_tok_k": 132.0683373493976,
-   "avg_steps": 150.9156626506024,
+   "pass_at_1": 0.5172413793103449,
+   "ci_low": 0.41379310344827586,
+   "ci_high": 0.6206896551724138,
+   "ci_half": 0.10344827586206898,
+   "pass_at_1_3h": 0.47126436781609193,
+   "avg_minutes": 147.13648067413794,
+   "avg_out_tok_k": 132.03435632183908,
+   "avg_steps": 150.05747126436782,
    "complete": false
   },
   {
@@ -316,6 +316,17 @@
     "peak_context_tokens": 218322
    },
    {
+    "task": "datacurve/fastapi-implicit-head-options",
+    "trial": "fastapi-implicit-head-options__68q5UzY",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 4654.517587,
+    "n_output_tokens": 120321,
+    "steps": 141,
+    "peak_context_tokens": 185777
+   },
+   {
     "task": "datacurve/python-statemachine-state-data-scoping",
     "trial": "python-statemachine-state-data-s__bFEXvmt",
     "status": "scored",
@@ -393,6 +404,17 @@
     "peak_context_tokens": 170235
    },
    {
+    "task": "datacurve/valibot-recursive-schema-composition",
+    "trial": "valibot-recursive-schema-composi__EjCb8nS",
+    "status": "failure",
+    "exception": "AgentTimeoutError",
+    "reward": 0,
+    "duration_s": 21600.093764,
+    "n_output_tokens": 148807,
+    "steps": 103,
+    "peak_context_tokens": 218806
+   },
+   {
     "task": "datacurve/psd-tools-blend-range-api",
     "trial": "psd-tools-blend-range-api__xT6GCKU",
     "status": "scored",
@@ -446,6 +468,17 @@
     "n_output_tokens": 93936,
     "steps": 140,
     "peak_context_tokens": 156918
+   },
+   {
+    "task": "datacurve/cliffy-config-file-parsing",
+    "trial": "cliffy-config-file-parsing__yKdxeoQ",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 7343.440628,
+    "n_output_tokens": 116793,
+    "steps": 137,
+    "peak_context_tokens": 196496
    },
    {
     "task": "datacurve/pebble-durability-wait-apis",
@@ -941,6 +974,17 @@
     "n_output_tokens": 123212,
     "steps": 114,
     "peak_context_tokens": 194267
+   },
+   {
+    "task": "datacurve/go-critic-doc-link-checker",
+    "trial": "go-critic-doc-link-checker__RYDAQR5",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 8880.130993,
+    "n_output_tokens": 139396,
+    "steps": 148,
+    "peak_context_tokens": 206049
    },
    {
     "task": "datacurve/tengo-callable-instance-isolation",
