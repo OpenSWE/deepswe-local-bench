@@ -347,3 +347,39 @@ kept the 67 valid results and 3 genuine agent timeouts, and removed the job-leve
 "config differs". Wrong: the driver resumes with `pier job resume -p <dir>` and passes no
 config flags, so the stored config is used and no comparison happens. The real blocker was
 different — a job-level `result.json` with `finished_at` set makes the driver skip the row.
+
+## Q25 — Orphaned containers silently oversubscribe the server
+
+**2026-09-26.** A concurrent `pier job resume` (mine, run as a diagnostic) raced the
+driver's on `docker compose down`. The losing trials ended as
+`RuntimeError: Docker compose command failed`, and their containers were never
+torn down. Eight survived across two job rows and kept issuing requests, so 11
+agents shared 3 server sessions. Nothing crashed — the row just stopped
+producing rewards, because every step re-prefilled 20–54k tokens at ~240 t/s
+instead of reusing its prefix.
+
+**Decision:** treat "containers running > `n_concurrent_trials`" as the
+diagnostic for a stalled row, not server health. `/v1/models` answering in
+0.5 ms while a 5-token completion never returns in 120 s is *saturation*, not a
+hang — read the server log for concurrent prefill lines before concluding
+anything. Recovery order matters: kill the driver, then Pier, then the
+containers, then the unscored trial dirs. Deleting dirs while Pier is live is
+what produced the orphans in the first place.
+
+`aggregate.py` now classifies `Docker compose command failed` as infra, so these
+never count against the model, and trials still in flight are excluded from the
+denominator rather than scored as zero.
+
+## Q26 — Wait for the server process, not the port, between configurations
+
+**2026-09-26.** `kill_stale_server` SIGTERMed the old `ds4-server` and waited for
+the TCP port to free. But `ds4-server` enforces single-instance with a pidfile
+and releases its listening socket *early*, then spends seconds persisting its KV
+cache (2.5 GiB here). The replacement started in that window, hit
+`another ds4 process is already running (pid …); refusing to start`, exited 2,
+and took the whole driver down with it.
+
+**Decision:** wait on the process (`pid_alive`, SIGKILL after 300 s), then
+re-check the port. The old behaviour would have broken every one of the 7
+remaining server transitions in the matrix; it only surfaced now because this
+was the first transition where the outgoing server had a large resident cache.
