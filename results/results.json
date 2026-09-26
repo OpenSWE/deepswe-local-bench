@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 04:53 PDT",
+ "generated_at": "2026-09-26 06:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 93,
-   "n_counted": 93,
+   "n_trials": 95,
+   "n_counted": 95,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5268817204301075,
-   "ci_low": 0.43010752688172044,
-   "ci_high": 0.6344086021505376,
-   "ci_half": 0.1021505376344086,
-   "pass_at_1_3h": 0.4731182795698925,
-   "avg_minutes": 145.5099737609319,
-   "avg_out_tok_k": 132.33659139784947,
-   "avg_steps": 151.03225806451613,
+   "pass_at_1": 0.5368421052631579,
+   "ci_low": 0.43157894736842106,
+   "ci_high": 0.6421052631578947,
+   "ci_half": 0.10526315789473684,
+   "pass_at_1_3h": 0.4842105263157895,
+   "avg_minutes": 144.9185438021053,
+   "avg_out_tok_k": 132.8601052631579,
+   "avg_steps": 154.01052631578946,
    "complete": false
   },
   {
@@ -888,6 +888,17 @@
     "peak_context_tokens": 253078
    },
    {
+    "task": "datacurve/helm-unified-manifest-stream",
+    "trial": "helm-unified-manifest-stream__X59KPdg",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5105.009257,
+    "n_output_tokens": 119757,
+    "steps": 178,
+    "peak_context_tokens": 193627
+   },
+   {
     "task": "datacurve/go-genai-streamed-function-args",
     "trial": "go-genai-streamed-function-args__8KE4bFN",
     "status": "scored",
@@ -1029,6 +1040,17 @@
     "n_output_tokens": 102967,
     "steps": 130,
     "peak_context_tokens": 175886
+   },
+   {
+    "task": "datacurve/scriggo-method-declarations",
+    "trial": "scriggo-method-declarations__KYNrbRn",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 8985.036829,
+    "n_output_tokens": 194650,
+    "steps": 407,
+    "peak_context_tokens": 361204
    },
    {
     "task": "datacurve/mashumaro-flattened-dataclass-fields",
