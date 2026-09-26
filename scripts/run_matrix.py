@@ -53,18 +53,43 @@ def listeners(port: int) -> list[int]:
     return [int(x) for x in out.split()]
 
 
+def pid_alive(pid: int) -> bool:
+    try:
+        os.kill(pid, 0)
+    except ProcessLookupError:
+        return False
+    except PermissionError:
+        return True
+    return True
+
+
 def kill_stale_server(port: int) -> None:
     for pid in listeners(port):
         comm = subprocess.run(["ps", "-o", "comm=", "-p", str(pid)], capture_output=True, text=True).stdout.strip()
-        if comm.endswith("ds4-server"):
-            log(f"killing stale ds4-server pid {pid} on port {port}")
-            os.kill(pid, signal.SIGTERM)
-            for _ in range(60):
-                if not listeners(port):
+        if not comm.endswith("ds4-server"):
+            sys.exit(f"port {port} is held by {comm!r} (pid {pid}); free it first")
+        log(f"killing stale ds4-server pid {pid} on port {port}")
+        os.kill(pid, signal.SIGTERM)
+        # Wait for the PROCESS, not the port: ds4-server enforces single-instance
+        # with a pidfile and releases the listening socket early, then spends
+        # seconds persisting its KV cache. A new server started in that window
+        # exits 2 with "another ds4 process is already running".
+        for _ in range(150):
+            if not pid_alive(pid):
+                break
+            time.sleep(2)
+        else:
+            log(f"ds4-server pid {pid} ignored SIGTERM after 300s; sending SIGKILL")
+            try:
+                os.kill(pid, signal.SIGKILL)
+            except ProcessLookupError:
+                pass
+            for _ in range(15):
+                if not pid_alive(pid):
                     break
                 time.sleep(2)
-        else:
-            sys.exit(f"port {port} is held by {comm!r} (pid {pid}); free it first")
+        if listeners(port):
+            sys.exit(f"port {port} still held after killing pid {pid}")
 
 
 def ensure_forwarder(d: dict) -> None:
