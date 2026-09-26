@@ -178,7 +178,7 @@ def pier_run_cmd(d: dict, s: dict, effort: str, name: str, jobs_dir: Path, args)
            "--ak", f"version={d['mini_swe_agent_version']}",
            "--ak", "model_class=litellm",                      # chat completions, not the Responses API
            "--ak", f"reasoning_effort={effort}",
-           "--ak", "model_kwargs=" + json.dumps({"seed": d["seed"]}),
+           "--ak", "model_kwargs=" + json.dumps({"seed": d["seed"], "timeout": d.get("request_timeout_s", 1800)}),
            "--ae", f"OPENAI_BASE_URL={d['base_url']}", "--ae", f"OPENAI_API_BASE={d['base_url']}",
            "--ae", "OPENAI_API_KEY=dummy",                     # ds4-server has no auth; litellm wants a key
            "-n", str(s.get("clients", s.get("sessions", 1))), "-k", "1",

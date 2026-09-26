@@ -18,6 +18,7 @@ forward_port = 80                        # root-owned forwarder; squid allows on
 base_url = "http://host.docker.internal/v1"
 mini_swe_agent_version = "2.3.0"         # the leaderboard's pinned harness version
 agent_timeout_multiplier = 2.0           # 3 h -> 6 h; aggregate.py also reports the 3 h cutoff
+request_timeout_s = 1800  # litellm per-request cap; default 600s times out on long high-effort generations
 verifier_timeout_multiplier = 3.0        # 30 min -> 90 min: task test suites run under Rosetta
                                          # emulation, several times slower than the native amd64
                                          # the leaderboard graded on. Does not touch agent behaviour.

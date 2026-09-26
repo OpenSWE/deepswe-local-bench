@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 08:53 PDT",
+ "generated_at": "2026-09-26 09:24 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 95,
-   "n_counted": 95,
+   "n_trials": 75,
+   "n_counted": 75,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5368421052631579,
-   "ci_low": 0.43157894736842106,
-   "ci_high": 0.6421052631578947,
-   "ci_half": 0.10526315789473684,
-   "pass_at_1_3h": 0.4842105263157895,
-   "avg_minutes": 144.9185438021053,
-   "avg_out_tok_k": 132.8601052631579,
-   "avg_steps": 154.01052631578946,
+   "pass_at_1": 0.5733333333333334,
+   "ci_low": 0.4666666666666667,
+   "ci_high": 0.68,
+   "ci_half": 0.10666666666666669,
+   "pass_at_1_3h": 0.5466666666666666,
+   "avg_minutes": 114.88694454933332,
+   "avg_out_tok_k": 135.61237333333332,
+   "avg_steps": 165.70666666666668,
    "complete": false
   },
   {
@@ -59,15 +59,15 @@
    "n_trials": 113,
    "n_counted": 113,
    "n_infra": 0,
-   "n_flagged": 0,
+   "n_flagged": 3,
    "pass_at_1": 0.584070796460177,
-   "ci_low": 0.48672566371681414,
-   "ci_high": 0.672566371681416,
-   "ci_half": 0.09292035398230092,
+   "ci_low": 0.49557522123893805,
+   "ci_high": 0.6814159292035398,
+   "ci_half": 0.09292035398230086,
    "pass_at_1_3h": 0.584070796460177,
-   "avg_minutes": 75.96546675339233,
-   "avg_out_tok_k": 93.24374336283185,
-   "avg_steps": 121.12389380530973,
+   "avg_minutes": 68.21903080681817,
+   "avg_out_tok_k": 93.44335454545454,
+   "avg_steps": 122.52727272727273,
    "complete": true
   }
  ],
@@ -83,28 +83,6 @@
     "n_output_tokens": 129580,
     "steps": 151,
     "peak_context_tokens": 205113
-   },
-   {
-    "task": "datacurve/csstree-shorthand-expansion-compression",
-    "trial": "csstree-shorthand-expansion-comp__gqzipEY",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.090128,
-    "n_output_tokens": 44427,
-    "steps": 32,
-    "peak_context_tokens": 73917
-   },
-   {
-    "task": "datacurve/task-task-graph-export",
-    "trial": "task-task-graph-export__o9Rin9A",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 8074.766283,
-    "n_output_tokens": 112951,
-    "steps": 144,
-    "peak_context_tokens": 212069
    },
    {
     "task": "datacurve/obsidian-linter-link-format-conversion",
@@ -173,17 +151,6 @@
     "peak_context_tokens": 253806
    },
    {
-    "task": "datacurve/happy-dom-deterministic-intersectionobserver",
-    "trial": "happy-dom-deterministic-intersec__rgdtndQ",
-    "status": "scored",
-    "exception": null,
-    "reward": 0,
-    "duration_s": 10873.522864,
-    "n_output_tokens": 156092,
-    "steps": 192,
-    "peak_context_tokens": 250311
-   },
-   {
     "task": "datacurve/anko-default-function-arguments",
     "trial": "anko-default-function-arguments__VZoK5h7",
     "status": "scored",
@@ -226,17 +193,6 @@
     "n_output_tokens": 158674,
     "steps": 181,
     "peak_context_tokens": 243830
-   },
-   {
-    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
-    "trial": "sql-formatter-bigquery-pipe-form__nTTJdp3",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.085539,
-    "n_output_tokens": 119867,
-    "steps": 55,
-    "peak_context_tokens": 182438
    },
    {
     "task": "datacurve/go-git-worktree-merge-conflicts",
@@ -371,39 +327,6 @@
     "peak_context_tokens": 171941
    },
    {
-    "task": "datacurve/ofetch-per-origin-circuit-breaker",
-    "trial": "ofetch-per-origin-circuit-breake__BNrVVba",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 7365.050753,
-    "n_output_tokens": 124903,
-    "steps": 78,
-    "peak_context_tokens": 213768
-   },
-   {
-    "task": "datacurve/superjson-error-stack-serialization",
-    "trial": "superjson-error-stack-serializat__Qq2UohU",
-    "status": "scored",
-    "exception": null,
-    "reward": 0,
-    "duration_s": 10043.748428,
-    "n_output_tokens": 101231,
-    "steps": 68,
-    "peak_context_tokens": 151983
-   },
-   {
-    "task": "datacurve/etree-xml-diff-patch",
-    "trial": "etree-xml-diff-patch__QNv2iWB",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 8033.996005,
-    "n_output_tokens": 164401,
-    "steps": 111,
-    "peak_context_tokens": 226655
-   },
-   {
     "task": "datacurve/adaptix-name-mapping-aliases",
     "trial": "adaptix-name-mapping-aliases__or9NuKN",
     "status": "scored",
@@ -426,17 +349,6 @@
     "peak_context_tokens": 183572
    },
    {
-    "task": "datacurve/participle-grammar-conflict-analysis",
-    "trial": "participle-grammar-conflict-anal__DFgzspF",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 7773.731839,
-    "n_output_tokens": 119407,
-    "steps": 113,
-    "peak_context_tokens": 193531
-   },
-   {
     "task": "datacurve/updo-policy-alerting",
     "trial": "updo-policy-alerting__ouni3cR",
     "status": "scored",
@@ -448,17 +360,6 @@
     "peak_context_tokens": 170235
    },
    {
-    "task": "datacurve/valibot-recursive-schema-composition",
-    "trial": "valibot-recursive-schema-composi__EjCb8nS",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.093764,
-    "n_output_tokens": 148807,
-    "steps": 103,
-    "peak_context_tokens": 218806
-   },
-   {
     "task": "datacurve/psd-tools-blend-range-api",
     "trial": "psd-tools-blend-range-api__xT6GCKU",
     "status": "scored",
@@ -468,17 +369,6 @@
     "n_output_tokens": 117313,
     "steps": 114,
     "peak_context_tokens": 194607
-   },
-   {
-    "task": "datacurve/termenv-preserve-ansi-resets",
-    "trial": "termenv-preserve-ansi-resets__GKXSugW",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 15830.031937,
-    "n_output_tokens": 116752,
-    "steps": 78,
-    "peak_context_tokens": 161927
    },
    {
     "task": "datacurve/scc-bounded-memory-spilling",
@@ -602,17 +492,6 @@
     "peak_context_tokens": 284606
    },
    {
-    "task": "datacurve/tengo-destructuring-bindings",
-    "trial": "tengo-destructuring-bindings__fvY6A9t",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.095367,
-    "n_output_tokens": 73022,
-    "steps": 50,
-    "peak_context_tokens": 142444
-   },
-   {
     "task": "datacurve/returns-validated-error-accumulation",
     "trial": "returns-validated-error-accumula__7Ewdgpy",
     "status": "scored",
@@ -701,17 +580,6 @@
     "peak_context_tokens": 208360
    },
    {
-    "task": "datacurve/obsidian-linter-auto-table-of-contents",
-    "trial": "obsidian-linter-auto-table-of-co__3YdoCeg",
-    "status": "scored",
-    "exception": null,
-    "reward": 0,
-    "duration_s": 15765.12864,
-    "n_output_tokens": 104328,
-    "steps": 115,
-    "peak_context_tokens": 223315
-   },
-   {
     "task": "datacurve/opa-template-string-reconstruction",
     "trial": "opa-template-string-reconstructi__YsPUSDt",
     "status": "scored",
@@ -732,39 +600,6 @@
     "n_output_tokens": 151166,
     "steps": 188,
     "peak_context_tokens": 293607
-   },
-   {
-    "task": "datacurve/koota-composite-trait-aspects",
-    "trial": "koota-composite-trait-aspects__wrBKXiE",
-    "status": "scored",
-    "exception": null,
-    "reward": 0,
-    "duration_s": 11575.074111,
-    "n_output_tokens": 140228,
-    "steps": 163,
-    "peak_context_tokens": 297418
-   },
-   {
-    "task": "datacurve/wasmi-trap-coredumps",
-    "trial": "wasmi-trap-coredumps__D66W3zo",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.092276,
-    "n_output_tokens": 61273,
-    "steps": 94,
-    "peak_context_tokens": 164214
-   },
-   {
-    "task": "datacurve/textual-richlog-follow-state",
-    "trial": "textual-richlog-follow-state__WEmvD9u",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.090366,
-    "n_output_tokens": 97722,
-    "steps": 103,
-    "peak_context_tokens": 140600
    },
    {
     "task": "datacurve/abs-stepped-slices",
@@ -820,17 +655,6 @@
     "n_output_tokens": 117883,
     "steps": 141,
     "peak_context_tokens": 184872
-   },
-   {
-    "task": "datacurve/happy-dom-abort-pending-body-reads",
-    "trial": "happy-dom-abort-pending-body-rea__ML74Rmj",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 15026.066334,
-    "n_output_tokens": 138340,
-    "steps": 211,
-    "peak_context_tokens": 302955
    },
    {
     "task": "datacurve/obsidian-linter-scoped-ignore-markers",
@@ -921,17 +745,6 @@
     "peak_context_tokens": 162043
    },
    {
-    "task": "datacurve/quill-shared-toolbar-focus",
-    "trial": "quill-shared-toolbar-focus__eqRzQHm",
-    "status": "scored",
-    "exception": null,
-    "reward": 0,
-    "duration_s": 19134.667243,
-    "n_output_tokens": 164508,
-    "steps": 160,
-    "peak_context_tokens": 267679
-   },
-   {
     "task": "datacurve/wazero-multi-module-snapshots",
     "trial": "wazero-multi-module-snapshots__vc3YFNZ",
     "status": "scored",
@@ -965,17 +778,6 @@
     "peak_context_tokens": 270270
    },
    {
-    "task": "datacurve/tomlkit-toml-table-converters",
-    "trial": "tomlkit-toml-table-converters__ya4K9P2",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 19034.993866,
-    "n_output_tokens": 223477,
-    "steps": 132,
-    "peak_context_tokens": 317203
-   },
-   {
     "task": "datacurve/bandit-structured-nosec-directives",
     "trial": "bandit-structured-nosec-directiv__zat3PRg",
     "status": "scored",
@@ -985,17 +787,6 @@
     "n_output_tokens": 154498,
     "steps": 136,
     "peak_context_tokens": 247162
-   },
-   {
-    "task": "datacurve/httpx-deterministic-cookie-store",
-    "trial": "httpx-deterministic-cookie-store__KfxMvRi",
-    "status": "scored",
-    "exception": null,
-    "reward": 1,
-    "duration_s": 9313.03031,
-    "n_output_tokens": 124351,
-    "steps": 107,
-    "peak_context_tokens": 179211
    },
    {
     "task": "datacurve/fd-deterministic-multi-key-sorting",
@@ -1073,17 +864,6 @@
     "n_output_tokens": 139396,
     "steps": 148,
     "peak_context_tokens": 206049
-   },
-   {
-    "task": "datacurve/tengo-callable-instance-isolation",
-    "trial": "tengo-callable-instance-isolatio__4Ac73BJ",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.093147,
-    "n_output_tokens": 114695,
-    "steps": 94,
-    "peak_context_tokens": 170242
    },
    {
     "task": "datacurve/vitest-duration-sharding",
@@ -2586,17 +2366,6 @@
     "peak_context_tokens": 127393
    },
    {
-    "task": "datacurve/wasmi-trap-coredumps",
-    "trial": "wasmi-trap-coredumps__6etUvUk",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.087673,
-    "n_output_tokens": 49215,
-    "steps": 74,
-    "peak_context_tokens": 131623
-   },
-   {
     "task": "datacurve/igel-persist-feature-schema",
     "trial": "igel-persist-feature-schema__G2wHKBi",
     "status": "scored",
@@ -2639,6 +2408,17 @@
     "n_output_tokens": 80822,
     "steps": 170,
     "peak_context_tokens": 161021
+   },
+   {
+    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
+    "trial": "sql-formatter-bigquery-pipe-form__MCEKjC5",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/koota-composite-trait-aspects",
@@ -2839,6 +2619,17 @@
     "peak_context_tokens": 107716
    },
    {
+    "task": "datacurve/csstree-shorthand-expansion-compression",
+    "trial": "csstree-shorthand-expansion-comp__tKDNV5B",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
+   },
+   {
     "task": "datacurve/obsidian-linter-link-format-conversion",
     "trial": "obsidian-linter-link-format-conv__swPFiyz",
     "status": "scored",
@@ -2859,6 +2650,17 @@
     "n_output_tokens": 84578,
     "steps": 90,
     "peak_context_tokens": 127595
+   },
+   {
+    "task": "datacurve/wasmi-trap-coredumps",
+    "trial": "wasmi-trap-coredumps__2q7wjdz",
+    "status": "unknown-error",
+    "exception": "RuntimeError",
+    "reward": null,
+    "duration_s": null,
+    "n_output_tokens": null,
+    "steps": null,
+    "peak_context_tokens": null
    },
    {
     "task": "datacurve/fd-deterministic-multi-key-sorting",
@@ -3224,17 +3026,6 @@
     "peak_context_tokens": 181452
    },
    {
-    "task": "datacurve/csstree-shorthand-expansion-compression",
-    "trial": "csstree-shorthand-expansion-comp__fUABpaT",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.087323,
-    "n_output_tokens": 130082,
-    "steps": 81,
-    "peak_context_tokens": 183123
-   },
-   {
     "task": "datacurve/task-task-graph-export",
     "trial": "task-task-graph-export__57zvuiK",
     "status": "scored",
@@ -3409,17 +3200,6 @@
     "n_output_tokens": 50441,
     "steps": 89,
     "peak_context_tokens": 88163
-   },
-   {
-    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
-    "trial": "sql-formatter-bigquery-pipe-form__uscspgS",
-    "status": "failure",
-    "exception": "AgentTimeoutError",
-    "reward": 0,
-    "duration_s": 21600.086267,
-    "n_output_tokens": 78477,
-    "steps": 54,
-    "peak_context_tokens": 130945
    },
    {
     "task": "datacurve/expr-try-catch-errors",
