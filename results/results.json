@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-25 20:53 PDT",
+ "generated_at": "2026-09-25 22:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 82,
-   "n_counted": 82,
+   "n_trials": 83,
+   "n_counted": 83,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.524390243902439,
-   "ci_low": 0.4146341463414634,
-   "ci_high": 0.6341463414634146,
-   "ci_half": 0.10975609756097562,
-   "pass_at_1_3h": 0.47560975609756095,
-   "avg_minutes": 145.44538603089433,
-   "avg_out_tok_k": 132.17531707317073,
-   "avg_steps": 149.70731707317074,
+   "pass_at_1": 0.5301204819277109,
+   "ci_low": 0.42168674698795183,
+   "ci_high": 0.6385542168674698,
+   "ci_half": 0.108433734939759,
+   "pass_at_1_3h": 0.4819277108433735,
+   "avg_minutes": 145.69763978855423,
+   "avg_out_tok_k": 132.0683373493976,
+   "avg_steps": 150.9156626506024,
    "complete": false
   },
   {
@@ -479,6 +479,17 @@
     "n_output_tokens": 123687,
     "steps": 123,
     "peak_context_tokens": 211584
+   },
+   {
+    "task": "datacurve/oxvg-structural-selector-preservation",
+    "trial": "oxvg-structural-selector-preserv__RxkREQs",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 9982.946875,
+    "n_output_tokens": 123296,
+    "steps": 250,
+    "peak_context_tokens": 284263
    },
    {
     "task": "datacurve/goreleaser-retry-publish-auditing",
