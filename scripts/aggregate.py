@@ -47,6 +47,7 @@ def load_trial(path: Path) -> dict | None:
     exc_msg = (r.get("exception_info") or {}).get("exception_message") or ""
     rewards = (r.get("verifier_result") or {}).get("rewards") or {}
     reward = rewards.get("reward")
+    partial = rewards.get("partial")
     ae = r.get("agent_execution") or {}
     t0, t1 = parse_ts(ae.get("started_at")), parse_ts(ae.get("finished_at"))
     duration = (t1 - t0).total_seconds() if t0 and t1 else None
@@ -65,7 +66,7 @@ def load_trial(path: Path) -> dict | None:
         status = "scored"
     return {
         "task": r.get("task_name"), "trial": path.parent.name, "status": status, "exception": exc,
-        "reward": reward, "duration_s": duration, "n_output_tokens": ar.get("n_output_tokens"),
+        "reward": reward, "partial": partial, "duration_s": duration, "n_output_tokens": ar.get("n_output_tokens"),
         "steps": r.get("n_agent_steps") or ar.get("n_agent_steps"),
         "peak_context_tokens": ar.get("peak_context_tokens"),
     }
@@ -90,6 +91,8 @@ def summarize(server: dict, effort: str, trials: list[dict]) -> dict:
     # unscored / unknown-error are conservatively counted as failures but flagged
     rewards = [float(t["reward"]) if t["reward"] is not None else 0.0 for t in counted]
     p = statistics.fmean(rewards) if rewards else None
+    # No verifier result (agent timeout, context exhaustion) means no tests passed.
+    partials = [float(t["partial"]) if t["partial"] is not None else 0.0 for t in counted]
     lo, hi = bootstrap_ci(rewards)
     at3h = [1.0 if (t["reward"] == 1 and (t["duration_s"] or 0) <= TASK_TIMEOUT_S) else 0.0 for t in counted]
     return {
@@ -97,6 +100,7 @@ def summarize(server: dict, effort: str, trials: list[dict]) -> dict:
         "ctx": server["ctx"], "sessions": server["sessions"], "mtp": server.get("mtp", False), "effort": effort,
         "n_trials": len(trials), "n_counted": len(counted),
         "n_infra": sum(t["status"] == "infra" for t in trials),
+        "mean_partial": statistics.fmean(partials) if partials else None,
         "n_flagged": sum(t["status"] in ("unscored", "unknown-error") for t in trials),
         "n_running": sum(t["status"] == "running" for t in trials),
         "pass_at_1": p, "ci_low": lo, "ci_high": hi, "ci_half": (hi - lo) / 2 if rewards else None,
@@ -122,15 +126,16 @@ def render_md(rows: list[dict], generated: str) -> str:
     out = [f"# DeepSWE on DwarfStar (ds4) — local results", "",
            f"Generated {generated}. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, "
            f"Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.", "",
-           "| Model | Pass@1 | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |",
-           "|---|---:|---:|---:|---:|---:|---:|"]
+           "| Model | Pass@1 | Partial | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |",
+           "|---|---:|---:|---:|---:|---:|---:|---:|"]
     for r in rows:
         star = " ★" if best.get((r["family"], r["quant"], r["ctx"])) is r else ""
         pct = f"{fmt(r['pass_at_1'] and r['pass_at_1']*100, '.0f')}% ±{fmt(r['ci_half'] and r['ci_half']*100, '.0f')}"
         infra = f" ({r['n_infra']} infra)" if r["n_infra"] else ""
         p3 = fmt(r["pass_at_1_3h"] and r["pass_at_1_3h"] * 100, ".0f")
         out.append(
-            f"| {r['label']} [{r['effort']}]{star} | {pct} | {p3}% "
+            f"| {r['label']} [{r['effort']}]{star} | {pct} "
+            f"| {fmt(r['mean_partial'] and r['mean_partial']*100, '.0f')}% | {p3}% "
             f"| {fmt(r['avg_minutes'], '.1f')} | {fmt(r['avg_out_tok_k'], '.0f')} | {fmt(r['avg_steps'], '.0f')} "
             f"| {r['n_counted']}/{N_TASKS}{infra} |"
         )
@@ -139,6 +144,8 @@ def render_md(rows: list[dict], generated: str) -> str:
             "`low`/`medium` as `high`; `max` needs a 393216-token context on Qwen and GLM.  ",
             "Avg min/task is wall-clock of the agent phase under the row's concurrency (sessions column in results.json); "
             "Pass@1 @3h re-scores each task as a failure if the agent phase exceeded the leaderboard's 3 h limit.  ",
+            "Partial is the mean fraction of f2p+p2p tests passed, so it credits a run that fixed most of "
+            "the bug; a trial with no verifier result (agent timeout) counts as 0.  ",
             "Tasks = counted / total; infra = harness errors excluded from the denominator."]
     return "\n".join(out) + "\n"
 
@@ -173,7 +180,9 @@ def main():
     (out_dir / "results.json").write_text(json.dumps({"generated_at": generated, "rows": rows, "trials": all_trials}, indent=1))
     (out_dir / "RESULTS.md").write_text(render_md(rows, generated))
     for r in sorted(rows, key=lambda r: -(r["pass_at_1"] or -1)):
-        print(f"{r['label']} [{r['effort']}]: {fmt(r['pass_at_1'] and r['pass_at_1']*100, '.1f')}% "
+        print(f"{r['label']} [{r['effort']}]: "
+              f"{fmt(r['pass_at_1'] and r['pass_at_1'] * 100, '.1f')}% "
+              f"partial {fmt(r['mean_partial'] and r['mean_partial'] * 100, '.1f')}% "
               f"({r['n_counted']} counted, {r['n_infra']} infra, {r['n_flagged']} flagged, "
               f"{r['n_running']} running)")
     if unknown:

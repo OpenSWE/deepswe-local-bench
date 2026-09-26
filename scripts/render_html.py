@@ -57,6 +57,7 @@ def table(rows, best_ids):
     head = ("<thead><tr>"
             '<th scope="col">Model</th>'
             '<th scope="col" class="num">Pass@1</th>'
+            '<th scope="col" class="num">Partial</th>'
             '<th scope="col" class="num">Pass@1 @3h</th>'
             '<th scope="col" class="num">Avg min/task</th>'
             '<th scope="col" class="num">Out tok (k)</th>'
@@ -72,6 +73,7 @@ def table(rows, best_ids):
             f'<tr data-best="{"1" if key in best_ids else "0"}">'
             f'<th scope="row">{html.escape(r["label"])} <span class="eff">[{html.escape(r["effort"])}]</span></th>'
             f'<td class="num">{p1}% <span class="ci">±{ci}</span></td>'
+            f'<td class="num">{fmt(r.get("mean_partial") and r["mean_partial"] * 100, ".0f")}%</td>'
             f'<td class="num">{fmt(r["pass_at_1_3h"] and r["pass_at_1_3h"] * 100, ".0f")}%</td>'
             f'<td class="num">{fmt(r["avg_minutes"], ".1f")}</td>'
             f'<td class="num">{fmt(r["avg_out_tok_k"], ".0f")}</td>'
