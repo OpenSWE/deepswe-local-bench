@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 02:53 PDT",
+ "generated_at": "2026-09-26 04:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -10,18 +10,18 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 91,
-   "n_counted": 91,
+   "n_trials": 93,
+   "n_counted": 93,
    "n_infra": 0,
    "n_flagged": 0,
-   "pass_at_1": 0.5274725274725275,
-   "ci_low": 0.42857142857142855,
-   "ci_high": 0.6263736263736264,
-   "ci_half": 0.09890109890109891,
-   "pass_at_1_3h": 0.4725274725274725,
-   "avg_minutes": 145.9471855981685,
-   "avg_out_tok_k": 132.85045054945056,
-   "avg_steps": 151.65934065934067,
+   "pass_at_1": 0.5268817204301075,
+   "ci_low": 0.43010752688172044,
+   "ci_high": 0.6344086021505376,
+   "ci_half": 0.1021505376344086,
+   "pass_at_1_3h": 0.4731182795698925,
+   "avg_minutes": 145.5099737609319,
+   "avg_out_tok_k": 132.33659139784947,
+   "avg_steps": 151.03225806451613,
    "complete": false
   },
   {
@@ -149,6 +149,17 @@
     "n_output_tokens": 163245,
     "steps": 134,
     "peak_context_tokens": 275393
+   },
+   {
+    "task": "datacurve/drizzle-orm-window-function-builders",
+    "trial": "drizzle-orm-window-function-buil__ohFz8te",
+    "status": "scored",
+    "exception": null,
+    "reward": 1,
+    "duration_s": 5030.271792,
+    "n_output_tokens": 116681,
+    "steps": 177,
+    "peak_context_tokens": 217149
    },
    {
     "task": "datacurve/skrub-duration-encoding",
@@ -369,6 +380,17 @@
     "n_output_tokens": 124903,
     "steps": 78,
     "peak_context_tokens": 213768
+   },
+   {
+    "task": "datacurve/superjson-error-stack-serialization",
+    "trial": "superjson-error-stack-serializat__Qq2UohU",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 10043.748428,
+    "n_output_tokens": 101231,
+    "steps": 68,
+    "peak_context_tokens": 151983
    },
    {
     "task": "datacurve/etree-xml-diff-patch",
