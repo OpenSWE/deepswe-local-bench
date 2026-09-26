@@ -193,3 +193,30 @@ herdr pane read "$TAB" --source recent --lines 40        # check on it later
 ```
 
 The driver is resumable, so a closed tab or a reboot costs only the task in flight.
+
+## Changing a model kwarg on a job that already has trials
+
+`pier job resume` reuses the **stored** config, so editing `matrix.toml` or
+`run_matrix.py` does not reach an existing job. Pier then validates three
+artifacts independently, and each one fails with a different error:
+
+| Artifact | Error if stale |
+|---|---|
+| `jobs/<row>/config.json` | silently reuses the old value |
+| `jobs/<row>/<trial>/config.json` | `ValueError: Existing trial config does not match planned job config.` |
+| `jobs/<row>/lock.json` | `FileExistsError: ... lock.json that does not match the resolved job lock.` |
+
+Patch all three to the same value in one pass. The lock's comparison excludes
+`created_at`, `pier` and `invocation` (see `pier/models/job/lock.py`
+`_canonical_payload`), so only `schema_version`, `n_concurrent_trials`,
+`retry` and `trials[]` have to match — but `trials[]` embeds each trial's full
+agent config, so the model kwarg lives there too.
+
+Keep the change minimal: every field you touch must match in all three places,
+so revert unrelated edits on an in-flight row rather than propagating them.
+
+**Never run `pier job resume` by hand against a job dir the driver owns.** Two
+resumes on one job dir race on `docker compose down`, and each losing trial
+ends as `RuntimeError: Docker compose command failed` with a duplicate trial
+directory left behind. `aggregate.py` classifies that message as infra so it
+never counts against the model, but the trial still has to be re-run.
