@@ -44,14 +44,17 @@ def load_trial(path: Path) -> dict | None:
     except (OSError, json.JSONDecodeError):
         return None
     exc = (r.get("exception_info") or {}).get("exception_type")
+    exc_msg = (r.get("exception_info") or {}).get("exception_message") or ""
     rewards = (r.get("verifier_result") or {}).get("rewards") or {}
     reward = rewards.get("reward")
     ae = r.get("agent_execution") or {}
     t0, t1 = parse_ts(ae.get("started_at")), parse_ts(ae.get("finished_at"))
     duration = (t1 - t0).total_seconds() if t0 and t1 else None
     ar = r.get("agent_result") or {}
-    if exc in INFRA_ERRORS:
-        status = "infra"
+    if r.get("finished_at") is None and reward is None and not exc:
+        status = "running"   # trial still executing; excluded from the denominator
+    elif exc in INFRA_ERRORS or "Docker compose command failed" in exc_msg:
+        status = "infra"   # harness/environment failure, never the model's fault
     elif exc in FAILURE_ERRORS:
         status, reward = "failure", 0
     elif exc:
@@ -95,6 +98,7 @@ def summarize(server: dict, effort: str, trials: list[dict]) -> dict:
         "n_trials": len(trials), "n_counted": len(counted),
         "n_infra": sum(t["status"] == "infra" for t in trials),
         "n_flagged": sum(t["status"] in ("unscored", "unknown-error") for t in trials),
+        "n_running": sum(t["status"] == "running" for t in trials),
         "pass_at_1": p, "ci_low": lo, "ci_high": hi, "ci_half": (hi - lo) / 2 if rewards else None,
         "pass_at_1_3h": statistics.fmean(at3h) if at3h else None,
         "avg_minutes": (mean_or_none([t["duration_s"] for t in counted]) or 0) / 60 if counted else None,
@@ -170,7 +174,8 @@ def main():
     (out_dir / "RESULTS.md").write_text(render_md(rows, generated))
     for r in sorted(rows, key=lambda r: -(r["pass_at_1"] or -1)):
         print(f"{r['label']} [{r['effort']}]: {fmt(r['pass_at_1'] and r['pass_at_1']*100, '.1f')}% "
-              f"({r['n_counted']} counted, {r['n_infra']} infra, {r['n_flagged']} flagged)")
+              f"({r['n_counted']} counted, {r['n_infra']} infra, {r['n_flagged']} flagged, "
+              f"{r['n_running']} running)")
     if unknown:
         print("exception types not classified (counted as failures):", sorted(unknown))
 

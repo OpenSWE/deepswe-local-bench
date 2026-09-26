@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 09:24 PDT",
+ "generated_at": "2026-09-26 09:25 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -14,6 +14,7 @@
    "n_counted": 75,
    "n_infra": 0,
    "n_flagged": 0,
+   "n_running": 0,
    "pass_at_1": 0.5733333333333334,
    "ci_low": 0.4666666666666667,
    "ci_high": 0.68,
@@ -37,6 +38,7 @@
    "n_counted": 112,
    "n_infra": 1,
    "n_flagged": 0,
+   "n_running": 0,
    "pass_at_1": 0.5625,
    "ci_low": 0.4732142857142857,
    "ci_high": 0.6517857142857143,
@@ -57,18 +59,19 @@
    "mtp": true,
    "effort": "medium",
    "n_trials": 113,
-   "n_counted": 113,
-   "n_infra": 0,
-   "n_flagged": 3,
-   "pass_at_1": 0.584070796460177,
-   "ci_low": 0.49557522123893805,
-   "ci_high": 0.6814159292035398,
-   "ci_half": 0.09292035398230086,
-   "pass_at_1_3h": 0.584070796460177,
+   "n_counted": 110,
+   "n_infra": 3,
+   "n_flagged": 0,
+   "n_running": 0,
+   "pass_at_1": 0.6,
+   "ci_low": 0.5,
+   "ci_high": 0.6909090909090909,
+   "ci_half": 0.09545454545454546,
+   "pass_at_1_3h": 0.6,
    "avg_minutes": 68.21903080681817,
    "avg_out_tok_k": 93.44335454545454,
    "avg_steps": 122.52727272727273,
-   "complete": true
+   "complete": false
   }
  ],
  "trials": {
@@ -2412,7 +2415,7 @@
    {
     "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
     "trial": "sql-formatter-bigquery-pipe-form__MCEKjC5",
-    "status": "unknown-error",
+    "status": "infra",
     "exception": "RuntimeError",
     "reward": null,
     "duration_s": null,
@@ -2621,7 +2624,7 @@
    {
     "task": "datacurve/csstree-shorthand-expansion-compression",
     "trial": "csstree-shorthand-expansion-comp__tKDNV5B",
-    "status": "unknown-error",
+    "status": "infra",
     "exception": "RuntimeError",
     "reward": null,
     "duration_s": null,
@@ -2654,7 +2657,7 @@
    {
     "task": "datacurve/wasmi-trap-coredumps",
     "trial": "wasmi-trap-coredumps__2q7wjdz",
-    "status": "unknown-error",
+    "status": "infra",
     "exception": "RuntimeError",
     "reward": null,
     "duration_s": null,
