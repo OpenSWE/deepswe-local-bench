@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-09-26 10:53 PDT",
+ "generated_at": "2026-09-26 12:53 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2",
@@ -58,19 +58,19 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 113,
-   "n_counted": 110,
-   "n_infra": 3,
+   "n_trials": 111,
+   "n_counted": 111,
+   "n_infra": 0,
    "n_flagged": 0,
    "n_running": 0,
-   "pass_at_1": 0.6,
-   "ci_low": 0.5,
-   "ci_high": 0.6909090909090909,
-   "ci_half": 0.09545454545454546,
-   "pass_at_1_3h": 0.6,
-   "avg_minutes": 68.21903080681817,
-   "avg_out_tok_k": 93.44335454545454,
-   "avg_steps": 122.52727272727273,
+   "pass_at_1": 0.5945945945945946,
+   "ci_low": 0.5045045045045045,
+   "ci_high": 0.6846846846846847,
+   "ci_half": 0.09009009009009011,
+   "pass_at_1_3h": 0.5945945945945946,
+   "avg_minutes": 68.58610983783782,
+   "avg_out_tok_k": 93.9343063063063,
+   "avg_steps": 122.43243243243244,
    "complete": false
   }
  ],
@@ -2413,17 +2413,6 @@
     "peak_context_tokens": 161021
    },
    {
-    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
-    "trial": "sql-formatter-bigquery-pipe-form__MCEKjC5",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/koota-composite-trait-aspects",
     "trial": "koota-composite-trait-aspects__ug8uN3d",
     "status": "scored",
@@ -2623,14 +2612,14 @@
    },
    {
     "task": "datacurve/csstree-shorthand-expansion-compression",
-    "trial": "csstree-shorthand-expansion-comp__tKDNV5B",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
+    "trial": "csstree-shorthand-expansion-comp__WB5eEW9",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "duration_s": 6537.888195,
+    "n_output_tokens": 147939,
+    "steps": 112,
+    "peak_context_tokens": 212480
    },
    {
     "task": "datacurve/obsidian-linter-link-format-conversion",
@@ -2653,17 +2642,6 @@
     "n_output_tokens": 84578,
     "steps": 90,
     "peak_context_tokens": 127595
-   },
-   {
-    "task": "datacurve/wasmi-trap-coredumps",
-    "trial": "wasmi-trap-coredumps__2q7wjdz",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/fd-deterministic-multi-key-sorting",
