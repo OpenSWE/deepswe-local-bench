@@ -383,3 +383,53 @@ and took the whole driver down with it.
 re-check the port. The old behaviour would have broken every one of the 7
 remaining server transitions in the matrix; it only surfaced now because this
 was the first transition where the outgoing server had a large resident cache.
+
+## Q27 — An interrupted `brew upgrade` destroyed Docker Desktop and stalled the sweep for 5 days
+
+**2026-10-08.** The sweep stopped on 2026-10-05 02:10. The driver had waited
+86400 s for Docker twice, then aborted. Docker's daemon died 2026-10-03 02:08
+and `/Applications/Docker.app` was an empty directory, mtime 2026-10-04 18:39.
+
+Root cause was an interrupted Docker Desktop cask upgrade, not a mystery
+deletion. The Caskroom held `4.92.0,240144.upgrading` with the staged 2.2 GB
+app beside an empty `4.92.0,240144`, and `/Applications/Docker.app` was the
+husk left when the old app was moved out. `brew list --cask` reported
+"not installed" while the Caskroom path existed. The herdr pane that runs the
+driver still carried the terminal title `brew upgrade`.
+
+**Decision:** `docker-desktop` is **not** declared in any macbook-provision
+role — `grep` and `git log -S` both come back empty — yet the homebrew role runs
+`upgrade_all: true` on arm64 nightly, so it upgrades Docker Desktop without
+owning it. Provisioning can therefore break Docker on any arm64 host and will
+never reinstall it. Repaired here by hand; the role gap is left open on purpose,
+because declaring the cask installs a multi-gigabyte VM app on all ten hosts
+(one shared role tree, no per-host scoping) and that is a fleet decision.
+
+Two traps worth keeping:
+
+- **`state: present` cannot repair a broken cask.** `community.general.homebrew_cask`
+  read the stale Caskroom directory and returned `changed: false, "Cask already
+  installed"` while no app existed. Fixing it needed the broken staging state
+  deleted first, then a plain install.
+- **Docker's own installer exits 0 having done nothing.** `install
+  --accept-license` left no helpers and no socket; `install config` failed with
+  "specifying --user is required"; only `install config --user=<user>` placed
+  `com.docker.socket` and `com.docker.vmnetd`. Verify by the helper files and a
+  live socket, never by exit status.
+
+`Docker.raw` survived at 444 GB, so all 1063 task images came back and nothing
+had to rebuild. Settings survived too (64 GiB, 16 CPU, Rosetta, VirtioFS), and
+`--backend` was deliberately not passed, since switching to Docker VMM could
+break the amd64 emulation every task image needs.
+
+## Q28 — The native row's 83 outage trials are deleted, not scored
+
+**2026-10-08.** `qwen3.8-flash-next-q2-native__high` read 71.0% on 31 counted
+tasks: 82 of its 113 trials were infra `RuntimeError`s from the Docker outage,
+and Pier still wrote `finished_at`, so the driver skipped the row as complete.
+
+**Decision:** delete the 83 infra and unknown-error trials, keep the 28 scored
+and 2 genuine failures, and move `result.json` aside to `result.json.outage` so
+the row re-runs. A 31-task row must never sit in the same table as 113-task
+rows; `aggregate.py` marks it `complete=False`, but the rendered table does not
+show that flag yet.
