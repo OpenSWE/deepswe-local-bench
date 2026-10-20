@@ -204,6 +204,14 @@ def pier_run_cmd(d: dict, s: dict, effort: str, name: str, jobs_dir: Path, args)
            "--ak", "model_class=litellm",                      # chat completions, not the Responses API
            "--ak", f"reasoning_effort={effort}",
            "--ak", "model_kwargs=" + json.dumps({"seed": d["seed"], "timeout": d.get("request_timeout_s", 1800)}),
+           # mini-swe-agent is pinned, but its litellm dependency is not, so a fresh
+           # container resolves the newest litellm, which imports mcp.types at module
+           # import time without depending on `mcp`. Without this the agent dies on
+           # `ModuleNotFoundError: No module named 'mcp'` at 0 steps and 0 tokens, and
+           # the verifier still scores the untouched repo 0 - a whole row of silent
+           # zeros that looks like a weak model. Images built before 2026-10-19 carry
+           # an older litellm and are unaffected, so this only shows up on a rebuild.
+           "--ak", "extra_python_packages=" + json.dumps(d.get("extra_python_packages", ["mcp"])),
            "--ae", f"OPENAI_BASE_URL={d['base_url']}", "--ae", f"OPENAI_API_BASE={d['base_url']}",
            "--ae", "OPENAI_API_KEY=dummy",                     # ds4-server has no auth; litellm wants a key
            "-n", str(s.get("clients", s.get("sessions", 1))), "-k", "1",

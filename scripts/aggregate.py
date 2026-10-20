@@ -48,6 +48,9 @@ def load_trial(path: Path) -> dict | None:
     rewards = (r.get("verifier_result") or {}).get("rewards") or {}
     reward = rewards.get("reward")
     partial = rewards.get("partial")
+    # f2p alone is the repair signal: `partial` mixes in p2p, and the median task
+    # carries 165 p2p tests against 44 f2p, so a run that changes nothing scores high.
+    f2p = rewards.get("f2p")
     ae = r.get("agent_execution") or {}
     t0, t1 = parse_ts(ae.get("started_at")), parse_ts(ae.get("finished_at"))
     duration = (t1 - t0).total_seconds() if t0 and t1 else None
@@ -56,6 +59,11 @@ def load_trial(path: Path) -> dict | None:
         status = "running"   # trial still executing; excluded from the denominator
     elif exc in INFRA_ERRORS or "Docker compose command failed" in exc_msg:
         status = "infra"   # harness/environment failure, never the model's fault
+    elif (r.get("n_agent_steps") or ar.get("n_agent_steps") or 0) == 0 and not ar.get("n_output_tokens"):
+        # The agent never ran: no steps, no tokens. The verifier still scores the
+        # untouched repo 0, so without this these look like a model scoring 0.0%.
+        # This is how a litellm/mcp import crash wiped a whole DeepSeek row.
+        status = "infra"
     elif exc in FAILURE_ERRORS:
         status, reward = "failure", 0
     elif exc:
@@ -66,7 +74,7 @@ def load_trial(path: Path) -> dict | None:
         status = "scored"
     return {
         "task": r.get("task_name"), "trial": path.parent.name, "status": status, "exception": exc,
-        "reward": reward, "partial": partial, "duration_s": duration, "n_output_tokens": ar.get("n_output_tokens"),
+        "reward": reward, "partial": partial, "f2p": f2p, "duration_s": duration, "n_output_tokens": ar.get("n_output_tokens"),
         "steps": r.get("n_agent_steps") or ar.get("n_agent_steps"),
         "peak_context_tokens": ar.get("peak_context_tokens"),
     }
@@ -93,6 +101,7 @@ def summarize(server: dict, effort: str, trials: list[dict]) -> dict:
     p = statistics.fmean(rewards) if rewards else None
     # No verifier result (agent timeout, context exhaustion) means no tests passed.
     partials = [float(t["partial"]) if t["partial"] is not None else 0.0 for t in counted]
+    f2ps = [float(t["f2p"]) if t["f2p"] is not None else 0.0 for t in counted]
     lo, hi = bootstrap_ci(rewards)
     at3h = [1.0 if (t["reward"] == 1 and (t["duration_s"] or 0) <= TASK_TIMEOUT_S) else 0.0 for t in counted]
     return {
@@ -101,6 +110,7 @@ def summarize(server: dict, effort: str, trials: list[dict]) -> dict:
         "n_trials": len(trials), "n_counted": len(counted),
         "n_infra": sum(t["status"] == "infra" for t in trials),
         "mean_partial": statistics.fmean(partials) if partials else None,
+        "mean_f2p": statistics.fmean(f2ps) if f2ps else None,
         "n_flagged": sum(t["status"] in ("unscored", "unknown-error") for t in trials),
         "n_running": sum(t["status"] == "running" for t in trials),
         "pass_at_1": p, "ci_low": lo, "ci_high": hi, "ci_half": (hi - lo) / 2 if rewards else None,
@@ -126,8 +136,8 @@ def render_md(rows: list[dict], generated: str) -> str:
     out = [f"# DeepSWE on DwarfStar (ds4) — local results", "",
            f"Generated {generated}. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, "
            f"Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.", "",
-           "| Model | Pass@1 | Partial | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |",
-           "|---|---:|---:|---:|---:|---:|---:|---:|"]
+           "| Model | Pass@1 | f2p | Partial | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |",
+           "|---|---:|---:|---:|---:|---:|---:|---:|---:|"]
     for r in rows:
         star = " ★" if best.get((r["family"], r["quant"], r["ctx"])) is r else ""
         pct = f"{fmt(r['pass_at_1'] and r['pass_at_1']*100, '.0f')}% ±{fmt(r['ci_half'] and r['ci_half']*100, '.0f')}"
@@ -135,6 +145,7 @@ def render_md(rows: list[dict], generated: str) -> str:
         p3 = fmt(r["pass_at_1_3h"] and r["pass_at_1_3h"] * 100, ".0f")
         out.append(
             f"| {r['label']} [{r['effort']}]{star} | {pct} "
+            f"| {fmt(r['mean_f2p'] and r['mean_f2p']*100, '.0f')}% "
             f"| {fmt(r['mean_partial'] and r['mean_partial']*100, '.0f')}% | {p3}% "
             f"| {fmt(r['avg_minutes'], '.1f')} | {fmt(r['avg_out_tok_k'], '.0f')} | {fmt(r['avg_steps'], '.0f')} "
             f"| {r['n_counted']}/{N_TASKS}{infra} |"
@@ -144,8 +155,11 @@ def render_md(rows: list[dict], generated: str) -> str:
             "`low`/`medium` as `high`; `max` needs a 393216-token context on Qwen and GLM.  ",
             "Avg min/task is wall-clock of the agent phase under the row's concurrency (sessions column in results.json); "
             "Pass@1 @3h re-scores each task as a failure if the agent phase exceeded the leaderboard's 3 h limit.  ",
-            "Partial is the mean fraction of f2p+p2p tests passed, so it credits a run that fixed most of "
-            "the bug; a trial with no verifier result (agent timeout) counts as 0.  ",
+            "f2p is the mean fraction of fail-to-pass tests passed - the tests the bug broke, so this is "
+            "the repair signal. Partial adds p2p (tests that already passed), and the median task has "
+            "165 p2p against 44 f2p, so Partial stays high for a run that changed nothing: DeepSeek Q2 "
+            "scored 85.9% Partial with 0.0% f2p. Read f2p; keep Partial only to see the gap. A trial "
+            "with no verifier result (agent timeout) counts as 0 in both.  ",
             "Tasks = counted / total; infra = harness errors excluded from the denominator."]
     return "\n".join(out) + "\n"
 
@@ -182,6 +196,7 @@ def main():
     for r in sorted(rows, key=lambda r: -(r["pass_at_1"] or -1)):
         print(f"{r['label']} [{r['effort']}]: "
               f"{fmt(r['pass_at_1'] and r['pass_at_1'] * 100, '.1f')}% "
+              f"f2p {fmt(r['mean_f2p'] and r['mean_f2p'] * 100, '.1f')}% "
               f"partial {fmt(r['mean_partial'] and r['mean_partial'] * 100, '.1f')}% "
               f"({r['n_counted']} counted, {r['n_infra']} infra, {r['n_flagged']} flagged, "
               f"{r['n_running']} running)")
