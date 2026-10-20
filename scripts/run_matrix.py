@@ -307,6 +307,13 @@ def run_job(d: dict, s: dict, effort: str, jobs_dir: Path, args) -> bool:
             raise SystemExit(3)
         if not ensure_disk(d):
             raise SystemExit(4)
+        # Each trial creates two networks, and a killed run leaks both. Docker then
+        # refuses every new one with "all predefined address pools have been fully
+        # subnetted", which Pier reports as a compose failure per trial - a whole row
+        # of infra errors in minutes. Pruning is safe: it only removes networks no
+        # container uses.
+        subprocess.run(["docker", "network", "prune", "-f"],
+                       capture_output=True, text=True, timeout=120)
         if attempt > 1:
             time.sleep(60 * attempt)
         job_dir = jobs_dir / name
