@@ -25,9 +25,13 @@ verifier_timeout_multiplier = 3.0        # 30 min -> 90 min: task test suites ru
 max_retries = 1                          # Pier retries infra errors once; timeouts are never retried
 seed = 0
 kv_disk_dir = "/tmp/ds4-kv"
-kv_disk_space_mb = 32768                 # 32 GiB, was 256 GiB: the cache grew to its cap and
-                                         # helped filling the volume that killed the Docker VM.
-                                         # Resident sessions already give ~97% prefix reuse.
+kv_disk_space_mb = 98304                 # 96 GiB. 32 GiB thrashed DeepSeek: every step stores a
+                                         # fresh entry (198 MiB at 30k tokens, 323 MiB at 51k), so 3
+                                         # concurrent trials exceed 32 GiB and the server logged 2818
+                                         # evictions with hits=0 - evicted before any reuse. Prefill then
+                                         # restarted at ctx=0 each step, ~7 min/step, timing out every
+                                         # trial. Keep well under min_free_gb: 256 GiB once filled the
+                                         # volume and killed the Docker VM.
 min_free_gb = 150                        # driver clears the KV cache below this, refuses below it after
 kv_cold_max_tokens = 200000
 server_ready_timeout_s = 3600
