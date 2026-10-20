@@ -12,6 +12,7 @@ time and rerun the same command.
 import argparse
 import json
 import os
+import shutil
 import signal
 import subprocess
 import sys
@@ -308,8 +309,16 @@ def run_job(d: dict, s: dict, effort: str, jobs_dir: Path, args) -> bool:
             raise SystemExit(4)
         if attempt > 1:
             time.sleep(60 * attempt)
-        if (jobs_dir / name).exists():
-            cmd = ["pier", "job", "resume", "-p", str(jobs_dir / name)]
+        job_dir = jobs_dir / name
+        # `pier job resume` reuses the config STORED in the job dir and ignores every
+        # flag built here, so a driver-side fix (a new agent kwarg, a raised timeout)
+        # silently never reaches a resumed row. When the dir holds nothing worth
+        # keeping, start over instead so the current config actually applies.
+        if job_dir.exists() and not any(job_dir.glob("*/verifier/reward.json")):
+            log(f"job {name}: no scored trials, discarding stale job dir to apply current config")
+            shutil.rmtree(job_dir)
+        if job_dir.exists():
+            cmd = ["pier", "job", "resume", "-p", str(job_dir)]
         else:
             cmd = pier_run_cmd(d, s, effort, name, jobs_dir, args)
         if args.dry_run:
