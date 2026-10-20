@@ -44,9 +44,18 @@ def job_done(jobs_dir: Path, name: str) -> bool:
     if not f.exists():
         return False
     try:
-        return json.loads(f.read_text()).get("finished_at") is not None
+        if json.loads(f.read_text()).get("finished_at") is None:
+            return False
     except (OSError, json.JSONDecodeError):
         return False
+    # A job can "finish" with every trial infra-failed - a Docker outage mid-row does
+    # exactly that, and Pier still stamps finished_at. Calling it done skips the row
+    # permanently and leaves a 0% reading that looks like the model. Treat a finished
+    # job with no scored trial as unfinished so it re-runs.
+    if not any((jobs_dir / name).glob("*/verifier/reward.json")):
+        log(f"job {name}: finished but no trial scored, treating as unfinished")
+        return False
+    return True
 
 
 def listeners(port: int) -> list[int]:
