@@ -433,3 +433,9 @@ and 2 genuine failures, and move `result.json` aside to `result.json.outage` so
 the row re-runs. A 31-task row must never sit in the same table as 113-task
 rows; `aggregate.py` marks it `complete=False`, but the rendered table does not
 show that flag yet.
+
+## 2026-10-20 — Dropped DeepSeek V4.1 Flash from the matrix
+
+**Decision:** Removed both DeepSeek V4.1 Flash server blocks (Q2, Q4) from `matrix.toml` and stopped the in-flight Q2 `high` row.
+**Why:** The user asked to stop the DeepSeek sweep because a newer DeepSeek model was released. V4.1 had 3 scored trials after ~11 days of harness faults, and at ~1 trial / 2 h a full row needed ~10 days.
+**Effect:** `aggregate.py` only reports jobs whose server id is in the matrix, so the partial DeepSeek data in `jobs/` stays on disk but leaves the table. The sweep continues with GLM 5.3 Flash Q2.

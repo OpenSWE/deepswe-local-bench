@@ -65,18 +65,8 @@ mtp = true
 efforts = ["high"]
 
 # ---------------------------------------------------------------- DeepSeek V4.1 Flash
-# No MTP exists for this model. `max` needs no context gate on V4.1.
-[[server]]
-id = "deepseek-v4.1-flash-q2"
-label = "DeepSeek V4.1 Flash Q2"
-family = "DeepSeek V4.1 Flash"
-quant = "Q2"
-model = "gguf/DeepSeek-V4.1-Flash-Q2.gguf"
-ctx = 262144
-sessions = 3
-clients = 3
-mtp = false
-efforts = ["high", "max"]
+# Dropped 2026-10-20: a newer DeepSeek release superseded V4.1 mid-sweep. Its partial
+# jobs/ data stays on disk but is no longer aggregated.
 
 # ---------------------------------------------------------------- GLM 5.3 Flash
 # `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
@@ -130,15 +120,4 @@ clients = 3
 mtp = true
 efforts = ["high", "max"]
 
-[[server]]
-id = "deepseek-v4.1-flash-q4"
-label = "DeepSeek V4.1 Flash Q4"
-family = "DeepSeek V4.1 Flash"
-quant = "Q4"
-model = "gguf/DeepSeek-V4.1-Flash-Q4.gguf"
-ctx = 262144
-sessions = 3
-clients = 3
-mtp = false
-efforts = ["high", "max"]
 
