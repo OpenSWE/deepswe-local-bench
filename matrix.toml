@@ -68,21 +68,6 @@ efforts = ["high"]
 # Dropped 2026-10-20: a newer DeepSeek release superseded V4.1 mid-sweep. Its partial
 # jobs/ data stays on disk but is no longer aggregated.
 
-# ---------------------------------------------------------------- GLM 5.3 Flash
-# `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
-# `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
-[[server]]
-id = "glm-5.3-flash-q2"
-label = "GLM 5.3 Flash Q2"
-family = "GLM 5.3 Flash"
-quant = "Q2"
-model = "gguf/GLM-5.3-Flash-Q2.gguf"
-ctx = 393216
-sessions = 3
-clients = 3
-mtp = true
-efforts = ["high", "max"]
-
 [[server]]
 id = "qwen3.8-flash-next-q4"
 label = "Qwen3.8 Flash Next Q4"
@@ -108,6 +93,21 @@ clients = 3
 mtp = true
 efforts = ["high"]
 
+# ---------------------------------------------------------------- GLM 5.3 Flash
+# `max` needs ctx >= 393216. The server drops MTP whenever sessions > 1, so
+# `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
+[[server]]
+id = "glm-5.3-flash-q2"
+label = "GLM 5.3 Flash Q2"
+family = "GLM 5.3 Flash"
+quant = "Q2"
+model = "gguf/GLM-5.3-Flash-Q2.gguf"
+ctx = 393216
+sessions = 3
+clients = 3
+mtp = true
+efforts = ["high", "max"]
+
 [[server]]
 id = "glm-5.3-flash-q4"
 label = "GLM 5.3 Flash Q4"
@@ -119,5 +119,3 @@ sessions = 3
 clients = 3
 mtp = true
 efforts = ["high", "max"]
-
-

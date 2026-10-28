@@ -439,3 +439,9 @@ show that flag yet.
 **Decision:** Removed both DeepSeek V4.1 Flash server blocks (Q2, Q4) from `matrix.toml` and stopped the in-flight Q2 `high` row.
 **Why:** The user asked to stop the DeepSeek sweep because a newer DeepSeek model was released. V4.1 had 3 scored trials after ~11 days of harness faults, and at ~1 trial / 2 h a full row needed ~10 days.
 **Effect:** `aggregate.py` only reports jobs whose server id is in the matrix, so the partial DeepSeek data in `jobs/` stays on disk but leaves the table. The sweep continues with GLM 5.3 Flash Q2.
+
+## 2026-10-28 — Run the Qwen Q4 rows before GLM
+
+**Decision:** Reordered `matrix.toml` so both Qwen3.8 Q4 rows run before the two GLM 5.3 rows.
+**Why:** The Mac rebooted on 2026-10-25 15:40 (Metal "Internal Error" in the server log) and killed the driver mid-GLM-Q2-high. That row had 57 scored trials but 55 of 60 finished trials hit the 6 h agent timeout (median 188 messages per trajectory), and the server logged 2935 KV disk-cache evictions, 98% with hits=0: a GLM entry is ~614 MiB per 20k tokens, about 4.6x DeepSeek's. Its 1.8% reading measures timeouts, not the model. Qwen rows are known to finish, so the machine does useful work while the GLM settings are decided.
+**Effect:** No row is dropped; GLM still runs, last. Its partial Q2 high job stays on disk and resumes when reached.
