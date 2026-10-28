@@ -158,7 +158,7 @@ def server_cmd(d: dict, s: dict) -> list[str]:
     if s.get("mtp"):
         cmd.append("--mtp")
     if d.get("kv_disk_dir"):
-        cmd += ["--kv-disk-dir", d["kv_disk_dir"], "--kv-disk-space-mb", str(d["kv_disk_space_mb"]),
+        cmd += ["--kv-disk-dir", d["kv_disk_dir"], "--kv-disk-space-mb", str(s.get("kv_disk_space_mb", d["kv_disk_space_mb"])),
                 "--kv-cache-cold-max-tokens", str(d["kv_cold_max_tokens"])]
     cmd += s.get("extra_args", [])
     return cmd

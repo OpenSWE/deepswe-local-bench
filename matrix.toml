@@ -98,6 +98,7 @@ efforts = ["high"]
 # `sessions`/`mtp` here are set from the 3-task pilot (see DECISIONS.md).
 [[server]]
 id = "glm-5.3-flash-q2"
+kv_disk_space_mb = 409600  # 400 GiB: a GLM entry is ~614 MiB per 20k tokens; 96 GiB thrashed (2935 evictions, 98% hits=0)
 label = "GLM 5.3 Flash Q2"
 family = "GLM 5.3 Flash"
 quant = "Q2"
@@ -110,6 +111,7 @@ efforts = ["high", "max"]
 
 [[server]]
 id = "glm-5.3-flash-q4"
+kv_disk_space_mb = 409600  # 400 GiB: a GLM entry is ~614 MiB per 20k tokens; 96 GiB thrashed (2935 evictions, 98% hits=0)
 label = "GLM 5.3 Flash Q4"
 family = "GLM 5.3 Flash"
 quant = "Q4"

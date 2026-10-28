@@ -445,3 +445,9 @@ show that flag yet.
 **Decision:** Reordered `matrix.toml` so both Qwen3.8 Q4 rows run before the two GLM 5.3 rows.
 **Why:** The Mac rebooted on 2026-10-25 15:40 (Metal "Internal Error" in the server log) and killed the driver mid-GLM-Q2-high. That row had 57 scored trials but 55 of 60 finished trials hit the 6 h agent timeout (median 188 messages per trajectory), and the server logged 2935 KV disk-cache evictions, 98% with hits=0: a GLM entry is ~614 MiB per 20k tokens, about 4.6x DeepSeek's. Its 1.8% reading measures timeouts, not the model. Qwen rows are known to finish, so the machine does useful work while the GLM settings are decided.
 **Effect:** No row is dropped; GLM still runs, last. Its partial Q2 high job stays on disk and resumes when reached.
+
+## 2026-10-28 — GLM 5.3 gets a 400 GiB KV disk cache
+
+**Decision:** Added a per-server `kv_disk_space_mb` override (`run_matrix.py` falls back to the default) and set both GLM rows to 409600 MiB. The partial GLM Q2 high job moved to `jobs/glm-5.3-flash-q2__high.thrash-96gib`, so the row re-runs from scratch.
+**Why:** User chose option 1. Under 96 GiB the GLM server evicted 2935 entries, 98% with hits=0, and 55 of 60 finished trials hit the 6 h timeout. Mixing those trials with post-fix trials would make the row's score meaningless. 989 GiB was free, so 400 GiB leaves well over the 150 GiB floor.
+**Unproven:** that the evictions, not slow decoding, cause the timeouts. Check eviction count and hits on the first GLM trials; if timeouts persist with no evictions, decode speed is the limit.

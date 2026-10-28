@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-28 10:52 PDT",
+ "generated_at": "2026-10-28 11:42 PDT",
  "rows": [
   {
    "server_id": "glm-5.3-flash-q2",
@@ -9,7 +9,7 @@
    "ctx": 393216,
    "sessions": 3,
    "mtp": true,
-   "effort": "high",
+   "effort": "high.thrash-96gib",
    "n_trials": 61,
    "n_counted": 57,
    "n_infra": 4,
@@ -156,10 +156,36 @@
    "avg_out_tok_k": 94.25805309734514,
    "avg_steps": 122.4424778761062,
    "complete": true
+  },
+  {
+   "server_id": "qwen3.8-flash-next-q4",
+   "label": "Qwen3.8 Flash Next Q4",
+   "family": "Qwen3.8 Flash Next",
+   "quant": "Q4",
+   "ctx": 393216,
+   "sessions": 3,
+   "mtp": true,
+   "effort": "low",
+   "n_trials": 5,
+   "n_counted": 2,
+   "n_infra": 3,
+   "mean_partial": 0.977606192328224,
+   "mean_f2p": 0.9411764705882353,
+   "n_flagged": 0,
+   "n_running": 0,
+   "pass_at_1": 0.0,
+   "ci_low": 0.0,
+   "ci_high": 0.0,
+   "ci_half": 0.0,
+   "pass_at_1_3h": 0.0,
+   "avg_minutes": 32.79129128333333,
+   "avg_out_tok_k": 40.2045,
+   "avg_steps": 112.5,
+   "complete": false
   }
  ],
  "trials": {
-  "glm-5.3-flash-q2__high": [
+  "glm-5.3-flash-q2__high.thrash-96gib": [
    {
     "task": "datacurve/goreleaser-retry-publish-auditing",
     "trial": "goreleaser-retry-publish-auditin__7coN6cy",
@@ -8307,6 +8333,73 @@
     "n_output_tokens": 97315,
     "steps": 98,
     "peak_context_tokens": 157230
+   }
+  ],
+  "qwen3.8-flash-next-q4__low": [
+   {
+    "task": "datacurve/prometheus-typed-label-sorting",
+    "trial": "prometheus-typed-label-sorting__GSaFgrQ",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "partial": 0.9555555555555556,
+    "f2p": 0.8823529411764706,
+    "duration_s": 2121.307297,
+    "n_output_tokens": 41816,
+    "steps": 112,
+    "peak_context_tokens": 68660
+   },
+   {
+    "task": "datacurve/skrub-duration-encoding",
+    "trial": "skrub-duration-encoding__sbDsRGY",
+    "status": "scored",
+    "exception": null,
+    "reward": 0,
+    "partial": 0.9996568291008923,
+    "f2p": 1.0,
+    "duration_s": 1813.647657,
+    "n_output_tokens": 38593,
+    "steps": 113,
+    "peak_context_tokens": 104624
+   },
+   {
+    "task": "datacurve/numba-stencil-boundary-modes",
+    "trial": "numba-stencil-boundary-modes__v6o96fq",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 444.60635,
+    "n_output_tokens": 6543,
+    "steps": 15,
+    "peak_context_tokens": 22119
+   },
+   {
+    "task": "datacurve/python-statemachine-state-data-scoping",
+    "trial": "python-statemachine-state-data-s__UrDTp7V",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 2845.429922,
+    "n_output_tokens": 63607,
+    "steps": 171,
+    "peak_context_tokens": 138019
+   },
+   {
+    "task": "datacurve/anko-typed-variable-bindings",
+    "trial": "anko-typed-variable-bindings__Rz5Asxu",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 604.558686,
+    "n_output_tokens": 16129,
+    "steps": 35,
+    "peak_context_tokens": 46870
    }
   ]
  }
