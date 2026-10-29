@@ -448,6 +448,6 @@ show that flag yet.
 
 ## 2026-10-28 — GLM 5.3 gets a 400 GiB KV disk cache
 
-**Decision:** Added a per-server `kv_disk_space_mb` override (`run_matrix.py` falls back to the default) and set both GLM rows to 409600 MiB. The partial GLM Q2 high job moved to `jobs/glm-5.3-flash-q2__high.thrash-96gib`, so the row re-runs from scratch.
+**Decision:** Added a per-server `kv_disk_space_mb` override (`run_matrix.py` falls back to the default) and set both GLM rows to 409600 MiB. The partial GLM Q2 high job moved to `jobs/_archive/glm-5.3-flash-q2__high.thrash-96gib` (outside the aggregated top level), so the row re-runs from scratch.
 **Why:** User chose option 1. Under 96 GiB the GLM server evicted 2935 entries, 98% with hits=0, and 55 of 60 finished trials hit the 6 h timeout. Mixing those trials with post-fix trials would make the row's score meaningless. 989 GiB was free, so 400 GiB leaves well over the 150 GiB floor.
 **Unproven:** that the evictions, not slow decoding, cause the timeouts. Check eviction count and hits on the first GLM trials; if timeouts persist with no evictions, decode speed is the limit.
