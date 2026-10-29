@@ -1,16 +1,16 @@
 # DeepSWE on DwarfStar (ds4) — local results
 
-Generated 2026-10-28 11:42 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
+Generated 2026-10-28 21:29 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
 
 | Model | Pass@1 | f2p | Partial | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Qwen3.8 Flash Next Q4 [low] ★ | 59% ±16 | 95% | 99% | 59% | 46.0 | 63 | 110 | 37/113 |
 | Qwen3.8 Flash Next Q2 [medium] ★ | 59% ±9 | 90% | 96% | 58% | 73.5 | 94 | 122 | 113/113 |
 | Qwen3.8 Flash Next Q2 (native ctx) [high] ★ | 57% ±9 | 77% | 96% | 53% | 138.3 | 117 | 132 | 113/113 |
 | Qwen3.8 Flash Next Q2 [low] | 56% ±9 | 94% | 98% | 56% | 51.1 | 72 | 124 | 112/113 (1 infra) |
 | Qwen3.8 Flash Next Q2 [high] | 56% ±9 | 89% | 97% | 52% | 128.8 | 139 | 161 | 113/113 |
 | Qwen3.8 Flash Next Q2 [max] | 56% ±9 | 88% | 96% | 51% | 130.1 | 140 | 158 | 113/113 |
 | GLM 5.3 Flash Q2 [high.thrash-96gib] ★ | 2% ±3 | 7% | 74% | 0% | 357.6 | 68 | 141 | 57/113 (4 infra) |
-| Qwen3.8 Flash Next Q4 [low] ★ | 0% ±0 | 94% | 98% | 0% | 32.8 | 40 | 112 | 2/113 (3 infra) |
 
 ★ best effort level within a (family, quant, context) group.  
 Effort labels are the ones ds4-server distinguishes: `xhigh` equals `high`; GLM and DeepSeek render `low`/`medium` as `high`; `max` needs a 393216-token context on Qwen and GLM.  
