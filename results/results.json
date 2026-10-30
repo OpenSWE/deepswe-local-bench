@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-30 15:33 PDT",
+ "generated_at": "2026-10-30 15:35 PDT",
  "rows": [
   {
    "server_id": "qwen3.8-flash-next-q2-native",
@@ -140,9 +140,9 @@
    "sessions": 3,
    "mtp": true,
    "effort": "high",
-   "n_trials": 10,
+   "n_trials": 13,
    "n_counted": 10,
-   "n_infra": 0,
+   "n_infra": 3,
    "mean_partial": 0.9998527245949926,
    "mean_f2p": 0.9972222222222221,
    "n_flagged": 0,
@@ -192,9 +192,9 @@
    "sessions": 3,
    "mtp": true,
    "effort": "medium",
-   "n_trials": 113,
+   "n_trials": 51,
    "n_counted": 51,
-   "n_infra": 62,
+   "n_infra": 0,
    "mean_partial": 0.958501314175254,
    "mean_f2p": 0.9376865718371733,
    "n_flagged": 0,
@@ -7581,6 +7581,32 @@
     "peak_context_tokens": 229064
    },
    {
+    "task": "datacurve/sqlfmt-create-table-ddl-formatting",
+    "trial": "sqlfmt-create-table-ddl-formatti__JZwSEWp",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 2743.23156,
+    "n_output_tokens": 69794,
+    "steps": 50,
+    "peak_context_tokens": 112693
+   },
+   {
+    "task": "datacurve/sql-formatter-bigquery-pipe-formatting",
+    "trial": "sql-formatter-bigquery-pipe-form__kXqhpK3",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 1808.194083,
+    "n_output_tokens": 44792,
+    "steps": 48,
+    "peak_context_tokens": 96503
+   },
+   {
     "task": "datacurve/prometheus-typed-label-sorting",
     "trial": "prometheus-typed-label-sorting__AhbEymZ",
     "status": "scored",
@@ -7683,6 +7709,19 @@
     "n_output_tokens": 86353,
     "steps": 121,
     "peak_context_tokens": 144739
+   },
+   {
+    "task": "datacurve/eicrud-keyset-pagination-cursor",
+    "trial": "eicrud-keyset-pagination-cursor__LawYgSN",
+    "status": "infra",
+    "exception": "CancelledError",
+    "reward": null,
+    "partial": null,
+    "f2p": null,
+    "duration_s": 4447.602378,
+    "n_output_tokens": 95473,
+    "steps": 152,
+    "peak_context_tokens": 191427
    },
    {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
@@ -9171,32 +9210,6 @@
   ],
   "qwen3.8-flash-next-q4__medium": [
    {
-    "task": "datacurve/superjson-error-stack-serialization",
-    "trial": "superjson-error-stack-serializat__XtT9Fbv",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/helm-array-merge-strategies",
-    "trial": "helm-array-merge-strategies__r9i4fm8",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/fd-deterministic-multi-key-sorting",
     "trial": "fd-deterministic-multi-key-sorti__zfDFAgY",
     "status": "scored",
@@ -9223,19 +9236,6 @@
     "peak_context_tokens": 139139
    },
    {
-    "task": "datacurve/kombu-virtual-queue-dead-lettering",
-    "trial": "kombu-virtual-queue-dead-letteri__ph8Eskv",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/skrub-duration-encoding",
     "trial": "skrub-duration-encoding__vdCwuat",
     "status": "scored",
@@ -9260,45 +9260,6 @@
     "n_output_tokens": 24247,
     "steps": 36,
     "peak_context_tokens": 48505
-   },
-   {
-    "task": "datacurve/dynamodb-toolbox-lazy-recursive-schemas",
-    "trial": "dynamodb-toolbox-lazy-recursive__oVUv3wC",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/ts-pattern-match-each",
-    "trial": "ts-pattern-match-each__4uJ8JFE",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/actionlint-action-pinning-lint",
-    "trial": "actionlint-action-pinning-lint__6ZzsNYz",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/expr-try-catch-errors",
@@ -9379,19 +9340,6 @@
     "peak_context_tokens": 113978
    },
    {
-    "task": "datacurve/happy-dom-abort-pending-body-reads",
-    "trial": "happy-dom-abort-pending-body-rea__NYk5Pzc",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/bandit-interprocedural-taint-checks",
     "trial": "bandit-interprocedural-taint-che__owneno4",
     "status": "scored",
@@ -9416,32 +9364,6 @@
     "n_output_tokens": 68089,
     "steps": 118,
     "peak_context_tokens": 144582
-   },
-   {
-    "task": "datacurve/dynamodb-toolbox-conditional-attribute-requirements",
-    "trial": "dynamodb-toolbox-conditional-att__yXT3cki",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/opa-template-string-reconstruction",
-    "trial": "opa-template-string-reconstructi__JQky37D",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/abs-stepped-slices",
@@ -9470,19 +9392,6 @@
     "peak_context_tokens": 132203
    },
    {
-    "task": "datacurve/arcane-drift-detection-baselines",
-    "trial": "arcane-drift-detection-baselines__txnpFTz",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/httpx-multipart-response-parsing",
     "trial": "httpx-multipart-response-parsing__G9RMWVM",
     "status": "scored",
@@ -9494,45 +9403,6 @@
     "n_output_tokens": 42946,
     "steps": 64,
     "peak_context_tokens": 63632
-   },
-   {
-    "task": "datacurve/dateutil-rfc5545-timezone-interop",
-    "trial": "dateutil-rfc5545-timezone-intero__QiXpqAS",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/dasel-html-document-format",
-    "trial": "dasel-html-document-format__CKj26jx",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/returns-validated-error-accumulation",
-    "trial": "returns-validated-error-accumula__36oPc9U",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/csstree-shorthand-expansion-compression",
@@ -9561,32 +9431,6 @@
     "peak_context_tokens": 185037
    },
    {
-    "task": "datacurve/go-critic-doc-link-checker",
-    "trial": "go-critic-doc-link-checker__YNibsPZ",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/scc-bounded-memory-spilling",
-    "trial": "scc-bounded-memory-spilling__HvDvPFi",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/task-task-graph-export",
     "trial": "task-task-graph-export__PRRnQJX",
     "status": "scored",
@@ -9611,19 +9455,6 @@
     "n_output_tokens": 55587,
     "steps": 88,
     "peak_context_tokens": 97933
-   },
-   {
-    "task": "datacurve/testem-per-launcher-reports",
-    "trial": "testem-per-launcher-reports__s67BgVy",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/bandit-structured-nosec-directives",
@@ -9665,19 +9496,6 @@
     "peak_context_tokens": 182329
    },
    {
-    "task": "datacurve/valibot-recursive-schema-composition",
-    "trial": "valibot-recursive-schema-composi__Whrn2Lr",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/vitest-duration-sharding",
     "trial": "vitest-duration-sharding__W74VYZj",
     "status": "scored",
@@ -9689,19 +9507,6 @@
     "n_output_tokens": 71762,
     "steps": 164,
     "peak_context_tokens": 135402
-   },
-   {
-    "task": "datacurve/clack-async-autocomplete-options",
-    "trial": "clack-async-autocomplete-options__5zBMBpn",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/vulture-persistent-analysis-cache",
@@ -9756,45 +9561,6 @@
     "peak_context_tokens": 54511
    },
    {
-    "task": "datacurve/meriyah-explicit-resource-declarations",
-    "trial": "meriyah-explicit-resource-declar__nHeWC2p",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/kea-atomic-signal-selectors",
-    "trial": "kea-atomic-signal-selectors__w6BYb9d",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/yaegi-go-embed-directives",
-    "trial": "yaegi-go-embed-directives__uLmFeQv",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/prometheus-typed-label-sorting",
     "trial": "prometheus-typed-label-sorting__XmXTqwE",
     "status": "scored",
@@ -9808,32 +9574,6 @@
     "peak_context_tokens": 84525
    },
    {
-    "task": "datacurve/kgateway-consistent-hash-policy",
-    "trial": "kgateway-consistent-hash-policy__5rKnXHf",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/query-persist-restored-query-state",
-    "trial": "query-persist-restored-query-sta__MWCfayD",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/geo-shapeindex-serialization",
     "trial": "geo-shapeindex-serialization__pGAewZf",
     "status": "scored",
@@ -9845,32 +9585,6 @@
     "n_output_tokens": 53143,
     "steps": 65,
     "peak_context_tokens": 101820
-   },
-   {
-    "task": "datacurve/obsidian-linter-auto-table-of-contents",
-    "trial": "obsidian-linter-auto-table-of-co__kqav392",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/oxvg-structural-selector-preservation",
-    "trial": "oxvg-structural-selector-preserv__t9zEaZV",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/igel-persist-feature-schema",
@@ -9899,84 +9613,6 @@
     "peak_context_tokens": 58245
    },
    {
-    "task": "datacurve/tengo-destructuring-bindings",
-    "trial": "tengo-destructuring-bindings__xi4iH7j",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/obsidian-linter-link-format-conversion",
-    "trial": "obsidian-linter-link-format-conv__r9cMxzm",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/scriggo-method-declarations",
-    "trial": "scriggo-method-declarations__5i2nc7r",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/tomlkit-toml-table-converters",
-    "trial": "tomlkit-toml-table-converters__jga8Vs8",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/textual-kitty-key-phases",
-    "trial": "textual-kitty-key-phases__zcecqKF",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/awilix-async-container-initialization",
-    "trial": "awilix-async-container-initializ__M8L3NnY",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/prometheus-transactional-reload-status",
     "trial": "prometheus-transactional-reload__Lyw3umw",
     "status": "scored",
@@ -9988,32 +9624,6 @@
     "n_output_tokens": 50181,
     "steps": 154,
     "peak_context_tokens": 112101
-   },
-   {
-    "task": "datacurve/effect-sse-httpapi-streaming",
-    "trial": "effect-sse-httpapi-streaming__rXhsZUo",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/ipython-session-bundle-replay",
-    "trial": "ipython-session-bundle-replay__y3rcD3z",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/quill-shared-toolbar-focus",
@@ -10042,32 +9652,6 @@
     "peak_context_tokens": 99159
    },
    {
-    "task": "datacurve/onedump-dump-encryption-pipeline",
-    "trial": "onedump-dump-encryption-pipeline__Nd4kJGt",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/pwntools-tube-multiplexing",
-    "trial": "pwntools-tube-multiplexing__YwTSNph",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/kysely-window-grouping-helpers",
     "trial": "kysely-window-grouping-helpers__2FJp4uC",
     "status": "scored",
@@ -10081,45 +9665,6 @@
     "peak_context_tokens": 136341
    },
    {
-    "task": "datacurve/drizzle-orm-window-function-builders",
-    "trial": "drizzle-orm-window-function-buil__SZpJVcb",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/wazero-multi-module-snapshots",
-    "trial": "wazero-multi-module-snapshots__mroaJ6e",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/go-genai-streamed-function-args",
-    "trial": "go-genai-streamed-function-args__CYKrr5z",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/wasmi-trap-coredumps",
     "trial": "wasmi-trap-coredumps__vVnxzgb",
     "status": "scored",
@@ -10131,32 +9676,6 @@
     "n_output_tokens": 163035,
     "steps": 236,
     "peak_context_tokens": 311971
-   },
-   {
-    "task": "datacurve/bandit-incremental-cache-control",
-    "trial": "bandit-incremental-cache-control__uWMGygp",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/mnamer-daemon-watch-lifecycle",
-    "trial": "mnamer-daemon-watch-lifecycle__wUnXqkR",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/koota-query-predicates",
@@ -10183,19 +9702,6 @@
     "n_output_tokens": 55237,
     "steps": 134,
     "peak_context_tokens": 114593
-   },
-   {
-    "task": "datacurve/abs-module-cache-flags",
-    "trial": "abs-module-cache-flags__JAkCoBc",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/arktype-json-schema-refs-dependencies",
@@ -10237,19 +9743,6 @@
     "peak_context_tokens": 166144
    },
    {
-    "task": "datacurve/fastapi-deprecation-response-headers",
-    "trial": "fastapi-deprecation-response-hea__aKJVpA7",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/katex-multicolumn-array-spans",
     "trial": "katex-multicolumn-array-spans__bM9yzzi",
     "status": "scored",
@@ -10261,32 +9754,6 @@
     "n_output_tokens": 84141,
     "steps": 97,
     "peak_context_tokens": 137610
-   },
-   {
-    "task": "datacurve/fastapi-implicit-head-options",
-    "trial": "fastapi-implicit-head-options__FffG7e9",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/pebble-durability-wait-apis",
-    "trial": "pebble-durability-wait-apis__sf6Y7ZW",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/aiomonitor-task-snapshots-diff",
@@ -10302,19 +9769,6 @@
     "peak_context_tokens": 90466
    },
    {
-    "task": "datacurve/mashumaro-flattened-dataclass-fields",
-    "trial": "mashumaro-flattened-dataclass-fi__gYCPKZv",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/koota-composite-trait-aspects",
     "trial": "koota-composite-trait-aspects__65MZVsb",
     "status": "scored",
@@ -10328,19 +9782,6 @@
     "peak_context_tokens": 269848
    },
    {
-    "task": "datacurve/boa-hierarchical-evaluation-cancellation",
-    "trial": "boa-hierarchical-evaluation-canc__fMaGMLC",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/ofetch-per-origin-circuit-breaker",
     "trial": "ofetch-per-origin-circuit-breake__zHhYeBk",
     "status": "scored",
@@ -10352,19 +9793,6 @@
     "n_output_tokens": 41946,
     "steps": 37,
     "peak_context_tokens": 73048
-   },
-   {
-    "task": "datacurve/optique-conditional-option-dependencies",
-    "trial": "optique-conditional-option-depen__XWbTeNA",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/happy-dom-deterministic-intersectionobserver",
@@ -10393,84 +9821,6 @@
     "peak_context_tokens": 141373
    },
    {
-    "task": "datacurve/yjs-map-conflict-detection",
-    "trial": "yjs-map-conflict-detection__XpoA5Mo",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/koota-entity-snapshot-rollback",
-    "trial": "koota-entity-snapshot-rollback__DDBNRMY",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/cliffy-config-file-parsing",
-    "trial": "cliffy-config-file-parsing__fWeGKAs",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/adaptix-name-mapping-aliases",
-    "trial": "adaptix-name-mapping-aliases__zHNVAWH",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/etree-xml-diff-patch",
-    "trial": "etree-xml-diff-patch__sWMGKDT",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/cattrs-partial-structuring-recovery",
-    "trial": "cattrs-partial-structuring-recov__FnT9oQ8",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/ytt-jsonpath-query-api",
     "trial": "ytt-jsonpath-query-api__JM98QLV",
     "status": "scored",
@@ -10482,45 +9832,6 @@
     "n_output_tokens": 48245,
     "steps": 56,
     "peak_context_tokens": 66601
-   },
-   {
-    "task": "datacurve/sqlite-utils-safe-import-checkpoints",
-    "trial": "sqlite-utils-safe-import-checkpo__VjjN2Nh",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/termenv-preserve-ansi-resets",
-    "trial": "termenv-preserve-ansi-resets__BcLyDEt",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/textual-richlog-follow-state",
-    "trial": "textual-richlog-follow-state__XxPgW2t",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    },
    {
     "task": "datacurve/participle-grammar-conflict-analysis",
@@ -10549,32 +9860,6 @@
     "peak_context_tokens": 111616
    },
    {
-    "task": "datacurve/kcp-go-multiplexed-kcp-streams",
-    "trial": "kcp-go-multiplexed-kcp-streams__32TxY99",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/koota-pair-relation-tracking",
-    "trial": "koota-pair-relation-tracking__uRT4a3d",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
     "task": "datacurve/mobly-grouped-test-barriers",
     "trial": "mobly-grouped-test-barriers__2BELQrX",
     "status": "scored",
@@ -10586,58 +9871,6 @@
     "n_output_tokens": 98918,
     "steps": 72,
     "peak_context_tokens": 135798
-   },
-   {
-    "task": "datacurve/ink-grid-box-layout",
-    "trial": "ink-grid-box-layout__W6UhSSA",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/gql-incremental-graphql-delivery",
-    "trial": "gql-incremental-graphql-delivery__LHwqf25",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/helm-unified-manifest-stream",
-    "trial": "helm-unified-manifest-stream__mjV7EZN",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
-   },
-   {
-    "task": "datacurve/opa-rego-rule-profiling",
-    "trial": "opa-rego-rule-profiling__Ec42vQp",
-    "status": "infra",
-    "exception": "RuntimeError",
-    "reward": null,
-    "partial": null,
-    "f2p": null,
-    "duration_s": null,
-    "n_output_tokens": null,
-    "steps": null,
-    "peak_context_tokens": null
    }
   ]
  }

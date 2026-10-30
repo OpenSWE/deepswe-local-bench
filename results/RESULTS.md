@@ -1,12 +1,12 @@
 # DeepSWE on DwarfStar (ds4) — local results
 
-Generated 2026-10-30 15:33 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
+Generated 2026-10-30 15:35 PDT. 113 tasks, one rollout per task, mini-swe-agent 2.3.0 via Pier, Apple M3 Ultra 512 GB. Pass@1 ± is a 95% bootstrap interval over tasks.
 
 | Model | Pass@1 | f2p | Partial | Pass@1 @3h | Avg min/task | Out tok (k) | Steps | Tasks |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Qwen3.8 Flash Next Q4 [high] ★ | 90% ±15 | 100% | 100% | 90% | 76.1 | 107 | 143 | 10/113 |
+| Qwen3.8 Flash Next Q4 [high] ★ | 90% ±15 | 100% | 100% | 90% | 76.1 | 107 | 143 | 10/113 (3 infra) |
 | Qwen3.8 Flash Next Q2 [medium] ★ | 59% ±9 | 90% | 96% | 58% | 73.5 | 94 | 122 | 113/113 |
-| Qwen3.8 Flash Next Q4 [medium] | 59% ±14 | 94% | 96% | 59% | 47.0 | 67 | 91 | 51/113 (62 infra) |
+| Qwen3.8 Flash Next Q4 [medium] | 59% ±14 | 94% | 96% | 59% | 47.0 | 67 | 91 | 51/113 |
 | Qwen3.8 Flash Next Q4 [low] | 57% ±9 | 93% | 97% | 57% | 46.7 | 63 | 116 | 112/113 (1 infra) |
 | Qwen3.8 Flash Next Q2 (native ctx) [high] ★ | 57% ±9 | 77% | 96% | 53% | 138.3 | 117 | 132 | 113/113 |
 | Qwen3.8 Flash Next Q2 [low] | 56% ±9 | 94% | 98% | 56% | 51.1 | 72 | 124 | 112/113 (1 infra) |
